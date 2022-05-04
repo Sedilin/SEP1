@@ -64,7 +64,7 @@ public class RoomList {
         return info;
     }
     /**
-     * Compares room number, if it is possible to smoke, type of the room and price of the object of two RoomList.
+     * Compares Room list, if it is possible to smoke, type of the room and price of the object of two RoomList.
      * @param obj object to be compared.
      * @return true if the two objects are equal and false otherwise.
      */
