@@ -152,14 +152,14 @@ public class Guest {
      * @return the birthday from the Guest class.
      */
     public Date getBirthday() {
-        return birthday;
+        return birthday.copy();
     }
     /**
      * Sets the birthday to the Guest.
      * @param birthday the nationality to set the object to.
      */
     public void setBirthday(Date birthday) {
-        this.birthday = birthday;
+        this.birthday = birthday.copy();
     }
     /**
      * A toString method to print out each of the elements from the Guest class.
@@ -168,7 +168,7 @@ public class Guest {
     public String toString()
     {
         return firstName + " " + lastName + " " + phoneNumber + " " + id + " " + title + " " + nationality + " " +
-                frequentGuest + " " + address + " " + birthday;
+                frequentGuest + " " + address + " " + birthday.copy();
     }
     /**
      * Compares all the variables of the object of two Addresses.
