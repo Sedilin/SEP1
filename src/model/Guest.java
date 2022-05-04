@@ -171,7 +171,7 @@ public class Guest {
                 frequentGuest + " " + address + " " + birthday.copy();
     }
     /**
-     * Compares all the variables of the object of two Addresses.
+     * Compares all the variables of the object of two Guests.
      * @param obj object to be compared.
      * @return true if the two objects are equal and false otherwise.
      */
