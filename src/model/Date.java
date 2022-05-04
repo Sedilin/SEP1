@@ -97,7 +97,7 @@ public class Date
 
   /**
    * Verifies if the year from Date class is a leap year
-   * @return true or false
+   * @return true if the year from Date is a leap year and false if it is not
    */
   public boolean isLeapYear()
 
@@ -113,9 +113,10 @@ public class Date
   }
 
   /**
-   *
-   * @return
+   * Gets the number of days in a month of date object
+   * @return number of days in a month
    */
+  //this method returns the number of days in a month(30 for even months, 31 for odd, and 29 or 28 for february(depends on isLeapYear true or false))
   public int daysInMonth()
   {
 
@@ -148,7 +149,10 @@ public class Date
     }
   }
 
-
+  /**
+   * Gets the current date
+   * @return a Date object of current date
+   */
   public static Date today()
   {
     LocalDate currentDate = LocalDate.now();
@@ -159,6 +163,9 @@ public class Date
     return new Date(day,month,year);
   }
 
+  /**
+   * Increases the day of date object with one day
+   */
   public void nextDay()
   {
     day++;
@@ -175,11 +182,20 @@ public class Date
     }
   }
 
+  /**
+   *Returns a string representation of the date
+   * @return a string representation of the date : format "day.month.year"
+   */
   public String toString ()
   {
     return day + "." + month + "." + year;
   }
 
+  /**
+   * Verifies the date from Date class is before another date object
+   * @param obj object of type Date
+   * @return true if the date from Date class is before the second object of type Date
+   */
   public boolean isBefore(Date obj)
   {
     if (year <= obj.year && month <= obj.month && day <= obj.day)
@@ -190,6 +206,11 @@ public class Date
       return false;
   }
 
+  /**
+   *Compares the date of the two Date objects
+   * @param obj compared object
+   * @return true if the two objects are equal and false if they aare not
+   */
   public boolean equals(Object obj)
   {
     if(!(obj instanceof Date))
@@ -200,6 +221,10 @@ public class Date
     return year ==other.year && month == other.month && day == other.day;
   }
 
+  /**
+   * Copies the Date class
+   * @return a copy of the Date class
+   */
   public Date copy()
   {
     return new Date(day,month,year);
