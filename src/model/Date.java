@@ -1,15 +1,10 @@
 package model;
 /**
- * A class containing for the date object
- * @author Gabriela
- * @version 1.0
+ * A class containing for the date object.
+ * @author Gabriela and Lukasz
+ * @version 1.1
  * */
-
-import java.util.Calendar;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-
-
 
 public class Date
 {
@@ -102,14 +97,7 @@ public class Date
   public boolean isLeapYear()
 
   {
-    if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
-    {
-      return true;
-    }
-    else
-    {
-      return false;
-    }
+    return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
   }
 
   /**
@@ -182,6 +170,11 @@ public class Date
     }
   }
 
+  /**
+   * Returns a number of days in between two dates.
+   * @param departureDate the date of departure.
+   * @return the number of days that has passed from arrival till departure date.
+   */
   public int daysInBetween(Date departureDate)
   {
     Date temp = new Date(day, month, year);
@@ -194,7 +187,7 @@ public class Date
       return count;
   }
   /**
-   *Returns a string representation of the date
+   * Returns a string representation of the date
    * @return a string representation of the date : format "day.month.year"
    */
   public String toString ()
@@ -209,26 +202,20 @@ public class Date
    */
   public boolean isBefore(Date obj)
   {
-    if (year <= obj.year && month <= obj.month && day <= obj.day)
-    {
-      return true;
-    }
-    else
-      return false;
+    return year <= obj.year && month <= obj.month && day <= obj.day;
   }
 
   /**
-   *Compares the date of the two Date objects
+   * Compares the date of the two Date objects
    * @param obj compared object
    * @return true if the two objects are equal and false if they aare not
    */
   public boolean equals(Object obj)
   {
-    if(!(obj instanceof Date))
+    if(!(obj instanceof Date other))
     {
       return false;
     }
-    Date other = (Date)  obj;
     return year ==other.year && month == other.month && day == other.day;
   }
 
