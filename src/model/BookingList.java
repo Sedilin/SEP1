@@ -13,4 +13,18 @@ public class BookingList {
     {
         return bookings;
     }
+    public void addBooking(Booking booking)
+    {
+        bookings.add(booking);
+    }
+    public BookingList findBookings(String phoneNumber)
+    {
+        BookingList bookingList = new BookingList();
+        for (Booking booking : bookings) {
+            if (booking.getGuest().getPhoneNumber().equals(phoneNumber)) {
+                bookingList.addBooking(booking);
+            }
+        }
+        return bookingList;
+    }
 }
