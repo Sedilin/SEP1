@@ -1,7 +1,11 @@
 package model;
 
 import java.util.ArrayList;
-
+/**
+ * A class containing Guest information.
+ * @author Gabriela and Lukasz
+ * @version 1.1
+ */
 public class GuestList {
   private ArrayList<Guest> guests;
 
@@ -55,6 +59,10 @@ public class GuestList {
     return null;
   }
 
+  /**
+   * Gets the size of the guest list.
+   * @return the number of guests in the list.
+   */
   public int size()
   {
     return guests.size();
