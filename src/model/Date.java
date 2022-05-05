@@ -182,6 +182,17 @@ public class Date
     }
   }
 
+  public int daysInBetween(Date departureDate)
+  {
+    Date temp = new Date(day, month, year);
+    int count = 0;
+    do {
+      temp.nextDay();
+      count++;
+    }
+    while (temp.equals(departureDate));
+      return count;
+  }
   /**
    *Returns a string representation of the date
    * @return a string representation of the date : format "day.month.year"
