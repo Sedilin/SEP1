@@ -1,5 +1,6 @@
 package model;
 
+import java.awt.print.Book;
 import java.util.ArrayList;
 
 public class BookingList {
@@ -9,15 +10,18 @@ public class BookingList {
     {
         bookings = new ArrayList<>();
     }
+
     public ArrayList<Booking> getAllBooking()
     {
         return bookings;
     }
+
     public void addBooking(Booking booking)
     {
         bookings.add(booking);
     }
-    public BookingList findBookings(String phoneNumber)
+
+    public BookingList findBookingsByPhoneNumber(String phoneNumber)
     {
         BookingList bookingList = new BookingList();
         for (Booking booking : bookings) {
@@ -27,4 +31,24 @@ public class BookingList {
         }
         return bookingList;
     }
+
+    public String toString()
+    {
+        String infoBookings = "";
+        for (Booking booking : bookings)
+        {
+            infoBookings += booking.toString() + "\n";
+        }
+        return infoBookings;
+    }
+
+    public boolean equals(Object obj)
+    {
+        if(!(obj instanceof BookingList other))
+        {
+            return false;
+        }
+        return bookings.equals(other.bookings);
+    }
+
 }

@@ -59,6 +59,11 @@ public class GuestList {
   {
     return guests.size();
   }
+  public Guest getMainGuest()
+  {
+    return guests.get(0);
+  }
+
   /**
    * Returns a string representation of the guest list
    * @return all guests

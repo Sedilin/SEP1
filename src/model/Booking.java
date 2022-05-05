@@ -74,4 +74,19 @@ public class Booking {
     {
         return totalPrice;
     }
+
+    public String toString()
+    {
+        return guestList.getMainGuest().toString()+" "+room.getRoomNumber()+" "+arrivalDate+" "+departureDate+" "+hasPaid;
+    }
+
+    public boolean equals(Object obj)
+    {
+        if(!(obj instanceof Booking other))
+        {
+            return false;
+        }
+        return guestList.equals(other.guestList) && room.equals(other.room) && arrivalDate.equals(other.arrivalDate)
+               && departureDate.equals(other.departureDate) && hasPaid == hasPaid();
+    }
 }
