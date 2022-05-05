@@ -21,7 +21,7 @@ public class BookingList {
     {
         BookingList bookingList = new BookingList();
         for (Booking booking : bookings) {
-            if (booking.getGuest().getPhoneNumber().equals(phoneNumber)) {
+            if (booking.getGuest(phoneNumber)!=null) {
                 bookingList.addBooking(booking);
             }
         }

@@ -5,32 +5,31 @@ import java.util.ArrayList;
 public class Booking {
     private double totalPrice;
     private boolean hasPaid;
-    private GuestList guestList = new GuestList();
-    private RoomList roomList = new RoomList();
+    private GuestList guestList;
+    private Room room;
     private Date arrivalDate;
     private Date departureDate;
-    private Room room;
-    private Guest guest;
 
     //Constructor
-    public Booking (int roomNumber, String phoneNumber, Date arrivalDate, Date departureDate, boolean hasPaid)
+    public Booking (Room room, Guest guest, Date arrivalDate, Date departureDate, boolean hasPaid)
     {
+        guestList = new GuestList();
         this.arrivalDate = arrivalDate;
         this.departureDate = departureDate;
         this.hasPaid = hasPaid;
-        this.room = roomList.findByRoomNumber(roomNumber);
-        this.guest = guestList.searchGuestByPhoneNumber(phoneNumber);
+        this.room = room;
+        guestList.addGuest(guest);
         totalPrice = arrivalDate.daysInBetween(departureDate) * room.getPrice();
     }
     //Guest
-    public Guest getGuest()
+    public void addGuest(Guest guest)
     {
-        return guest;
+        guestList.addGuest(guest);
     }
-    public void editGuestDetails(Guest guest) {
-        this.guest = guest;
+    public Guest getGuest(String phoneNumber)
+    {
+        return guestList.searchGuestByPhoneNumber(phoneNumber);
     }
-
     //Arrival date
     public void setArrivalDate(Date arrivalDate) {
         this.arrivalDate = arrivalDate;
@@ -48,9 +47,9 @@ public class Booking {
     }
 
     //Room
-    public void changeRoomNumber(int newRoomNumber)
+    public void changeRoom(Room room)
     {
-        room = roomList.findByRoomNumber(newRoomNumber);
+        this.room = room;
     }
     public Room getRoom() {
         return room;
@@ -67,9 +66,9 @@ public class Booking {
     }
 
     //Price
-    public void applyDiscount(int discount)
+    public void applyDiscount(double discount)
     {
-        totalPrice *= discount;
+        totalPrice -= totalPrice * (discount/100);
     }
     public double getTotalPrice()
     {

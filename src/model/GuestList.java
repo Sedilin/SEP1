@@ -55,6 +55,10 @@ public class GuestList {
     return null;
   }
 
+  public int size()
+  {
+    return guests.size();
+  }
   /**
    * Returns a string representation of the guest list
    * @return all guests
