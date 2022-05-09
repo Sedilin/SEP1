@@ -79,6 +79,11 @@ public class Booking {
     public void setDepartureDate(Date departureDate) {
         this.departureDate = departureDate;
     }
+
+    /**
+     * Gets the departure date from the Booking.
+     * @return the departure date from the Booking.
+     */
     public Date getDepartureDate() {
         return departureDate;
     }
