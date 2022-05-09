@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @version 1.2
  */
 public class RoomList {
-    public static Room[] rooms;
+    public Room[] rooms;
     /**
      * No-argument constructor initializing the array of Rooms.
      */
@@ -62,21 +62,21 @@ public class RoomList {
         }
         return info;
     }
-//    /**
-//     * Compares Room list, if it is possible to smoke, type of the room and price of the object of two RoomList.
-//     * @param obj object to be compared.
-//     * @return true if the two objects are equal and false otherwise.
-//     */
-//    public boolean equals(Object obj)
-//    {
-//        if (!(obj instanceof RoomList))
-//        {
-//            return false;
-//        }
-//        else
-//        {
-//            RoomList other = (RoomList) obj;
-//            return rooms.equals(other.rooms);
-//        }
-//    }
+    /**
+     * Compares Room list, if it is possible to smoke, type of the room and price of the object of two RoomList.
+     * @param obj object to be compared.
+     * @return true if the two objects are equal and false otherwise.
+     */
+    public boolean equals(Object obj)
+    {
+        if (!(obj instanceof RoomList))
+        {
+            return false;
+        }
+        else
+        {
+            RoomList other = (RoomList) obj;
+            return rooms.equals(other.rooms);
+        }
+    }
 }
