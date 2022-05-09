@@ -205,6 +205,11 @@ public class Date
     return year <= obj.year && month <= obj.month && day <= obj.day;
   }
 
+  public boolean isAfter(Date obj)
+  {
+    return year > obj.year && month > obj.month && day > obj.day;
+  }
+
   /**
    * Compares the date of the two Date objects
    * @param obj compared object

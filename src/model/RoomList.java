@@ -18,6 +18,11 @@ public class RoomList {
         rooms = new ArrayList<>();
     }
 
+    public void addRoom(Room room)
+    {
+        rooms.add(room);
+    }
+
     /**
      * Goes through the array searching for specific room number in the array of Rooms.
      * @param roomNumber the room number we are searching for.

@@ -52,6 +52,23 @@ public class BookingList {
         return bookingList;
     }
 
+    public BookingList getRoomsOfOneType(String type)
+    {
+        BookingList bookingsOfType = new BookingList();
+        for (int i = 0; i < bookings.size(); i++) {
+            if (bookings.get(i).getRoom().getType().equals(type))
+            {
+                bookingsOfType.addBooking(bookings.get(i));
+            }
+        }
+        return bookingsOfType;
+    }
+
+    public int size()
+    {
+        return bookings.size();
+    }
+
     /**
      * A toString method to print out each of the elements from the BookingList class.
      * @return all objects from the BookingList.
