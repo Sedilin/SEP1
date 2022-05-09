@@ -2,12 +2,13 @@ package model;
 
 import java.util.Arrays;
 /**
- * A class containing Guest information.
+ * A class containing RoomList information.
  * @author Lukasz
  * @version 1.2
  */
 public class RoomList {
     public Room[] rooms;
+
     /**
      * No-argument constructor initializing the array of Rooms.
      */
@@ -15,6 +16,7 @@ public class RoomList {
     {
         rooms = new Room[42];
     }
+
     /**
      * Goes through the array searching for specific room number in the array of Rooms.
      * @param roomNumber the room number we are searching for.
@@ -31,6 +33,7 @@ public class RoomList {
         }
         return null;
     }
+
     /**
      * Goes through the array of rooms, searches for given
      * @param type the type we want to search for.
@@ -49,6 +52,7 @@ public class RoomList {
         }
         return temp;
     }
+
     /**
      * A toString method to print out each of the elements from the RoomList class.
      * @return all objects from the RoomList.
@@ -62,8 +66,9 @@ public class RoomList {
         }
         return info;
     }
+
     /**
-     * Compares Room list, if it is possible to smoke, type of the room and price of the object of two RoomList.
+     * Compares the two lists of RoomList.
      * @param obj object to be compared.
      * @return true if the two objects are equal and false otherwise.
      */

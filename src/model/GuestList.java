@@ -1,8 +1,9 @@
 package model;
 
 import java.util.ArrayList;
+
 /**
- * A class containing Guest information.
+ * A class containing GuestList information.
  * @author Gabriela and Lukasz
  * @version 1.1
  */

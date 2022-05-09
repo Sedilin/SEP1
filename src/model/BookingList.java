@@ -2,25 +2,45 @@ package model;
 
 import java.awt.print.Book;
 import java.util.ArrayList;
-
+/**
+ * A class containing for the BookingList object.
+ * @author Gabriela and Lukasz
+ * @version 1.0
+ * */
 public class BookingList {
     private ArrayList<Booking> bookings;
 
+    /**
+     * No-argument constructor initializing the array of Rooms.
+     */
     public BookingList()
     {
         bookings = new ArrayList<>();
     }
 
+    /**
+     * Gets all the bookings from the list.
+     * @return the bookings in the BookingList.
+     */
     public ArrayList<Booking> getAllBooking()
     {
         return bookings;
     }
 
+    /**
+     * Adds a booking to the BookingList object.
+     * @param booking the booking to add to the booking list.
+     */
     public void addBooking(Booking booking)
     {
         bookings.add(booking);
     }
 
+    /**
+     * Finds a booking by phone number.
+     * @param phoneNumber the phone number to search the booking by.
+     * @return the booking that has been found by the phone number, if booking does not exist it does not return anything.
+     */
     public BookingList findBookingsByPhoneNumber(String phoneNumber)
     {
         BookingList bookingList = new BookingList();
@@ -32,6 +52,10 @@ public class BookingList {
         return bookingList;
     }
 
+    /**
+     * A toString method to print out each of the elements from the BookingList class.
+     * @return all objects from the BookingList.
+     */
     public String toString()
     {
         String infoBookings = "";
@@ -42,6 +66,11 @@ public class BookingList {
         return infoBookings;
     }
 
+    /**
+     * Compares the two lists of BookingList
+     * @param obj object to be compared.
+     * @return true if the two objects are equal and false otherwise.
+     */
     public boolean equals(Object obj)
     {
         if(!(obj instanceof BookingList other))
