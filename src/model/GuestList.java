@@ -1,5 +1,6 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -7,7 +8,8 @@ import java.util.ArrayList;
  * @author Gabriela and Lukasz
  * @version 1.1
  */
-public class GuestList {
+public class GuestList implements Serializable
+{
   private ArrayList<Guest> guests;
 
   /**

@@ -1,12 +1,14 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 /**
  * A class containing for the booking object.
  * @author Gabriela and Lukasz
  * @version 1.4
  * */
-public class Booking {
+public class Booking implements Serializable
+{
     private double totalPrice;
     private Guest guest;
     private Room room;

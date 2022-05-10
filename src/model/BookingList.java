@@ -1,13 +1,15 @@
 package model;
 
 import java.awt.print.Book;
+import java.io.Serializable;
 import java.util.ArrayList;
 /**
  * A class containing for the BookingList object.
  * @author Gabriela and Lukasz
  * @version 1.0
  * */
-public class BookingList {
+public class BookingList implements Serializable
+{
     private ArrayList<Booking> bookings;
 
     /**

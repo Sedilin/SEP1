@@ -1,10 +1,14 @@
 package model;
+
+import java.io.Serializable;
+
 /**
  * A class containing Address information.
  * @author Lukasz
  * @version 1.0
  */
-public class Address {
+public class Address implements Serializable
+{
     private String postcode;
     private String city;
     private String country;

@@ -4,11 +4,23 @@ import utils.MyFileHandler;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class Hotel {
+/**
+ * A class that manages other classes
+ * @author Lukasz
+ * @version 1.1
+ */
+public class Hotel
+{
     private String fileNameRoom;
     private String fileNameBookings;
     private String fileNameGuests;
 
+    /**
+     *
+      * @param fileNameBookings name of the file that contains information about Bookings of the hotel
+     * @param fileNameGuests name of the file that contains information about Guests of the hotel
+     * @param fileNameRoom name of the file that contains information about Rooms of the hotel
+     */
     public Hotel(String fileNameBookings, String fileNameGuests, String fileNameRoom)
     {
         this.fileNameBookings = fileNameBookings;
@@ -16,6 +28,10 @@ public class Hotel {
         this.fileNameRoom = fileNameRoom;
     }
 
+    /**
+     *Gets the list of room objects from the file that contains information about RoomList
+     * @return a list of room objects
+     */
     public RoomList getAllRooms()
     {
         RoomList allRooms = new RoomList();
@@ -37,6 +53,14 @@ public class Hotel {
         }
         return allRooms;
     }
+
+    /**
+     * Gets a list of rooms available room objects in certain a range of time
+     * @param arrivalDate arrival date
+     * @param departureDate departure date
+     * @param roomType type of room
+     * @return a list of room objects
+     */
     public RoomList getAvailableRooms(Date arrivalDate, Date departureDate, String roomType)
     {
         RoomList availableRooms = getAllRooms();
@@ -55,6 +79,11 @@ public class Hotel {
         }
         return availableRooms;
     }
+
+    /**
+     * Adds a booking object to the file that contains information about BookingList
+     * @param booking booking object to be added
+     */
     public void addBooking (Booking booking)
     {
         BookingList bookings = getAllBookings();
@@ -71,6 +100,11 @@ public class Hotel {
             System.out.println("IO Error reading file");
         }
     }
+
+    /**
+     * Gets a list of booking objects from the file that contains information about BookingList
+     * @return a list of booking objects
+     */
     public BookingList getAllBookings()
     {
         BookingList allBookings = new BookingList();
@@ -92,6 +126,11 @@ public class Hotel {
         }
         return allBookings;
     }
+
+    /**
+     * Adds a guest to the file that contains information about GuestList
+     * @param guest guest object to be added
+     */
     public void addGuest(Guest guest)
     {
         GuestList guests = getAllGuests();
@@ -108,6 +147,11 @@ public class Hotel {
             System.out.println("IO Error reading file");
         }
     }
+
+    /**
+     * Gets the list of guest objects from the file containing information about GuestList
+     * @return a list of guest objects
+     */
     public GuestList getAllGuests()
     {
         GuestList allGuests = new GuestList();
@@ -134,6 +178,11 @@ public class Hotel {
         GuestList allGuests = getAllGuests();
         return allGuests.searchGuestByPhoneNumber(phoneNumber);
     }
+
+    /**
+     *Sets booking variable's value checkedIn to true and writes it to the file than contains information about booking list
+     * @param booking booking which checkedIn value is changed and meant to be written in the file
+     */
     public void checkIn(Booking booking)
     {
         BookingList bookings = getAllBookings();
@@ -150,6 +199,12 @@ public class Hotel {
             System.out.println("IO Error reading file");
         }
     }
+
+    /**
+     * Changes Sets booking variable's value checkedOut to true and writes it to the file than contains information about booking list
+     * @param booking booking which checkedOut value is changed and meant to be written in the file
+     * @return the variable total price of the booking object
+     */
     public double checkOut(Booking booking)
     {
         BookingList bookings = getAllBookings();

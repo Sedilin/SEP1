@@ -1,10 +1,14 @@
 package model;
+
+import java.io.Serializable;
+
 /**
  * A class containing Guest information.
  * @author Lukasz
  * @version 1.0
  */
-public class Guest {
+public class Guest implements Serializable
+{
     private String firstName;
     private String lastName;
     private String phoneNumber;

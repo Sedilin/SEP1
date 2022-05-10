@@ -4,9 +4,10 @@ package model;
  * @author Gabriela and Lukasz
  * @version 1.1
  * */
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Date
+public class Date implements Serializable
 {
   private int day;
   private int month;

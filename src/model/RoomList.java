@@ -1,12 +1,14 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 /**
  * A class containing RoomList information.
  * @author Lukasz
  * @version 1.2
  */
-public class RoomList {
+public class RoomList implements Serializable
+{
     public ArrayList<Room> rooms;
 
     /**

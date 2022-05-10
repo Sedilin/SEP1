@@ -1,10 +1,14 @@
 package model;
+
+import java.io.Serializable;
+
 /**
  * A class containing Guest information.
  * @author Lukasz
  * @version 1.0
  */
-public class Room {
+public class Room implements Serializable
+{
     private int roomNumber;
     private boolean isSmoking;
     private String type;
