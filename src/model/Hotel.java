@@ -150,7 +150,7 @@ public class Hotel {
             System.out.println("IO Error reading file");
         }
     }
-    public void checkOut(Booking booking)
+    public double checkOut(Booking booking)
     {
         BookingList bookings = getAllBookings();
         bookings.getBooking(booking).setCheckedOut();
@@ -165,6 +165,7 @@ public class Hotel {
         {
             System.out.println("IO Error reading file");
         }
+        return bookings.getBooking(booking).getTotalPrice();
     }
 
 }
