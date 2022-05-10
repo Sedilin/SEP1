@@ -4,15 +4,16 @@ import java.util.ArrayList;
 /**
  * A class containing for the booking object.
  * @author Gabriela and Lukasz
- * @version 1.3
+ * @version 1.4
  * */
 public class Booking {
     private double totalPrice;
-    private boolean hasPaid;
     private GuestList guestList;
     private Room room;
     private Date arrivalDate;
     private Date departureDate;
+    private boolean isCheckedIn;
+    private boolean isCheckedOut;
 
     //Constructor
 
@@ -22,20 +23,19 @@ public class Booking {
      * @param guest the guest.
      * @param arrivalDate the arrival date.
      * @param departureDate the departure date.
-     * @param hasPaid the information if the guest paid.
      */
-    public Booking (Room room, Guest guest, Date arrivalDate, Date departureDate, boolean hasPaid)
+    public Booking (Room room, Guest guest, Date arrivalDate, Date departureDate)
     {
         guestList = new GuestList();
         this.arrivalDate = arrivalDate;
         this.departureDate = departureDate;
-        this.hasPaid = hasPaid;
-        this.room = room;
         guestList.addGuest(guest);
+        this.room = room;
         totalPrice = arrivalDate.daysInBetween(departureDate) * room.getPrice();
+        isCheckedIn = false;
+        isCheckedOut = false;
     }
     //Guest
-
     /**
      * Adds a guest to the guest list in the Booking.
      * @param guest the guest.
@@ -54,7 +54,6 @@ public class Booking {
     }
 
     //Arrival date
-
     /**
      * Sets an arrival date in the Booking.
      * @param arrivalDate the arrival date.
@@ -107,24 +106,42 @@ public class Booking {
         return room;
     }
 
-    //Has Paid
+    //Check-In
 
     /**
-     * Gets information if the guest has paid for the Booking.
-     * @return the information if the guest has paid for the Booking.
+     * Gets information if the guest is checked in.
+     * @return the information if the guest is checked in.
      */
-    public boolean hasPaid()
+    public boolean isCheckedIn()
     {
-        return hasPaid;
+        return isCheckedIn;
     }
 
     /**
-     * Sets the information if the guest has paid for the Booking.
-     * @param hasPaid the information if the guest has paid for the Booking.
+     * Sets the information if the guest is checked in to true.
      */
-    public void setHasPaid(boolean hasPaid)
+    public void setCheckedIn()
     {
-        this.hasPaid = hasPaid;
+        isCheckedIn = true;
+    }
+
+    //Check-Out
+
+    /**
+     * Gets information if the guest is checked in.
+     * @return the information if the guest is checked in.
+     */
+    public boolean isCheckedOut()
+    {
+        return isCheckedOut;
+    }
+
+    /**
+     * Sets the information if the guest is checked out to true.
+     */
+    public void setCheckedOut()
+    {
+        isCheckedOut = true;
     }
 
     //Price
@@ -153,7 +170,7 @@ public class Booking {
      */
     public String toString()
     {
-        return guestList.getMainGuest().toString()+" "+room.getRoomNumber()+" "+arrivalDate+" "+departureDate+" "+hasPaid;
+        return guestList.getMainGuest().toString()+" "+room.getRoomNumber()+" "+arrivalDate+" "+departureDate+" "+ isCheckedIn + " " + isCheckedOut;
     }
 
     /**
@@ -168,6 +185,6 @@ public class Booking {
             return false;
         }
         return guestList.equals(other.guestList) && room.equals(other.room) && arrivalDate.equals(other.arrivalDate)
-               && departureDate.equals(other.departureDate) && hasPaid == hasPaid();
+               && departureDate.equals(other.departureDate) && isCheckedOut == other.isCheckedOut && isCheckedIn == other.isCheckedIn;
     }
 }

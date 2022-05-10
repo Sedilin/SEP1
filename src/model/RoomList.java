@@ -1,7 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 /**
  * A class containing RoomList information.
  * @author Lukasz
@@ -21,6 +20,11 @@ public class RoomList {
     public void addRoom(Room room)
     {
         rooms.add(room);
+    }
+
+    public void removeRoom(Room room)
+    {
+        rooms.remove(room);
     }
 
     /**
@@ -46,12 +50,12 @@ public class RoomList {
      * @return the array of Rooms with specific criteria.
      */
     //We have only 4 types of rooms (single, double, suite, king bedroom).
-    public ArrayList<Room> getRoomsType(String type)
+    public RoomList getRoomsType(String type)
     {
-        ArrayList<Room> temp = new ArrayList<>();
+        RoomList temp = new RoomList();
         for (Room room : rooms) {
             if (room.getType().equals(type)) {
-                temp.add(room);
+                temp.addRoom(room);
             }
         }
         return temp;

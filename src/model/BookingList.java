@@ -64,6 +64,16 @@ public class BookingList {
         return bookingsOfType;
     }
 
+    public Booking getBooking(Booking booking)
+    {
+        for (Booking value : bookings) {
+            if (value.equals(booking)) {
+                return value;
+            }
+        }
+        return null;
+    }
+
     public int size()
     {
         return bookings.size();
