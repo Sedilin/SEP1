@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * */
 public class Booking {
     private double totalPrice;
-    private GuestList guestList;
+    private Guest guest;
     private Room room;
     private Date arrivalDate;
     private Date departureDate;
@@ -26,10 +26,9 @@ public class Booking {
      */
     public Booking (Room room, Guest guest, Date arrivalDate, Date departureDate)
     {
-        guestList = new GuestList();
+        this.guest = guest;
         this.arrivalDate = arrivalDate;
         this.departureDate = departureDate;
-        guestList.addGuest(guest);
         this.room = room;
         totalPrice = arrivalDate.daysInBetween(departureDate) * room.getPrice();
         isCheckedIn = false;
@@ -40,17 +39,17 @@ public class Booking {
      * Adds a guest to the guest list in the Booking.
      * @param guest the guest.
      */
-    public void addGuest(Guest guest)
+    public void setGuest(Guest guest)
     {
-        guestList.addGuest(guest);
+        this.guest = guest;
     }
     /**
      * Gets the guest from the guest list in the booking.
      * @return guest from guest list.
      */
-    public Guest getGuest(String phoneNumber)
+    public Guest getGuest()
     {
-        return guestList.searchGuestByPhoneNumber(phoneNumber);
+        return guest;
     }
 
     //Arrival date
@@ -170,7 +169,7 @@ public class Booking {
      */
     public String toString()
     {
-        return guestList.getMainGuest().toString()+" "+room.getRoomNumber()+" "+arrivalDate+" "+departureDate+" "+ isCheckedIn + " " + isCheckedOut;
+        return guest+" "+room.getRoomNumber()+" "+arrivalDate+" "+departureDate+" "+ isCheckedIn + " " + isCheckedOut;
     }
 
     /**
@@ -184,7 +183,7 @@ public class Booking {
         {
             return false;
         }
-        return guestList.equals(other.guestList) && room.equals(other.room) && arrivalDate.equals(other.arrivalDate)
+        return guest.equals(other.guest) && room.equals(other.room) && arrivalDate.equals(other.arrivalDate)
                && departureDate.equals(other.departureDate) && isCheckedOut == other.isCheckedOut && isCheckedIn == other.isCheckedIn;
     }
 }

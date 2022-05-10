@@ -45,7 +45,7 @@ public class BookingList {
     {
         BookingList bookingList = new BookingList();
         for (Booking booking : bookings) {
-            if (booking.getGuest(phoneNumber)!=null) {
+            if (booking.getGuest().getPhoneNumber().equals(phoneNumber)) {
                 bookingList.addBooking(booking);
             }
         }
@@ -55,10 +55,9 @@ public class BookingList {
     public BookingList getRoomsOfOneType(String type)
     {
         BookingList bookingsOfType = new BookingList();
-        for (int i = 0; i < bookings.size(); i++) {
-            if (bookings.get(i).getRoom().getType().equals(type))
-            {
-                bookingsOfType.addBooking(bookings.get(i));
+        for (Booking booking : bookings) {
+            if (booking.getRoom().getType().equals(type)) {
+                bookingsOfType.addBooking(booking);
             }
         }
         return bookingsOfType;
