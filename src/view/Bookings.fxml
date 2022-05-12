@@ -14,9 +14,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.BookingsController">
+<Pane userData="Overlook Hotel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.BookingsController">
    <children>
-      <VBox fillWidth="false" layoutX="14.0" layoutY="45.0" prefHeight="341.0" prefWidth="331.0">
+      <VBox fillWidth="false" layoutX="25.0" layoutY="58.0" prefHeight="341.0" prefWidth="331.0">
          <children>
             <TextField fx:id="searchField" focusTraversable="false" promptText="Search">
                <VBox.margin>
@@ -43,7 +43,7 @@
             </Button>
          </children>
       </VBox>
-      <VBox fillWidth="false" layoutX="376.0" layoutY="45.0" prefHeight="317.0" prefWidth="210.0">
+      <VBox fillWidth="false" layoutX="361.0" layoutY="55.0" prefHeight="317.0" prefWidth="210.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Booking">
                <font>
