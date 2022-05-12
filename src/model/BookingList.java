@@ -47,13 +47,18 @@ public class BookingList implements Serializable
     {
         BookingList bookingList = new BookingList();
         for (Booking booking : bookings) {
-            if (booking.getGuest().getPhoneNumber().equals(phoneNumber)) {
+            if (booking.getMainGuestForBooking().getPhoneNumber().equals(phoneNumber)) {
                 bookingList.addBooking(booking);
             }
         }
         return bookingList;
     }
 
+    /**
+     * Gets room objects of one type from bookings
+     * @param type type of room
+     * @return a room object
+     */
     public BookingList getRoomsOfOneType(String type)
     {
         BookingList bookingsOfType = new BookingList();
@@ -65,6 +70,11 @@ public class BookingList implements Serializable
         return bookingsOfType;
     }
 
+    /**
+     * Gets a specific booking from bookings
+     * @param booking booking to be returned
+     * @return the booking from bookings
+     */
     public Booking getBooking(Booking booking)
     {
         for (Booking value : bookings) {
@@ -75,6 +85,10 @@ public class BookingList implements Serializable
         return null;
     }
 
+    /**
+     * Gets the size of bookings
+     * @return size of bookings
+     */
     public int size()
     {
         return bookings.size();
