@@ -51,7 +51,7 @@
                               </Text>
                               <DatePicker prefHeight="38.0" prefWidth="227.0" promptText="Arrival date" />
                               <DatePicker prefHeight="38.0" prefWidth="227.0" promptText="Departure date" />
-                              <ComboBox prefWidth="150.0" promptText="Room type" />
+                              <ComboBox fx:id="roomType" prefWidth="150.0" promptText="Room type" />
                               <Button mnemonicParsing="false" text="Search">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
