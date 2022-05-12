@@ -62,6 +62,13 @@ public class BookingsController
             }
         }
     }
+    public void addGuestDetailsToTextField()
+    {
+        Guest guest = guestListTable.getSelectionModel().getSelectedItem();
+        firstNameField.setText(guest.getFirstName());
+        lastNameField.setText(guest.getLastName());
+        phoneNumberField.setText(guest.getPhoneNumber());
+    }
     public void updateGuestTable()
     {
         guestListTable.getItems().clear();
