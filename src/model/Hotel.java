@@ -11,21 +11,21 @@ import java.io.IOException;
  */
 public class Hotel
 {
-    private String fileNameRoom;
-    private String fileNameBookings;
-    private String fileNameGuests;
+    private RoomList rooms;
+    private BookingList bookings;
+    private GuestList guests;
 
     /**
-     *
-      * @param fileNameBookings name of the file that contains information about Bookings of the hotel
-     * @param fileNameGuests name of the file that contains information about Guests of the hotel
-     * @param fileNameRoom name of the file that contains information about Rooms of the hotel
+     * 3 argument constructor
+     * @param bookings the booking list.
+     * @param guests the guest list.
+     * @param rooms the room list.
      */
-    public Hotel(String fileNameBookings, String fileNameGuests, String fileNameRoom)
+    public Hotel(BookingList bookings, GuestList guests, RoomList rooms)
     {
-        this.fileNameBookings = fileNameBookings;
-        this.fileNameGuests = fileNameGuests;
-        this.fileNameRoom = fileNameRoom;
+        this.bookings = bookings;
+        this.guests = guests;
+        this.rooms= rooms;
     }
 
     /**
@@ -34,24 +34,7 @@ public class Hotel
      */
     public RoomList getAllRooms()
     {
-        RoomList allRooms = new RoomList();
-
-        try {
-            allRooms = (RoomList) MyFileHandler.readFromBinaryFile(fileNameRoom);
-        }
-        catch (FileNotFoundException e)
-        {
-            System.out.println("File not found.");
-        }
-        catch (IOException e)
-        {
-            System.out.println("IO Error reading file");
-        }
-        catch (ClassNotFoundException e)
-        {
-            System.out.println("Class Not Found");
-        }
-        return allRooms;
+        return rooms;
     }
 
     /**
@@ -81,98 +64,41 @@ public class Hotel
     }
 
     /**
-     * Adds a booking object to the file that contains information about BookingList
+     * Adds a booking object to bookings
      * @param booking booking object to be added
      */
     public void addBooking (Booking booking)
     {
-        BookingList bookings = getAllBookings();
         bookings.addBooking(booking);
-        try {
-            MyFileHandler.writeToBinaryFile(fileNameBookings, bookings);
-        }
-        catch (FileNotFoundException e)
-        {
-            System.out.println("File not found.");
-        }
-        catch (IOException e)
-        {
-            System.out.println("IO Error reading file");
-        }
     }
 
     /**
-     * Gets a list of booking objects from the file that contains information about BookingList
+     * Gets a list of booking objects from bookings
      * @return a list of booking objects
      */
     public BookingList getAllBookings()
     {
-        BookingList allBookings = new BookingList();
-
-        try {
-            allBookings = (BookingList) MyFileHandler.readFromBinaryFile(fileNameBookings);
-        }
-        catch (FileNotFoundException e)
-        {
-            System.out.println("File not found.");
-        }
-        catch (IOException e)
-        {
-            System.out.println("IO Error reading file");
-        }
-        catch (ClassNotFoundException e)
-        {
-            System.out.println("Class Not Found");
-        }
-        return allBookings;
+        return  bookings;
     }
 
     /**
-     * Adds a guest to the file that contains information about GuestList
+     * Adds a guest to guests
      * @param guest guest object to be added
      */
     public void addGuest(Guest guest)
     {
-        GuestList guests = getAllGuests();
         guests.addGuest(guest);
-        try {
-            MyFileHandler.writeToBinaryFile(fileNameGuests, guests);
-        }
-        catch (FileNotFoundException e)
-        {
-            System.out.println("File not found.");
-        }
-        catch (IOException e)
-        {
-            System.out.println("IO Error reading file");
-        }
     }
 
     /**
-     * Gets the list of guest objects from the file containing information about GuestList
+     * Gets the list of guest objects from guests
      * @return a list of guest objects
      */
     public GuestList getAllGuests()
     {
-        GuestList allGuests = new GuestList();
-
-        try {
-            allGuests = (GuestList) MyFileHandler.readFromBinaryFile(fileNameGuests);
-        }
-        catch (FileNotFoundException e)
-        {
-            System.out.println("File not found.");
-        }
-        catch (IOException e)
-        {
-            System.out.println("IO Error reading file");
-        }
-        catch (ClassNotFoundException e)
-        {
-            System.out.println("Class Not Found");
-        }
-        return allGuests;
+        return guests;
     }
+
     public Guest findGuestByPhoneNumber (String phoneNumber)
     {
         GuestList allGuests = getAllGuests();
@@ -181,45 +107,21 @@ public class Hotel
 
     /**
      *Sets booking variable's value checkedIn to true and writes it to the file than contains information about booking list
-     * @param booking booking which checkedIn value is changed and meant to be written in the file
+     * @param booking booking which checkedIn value is changed
      */
     public void checkIn(Booking booking)
     {
-        BookingList bookings = getAllBookings();
         bookings.getBooking(booking).setCheckedIn();
-        try {
-            MyFileHandler.writeToBinaryFile(fileNameBookings, bookings);
-        }
-        catch (FileNotFoundException e)
-        {
-            System.out.println("File not found.");
-        }
-        catch (IOException e)
-        {
-            System.out.println("IO Error reading file");
-        }
     }
 
     /**
      * Changes Sets booking variable's value checkedOut to true and writes it to the file than contains information about booking list
-     * @param booking booking which checkedOut value is changed and meant to be written in the file
+     * @param booking booking which checkedOut value is changed
      * @return the variable total price of the booking object
      */
     public double checkOut(Booking booking)
     {
-        BookingList bookings = getAllBookings();
         bookings.getBooking(booking).setCheckedOut();
-        try {
-            MyFileHandler.writeToBinaryFile(fileNameBookings, bookings);
-        }
-        catch (FileNotFoundException e)
-        {
-            System.out.println("File not found.");
-        }
-        catch (IOException e)
-        {
-            System.out.println("IO Error reading file");
-        }
         return bookings.getBooking(booking).getTotalPrice();
     }
 

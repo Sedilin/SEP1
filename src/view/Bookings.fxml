@@ -5,56 +5,75 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-
+<?import javafx.scene.text.Text?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox layoutX="14.0" layoutY="45.0" prefHeight="341.0" prefWidth="274.0">
+      <VBox fillWidth="false" layoutX="14.0" layoutY="45.0" prefHeight="341.0" prefWidth="331.0">
          <children>
-            <TableView prefHeight="285.0" prefWidth="274.0">
-              <columns>
-                <TableColumn prefWidth="73.0" text="First name" />
-                <TableColumn prefWidth="95.0" text="Last name" />
-                  <TableColumn prefWidth="105.0" text="Phone number" />
-              </columns>
-            </TableView>
-            <TextField promptText="Search" />
-            <Button mnemonicParsing="false" text="New guest" textAlignment="CENTER">
+            <TextField promptText="Search">
                <VBox.margin>
-                  <Insets left="190.0" top="10.0" />
+                  <Insets bottom="10.0" />
+               </VBox.margin></TextField>
+            <ScrollPane prefHeight="247.0" prefWidth="357.0">
+               <content>
+                  <TableView prefHeight="245.0" prefWidth="330.0">
+                    <columns>
+                      <TableColumn prefWidth="97.0" text="First name" />
+                      <TableColumn prefWidth="102.0" text="Last name" />
+                        <TableColumn prefWidth="131.0" text="Phone no." />
+                    </columns>
+                  </TableView>
+               </content>
+            </ScrollPane>
+            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="65.0" text="New guest" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets top="10.0" />
                </VBox.margin>
+               <font>
+                  <Font size="11.0" />
+               </font>
             </Button>
          </children>
       </VBox>
-      <VBox layoutX="357.0" layoutY="45.0" prefHeight="187.0" prefWidth="229.0">
+      <VBox fillWidth="false" layoutX="376.0" layoutY="45.0" prefHeight="317.0" prefWidth="210.0">
          <children>
-            <TextField alignment="CENTER" disable="true" promptText="First name">
-               <VBox.margin>
-                  <Insets top="100.0" />
-               </VBox.margin>
-            </TextField>
-            <TextField alignment="CENTER" disable="true" promptText="Last name">
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-            </TextField>
-            <TextField alignment="CENTER" disable="true" promptText="Phone number">
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-            </TextField>
-            <Button mnemonicParsing="false" text="Book">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Booking">
                <font>
-                  <Font size="23.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
                <VBox.margin>
-                  <Insets left="70.0" top="20.0" />
+                  <Insets left="145.0" />
+               </VBox.margin>
+            </Text>
+            <TextField alignment="CENTER" disable="true" prefHeight="26.0" prefWidth="208.0" promptText="First name">
+               <VBox.margin>
+                  <Insets left="10.0" top="40.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField alignment="CENTER" disable="true" prefHeight="26.0" prefWidth="208.0" promptText="Last name">
+               <VBox.margin>
+                  <Insets left="10.0" top="25.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField alignment="CENTER" disable="true" prefHeight="26.0" prefWidth="208.0" promptText="Phone number">
+               <VBox.margin>
+                  <Insets left="10.0" top="25.0" />
+               </VBox.margin>
+            </TextField>
+            <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="105.0" text="Book">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="60.0" top="60.0" />
                </VBox.margin>
             </Button>
          </children>

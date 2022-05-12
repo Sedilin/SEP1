@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Booking implements Serializable
 {
     private double totalPrice;
-    private Guest guest;
+    private GuestList guestList;
     private Room room;
     private Date arrivalDate;
     private Date departureDate;
@@ -28,7 +28,8 @@ public class Booking implements Serializable
      */
     public Booking (Room room, Guest guest, Date arrivalDate, Date departureDate)
     {
-        this.guest = guest;
+        guestList = new GuestList();
+        guestList.addGuest(guest);
         this.arrivalDate = arrivalDate;
         this.departureDate = departureDate;
         this.room = room;
@@ -41,17 +42,17 @@ public class Booking implements Serializable
      * Adds a guest to the guest list in the Booking.
      * @param guest the guest.
      */
-    public void setGuest(Guest guest)
+    public void addGuest(Guest guest)
     {
-        this.guest = guest;
+        guestList.addGuest(guest);
     }
     /**
      * Gets the guest from the guest list in the booking.
      * @return guest from guest list.
      */
-    public Guest getGuest()
+    public Guest getMainGuestForBooking()
     {
-        return guest;
+        return guestList.getMainGuest();
     }
 
     //Arrival date
@@ -171,7 +172,7 @@ public class Booking implements Serializable
      */
     public String toString()
     {
-        return guest+" "+room.getRoomNumber()+" "+arrivalDate+" "+departureDate+" "+ isCheckedIn + " " + isCheckedOut;
+        return guestList.toString()+" "+room.getRoomNumber()+" "+arrivalDate+" "+departureDate+" "+ isCheckedIn + " " + isCheckedOut;
     }
 
     /**
@@ -185,7 +186,7 @@ public class Booking implements Serializable
         {
             return false;
         }
-        return guest.equals(other.guest) && room.equals(other.room) && arrivalDate.equals(other.arrivalDate)
+        return guestList.equals(other.guestList) && room.equals(other.room) && arrivalDate.equals(other.arrivalDate)
                && departureDate.equals(other.departureDate) && isCheckedOut == other.isCheckedOut && isCheckedIn == other.isCheckedIn;
     }
 }

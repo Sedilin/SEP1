@@ -12,7 +12,7 @@ public class StartApplication extends Application
     window.setTitle("Outlook Hotel");
     FXMLLoader loader = new FXMLLoader();
     loader.setLocation(getClass().getResource("MainPage.fxml"));
-    Scene scene = new Scene(loader.load(), 600, 400);
+    Scene scene = new Scene(loader.load());
     window.setScene(scene);
     window.setResizable(false);
     window.show();
