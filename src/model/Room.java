@@ -13,6 +13,7 @@ public class Room implements Serializable
     private boolean isSmoking;
     private String type;
     private double price;
+    private int capacity;
 
     /**
      * 4 argument constructor initializing the Room variables.
@@ -20,13 +21,15 @@ public class Room implements Serializable
      * @param isSmoking the information if you can smoke in the room.
      * @param type the type of the room.
      * @param price the price.
+     * @param capacity the capicity of the room.
      */
-    public Room (int roomNumber, boolean isSmoking, String type, double price)
+    public Room (int roomNumber, boolean isSmoking, String type, double price, int capacity)
     {
         this.roomNumber = roomNumber;
         this.isSmoking = isSmoking;
         this.type = type;
         this.price = price;
+        this.capacity=capacity;
     }
     /**
      * Gets a room number from the Room class.
@@ -85,12 +88,26 @@ public class Room implements Serializable
         this.price = price;
     }
     /**
+     * Gets the capacity from the Room class.
+     * @return the capacity from the Room class.
+     */
+    public int getCapacity(){
+        return capacity;
+    }
+    /**
+     * Sets the capacity to the Room.
+     * @param capacity the price to set the object to.
+     */
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+    /**
      * A toString method to print out each of the elements from the Room class.
      * @return all objects from the Room.
      */
     public String toString()
     {
-        return roomNumber + " " + isSmoking + " " + type + " " + price;
+        return roomNumber + " " + isSmoking + " " + type + " " + price + " " + capacity;
     }
     /**
      * Compares room number, if it is possible to smoke, type of the room and price of the object of two Rooms.
@@ -106,7 +123,7 @@ public class Room implements Serializable
         else
         {
             return roomNumber == other.roomNumber && isSmoking == other.isSmoking && type.equals(other.type) &&
-                    price == other.price;
+                    price == other.price && capacity ==other.capacity;
         }
     }
 }
