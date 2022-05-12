@@ -8,6 +8,8 @@ import javafx.scene.layout.Region;
 import main.HotelManagerGUI;
 import model.*;
 
+import java.util.ArrayList;
+
 public class MainPageController
 {
   private Region root;
@@ -15,6 +17,7 @@ public class MainPageController
   private RoomList roomList;
   private GuestList guestList;
   private BookingList bookingList;
+  private ViewHandler viewHandler;
 
   /**
    * A GUI tab containing components for displaying a list of rooms.
@@ -30,7 +33,7 @@ public class MainPageController
   @FXML private Button bookButton;
   @FXML private DatePicker arrivalDate;
   @FXML private DatePicker departureDate;
-  @FXML private ToggleButton roomType;
+  @FXML private ComboBox<String> roomType;
   @FXML private Button searchButton;
   @FXML private TextField resetButton;
 
@@ -44,10 +47,23 @@ public class MainPageController
     capacityColumn.setPrefWidth(72);
 
     updateRoomsArea();
+    updateRoomTypes();
+  }
+  public void reset() {
+    updateRoomTypes();
   }
 
-
-
+  private void updateRoomTypes()
+  { roomType.getItems().clear();
+    RoomList roomList1 = modelManager.load().getAllRooms();
+    //ArrayList<String> types = new ArrayList<>();
+    for (int i = 0; i < roomList1.size(); i++)
+    {
+      if (!roomType.getItems().contains(roomList1.getRoom(i).getType())) {
+        roomType.getItems().add(roomList1.getRoom(i).getType());
+      }
+    }
+  }
 
   public void updateRoomsArea()
   {
@@ -60,4 +76,13 @@ public class MainPageController
     }
   }
 
+  public void init(ViewHandler viewHandler, BookingModelManager modelManager, Region root)
+  { this.viewHandler=viewHandler;
+    this.modelManager=modelManager;
+    this.root=root;
+  }
+
+  public Region getRoot()
+  { return root;
+  }
 }
