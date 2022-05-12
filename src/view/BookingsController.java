@@ -8,15 +8,13 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Region;
-import model.Booking;
-import model.BookingModelManager;
-import model.Guest;
-import model.Hotel;
+import model.*;
 
 public class BookingsController
 {
     private Region root;
     private BookingModelManager modelManager;
+    private ViewHandler viewHandler;
 
     private MyActionListener listener;
 
@@ -33,6 +31,21 @@ public class BookingsController
     @FXML private TextField phoneNumberField;
     @FXML private Button bookButton;
 
+    public void init(ViewHandler viewHandler, BookingModelManager modelManager, Region root)
+    {
+        this.viewHandler = viewHandler;
+        this.modelManager = modelManager;
+        this.root = root;
+        reset();
+    }
+    public void reset()
+    {
+        updateGuestTable();
+    }
+    public Region getRoot()
+    {
+        return root;
+    }
     public void initialize()
     {
         firstNameColumn.setCellValueFactory(new PropertyValueFactory<Guest, String>("firstName"));
@@ -47,6 +60,15 @@ public class BookingsController
             {
 
             }
+        }
+    }
+    public void updateGuestTable()
+    {
+        guestListTable.getItems().clear();
+        GuestList guests = modelManager.load().getAllGuests();
+
+        for (int i = 0; i < guests.size(); i++) {
+            guestListTable.getItems().add(guests.getGuest(i));
         }
     }
 }
