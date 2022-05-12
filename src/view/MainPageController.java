@@ -52,7 +52,9 @@ public class MainPageController
   public void reset() {
     updateRoomTypes();
   }
-
+  public void bookButton(ActionEvent event) {
+    viewHandler.openView("Bookings");
+  }
   private void updateRoomTypes()
   { roomType.getItems().clear();
     RoomList roomList1 = modelManager.load().getAllRooms();
