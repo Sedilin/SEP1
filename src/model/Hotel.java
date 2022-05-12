@@ -3,13 +3,14 @@ import utils.MyFileHandler;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.Serializable;
 
 /**
  * A class that manages other classes
  * @author Lukasz and Gabriela
  * @version 1.2
  */
-public class Hotel
+public class Hotel implements Serializable
 {
     private RoomList rooms;
     private BookingList bookings;
