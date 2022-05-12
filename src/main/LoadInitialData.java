@@ -13,7 +13,7 @@ public class LoadInitialData {
     {
         //Constructor
         /**
-         * 5 parameter constructor for individual room types.
+         * 5 parameter constructor for Single Bedroom Suite room types.
          * @param roomNumber the room number.
          * @param isSmoking the room includes a smoking option.
          * @param type the room type.
@@ -27,7 +27,7 @@ public class LoadInitialData {
         hotel.getAllRooms().addRoom(new Room(303, false, "Single Bedroom Suite", 259.00, 2));
         //Constructor
         /**
-         * 5 parameter constructor for individual room types.
+         * 5 parameter constructor for 2-Bedroom suite room types.
          * @param roomNumber the room number.
          * @param isSmoking the room includes a smoking option.
          * @param type the room type.
@@ -36,7 +36,7 @@ public class LoadInitialData {
          */
         hotel.getAllRooms().addRoom(new Room(302, false, "2-Bedroom Suite", 339.00, 4));
         /**
-         * 5 parameter constructor for individual room types.
+         * 5 parameter constructor for 3-Bedroom suite room types.
          * @param roomNumber the room number.
          * @param isSmoking the room includes a smoking option.
          * @param type the room type.
@@ -45,7 +45,7 @@ public class LoadInitialData {
          */
         hotel.getAllRooms().addRoom(new Room(301, false, "3-Bedroom Suite", 399.00, 6));
         /**
-         * 5 parameter constructor for individual room types.
+         * 5 parameter constructor for Double Room - King Size room types.
          * @param roomNumber the room number.
          * @param isSmoking the room includes a smoking option.
          * @param type the room type.
@@ -67,7 +67,7 @@ public class LoadInitialData {
         hotel.getAllRooms().addRoom(new Room(207, false, "Double Room-King Size", 169.00, 2));
         hotel.getAllRooms().addRoom(new Room(206, false, "Double Room-King Size", 169.00,2));
         /**
-         * 5 parameter constructor for individual room types.
+         * 5 parameter constructor for Double Room - Twin room types.
          * @param roomNumber the room number.
          * @param isSmoking the room includes a smoking option.
          * @param type the room type.
@@ -80,7 +80,7 @@ public class LoadInitialData {
         hotel.getAllRooms().addRoom(new Room(202, false, "Double Room-Twin", 169.00, 2));
         hotel.getAllRooms().addRoom(new Room(201, false, "Double Room-Twin", 169.00, 2));
         /**
-         * 5 parameter constructor for individual room types.
+         * 5 parameter constructor for Double Room - King Size room types.
          * @param roomNumber the room number.
          * @param isSmoking the room includes a smoking option.
          * @param type the room type.
@@ -96,7 +96,7 @@ public class LoadInitialData {
         hotel.getAllRooms().addRoom(new Room(112,false, "Double Room-King Size", 169.00, 2));
         hotel.getAllRooms().addRoom(new Room(111,false, "Double Room-King Size", 169.00, 2));
         /**
-         * 5 parameter constructor for individual room types.
+         * 5 parameter constructor for Single Room, room types.
          * @param roomNumber the room number.
          * @param isSmoking the room includes a smoking option.
          * @param type the room type.
