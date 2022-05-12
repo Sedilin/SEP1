@@ -18,7 +18,7 @@
    <children>
       <VBox fillWidth="false" layoutX="14.0" layoutY="45.0" prefHeight="341.0" prefWidth="331.0">
          <children>
-            <TextField promptText="Search">
+            <TextField focusTraversable="false" promptText="Search">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin></TextField>
@@ -47,7 +47,7 @@
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Booking">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
                <VBox.margin>
                   <Insets left="145.0" />
