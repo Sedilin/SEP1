@@ -25,19 +25,19 @@ public class ViewHandler {
     public void start(Stage window)
     {
         this.window = window;
-        openView("MainPage");
+        openView("Bookings");
     }
     public void openView(String id)
     {
         Region root = null;
         switch (id)
         {
-            case "MainPage":
-                root = loadMainPage();
-                break;
-            case "RegisterGuestDetails":
-                root = loadRegisterGuestDetails();
-                break;
+//            case "MainPage":
+//                root = loadMainPage();
+//                break;
+//            case "RegisterGuestDetails":
+//                root = loadRegisterGuestDetails();
+//                break;
             case "Bookings":
                 root = loadBookings();
                 break;
@@ -74,42 +74,42 @@ public class ViewHandler {
         }
         return bookingsController.getRoot();
     }
-    private Region loadMainPage()
-    {
-        if (mainPageController == null) {
-            try {
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("MainPage.fxml"));
-                Region root = loader.load();
-                mainPageController = loader.getController();
-                mainPageController.init(this, modelManager, root);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        else
-        {
-            mainPageController.reset();
-        }
-        return mainPageController.getRoot();
-    }
-    private Region loadRegisterGuestDetails()
-    {
-        if (registerGuestDetailsController == null) {
-            try {
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("RegisterGuestDetails.fxml"));
-                Region root = loader.load();
-                registerGuestDetailsController = loader.getController();
-                registerGuestDetailsController.init(this, modelManager, root);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        else
-        {
-            registerGuestDetailsController.reset();
-        }
-        return registerGuestDetailsController.getRoot();
-    }
+//    private Region loadMainPage()
+//    {
+//        if (mainPageController == null) {
+//            try {
+//                FXMLLoader loader = new FXMLLoader();
+//                loader.setLocation(getClass().getResource("MainPage.fxml"));
+//                Region root = loader.load();
+//                mainPageController = loader.getController();
+//                mainPageController.init(this, modelManager, root);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        else
+//        {
+//            mainPageController.reset();
+//        }
+//        return mainPageController.getRoot();
+//    }
+//    private Region loadRegisterGuestDetails()
+//    {
+//        if (registerGuestDetailsController == null) {
+//            try {
+//                FXMLLoader loader = new FXMLLoader();
+//                loader.setLocation(getClass().getResource("RegisterGuestDetails.fxml"));
+//                Region root = loader.load();
+//                registerGuestDetailsController = loader.getController();
+//                registerGuestDetailsController.init(this, modelManager, root);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        else
+//        {
+//            registerGuestDetailsController.reset();
+//        }
+//        return registerGuestDetailsController.getRoot();
+//    }
 }
