@@ -7,6 +7,7 @@ import java.io.Serializable;
  * @author Lukasz
  * @version 1.0
  */
+
 public class Address implements Serializable
 {
     private String postcode;

@@ -33,7 +33,7 @@ public class BookingsController
     @FXML private TextField phoneNumberField;
     @FXML private Button bookButton;
 
-    public void initilize()
+    public void initialize()
     {
         firstNameColumn.setCellValueFactory(new PropertyValueFactory<Guest, String>("firstName"));
         lastNameColumn.setCellValueFactory(new PropertyValueFactory<Guest, String>("lastName"));

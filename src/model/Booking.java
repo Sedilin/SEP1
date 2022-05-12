@@ -20,7 +20,7 @@ public class Booking implements Serializable
     //Constructor
 
     /**
-     * 5 parameter constructor initializing the current booking.
+     * 4 parameter constructor initializing the current booking.
      * @param room the room.
      * @param guest the guest.
      * @param arrivalDate the arrival date.

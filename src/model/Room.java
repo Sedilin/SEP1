@@ -14,14 +14,13 @@ public class Room implements Serializable
     private String type;
     private double price;
     private int capacity;
-
     /**
      * 5 argument constructor initializing the Room variables.
      * @param roomNumber the room number.
      * @param isSmoking the information if you can smoke in the room.
      * @param type the type of the room.
      * @param price the price.
-     * @param capacity the capicity of the room.
+     * @param capacity the capacity of the room.
      */
     public Room (int roomNumber, boolean isSmoking, String type, double price, int capacity)
     {
@@ -46,28 +45,28 @@ public class Room implements Serializable
         this.roomNumber = roomNumber;
     }
     /**
-     * Gets an information if you can smoke in the room from the Room class.
-     * @return the information if you can smoke in the room from the Room class.
+     * Gets information on whether you can smoke in the room from the Room class.
+     * @return information on whether you can smoke in the room from the Room class.
      */
     public boolean isSmoking() {
         return isSmoking;
     }
     /**
-     * Sets the information about smoking in the room to the Room.
-     * @param isSmoking the information about smoking in the room to set the object to.
+     * Sets the smoking information in the room to the Room Class.
+     * @param isSmoking the information regarding smoking in the room to set the object to.
      */
     public void setSmoking(boolean isSmoking) {
         this.isSmoking = isSmoking;
     }
     /**
-     * Gets a type from the Room class.
-     * @return the type from the Room class.
+     * Gets a room type from the Room Class.
+     * @return the room type from the Room class.
      */
     public String getType() {
         return type;
     }
     /**
-     * Sets the type to the Room.
+     * Sets the room type to the Room.
      * @param type the type to set the object to.
      */
     public void setType(String type) {
@@ -110,7 +109,7 @@ public class Room implements Serializable
         return roomNumber + " " + isSmoking + " " + type + " " + price + " " + capacity;
     }
     /**
-     * Compares room number, if it is possible to smoke, type of the room and price of the object of two Rooms.
+     * Compares room number, if it is possible to smoke, type of the room, price and capacity of the object of two Rooms.
      * @param obj object to be compared.
      * @return true if the two objects are equal and false otherwise.
      */
