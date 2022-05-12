@@ -103,7 +103,7 @@
                         </ScrollPane>
                         <VBox layoutX="480.0" layoutY="99.0" prefHeight="115.0" prefWidth="268.0" spacing="30.0">
                            <children>
-                              <TextField prefHeight="37.0" prefWidth="201.0" promptText="Phone no." />
+                              <TextField prefHeight="37.0" prefWidth="201.0" promptText="Search" />
                               <Button mnemonicParsing="false" text="Search">
                                  <VBox.margin>
                                     <Insets left="212.0" />
@@ -146,7 +146,7 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Button>
-                        <TextField layoutX="516.0" layoutY="44.0" prefHeight="37.0" prefWidth="201.0" promptText="Phone no." />
+                        <TextField layoutX="516.0" layoutY="44.0" prefHeight="37.0" prefWidth="201.0" promptText="Search" />
                         <Text layoutX="65.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check out">
                            <font>
                               <Font name="System Bold" size="22.0" />
