@@ -4,17 +4,14 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.BookingModelManager;
 
 public class StartApplication extends Application
 {
   public void start(Stage window) throws Exception
   {
-    window.setTitle("Outlook Hotel");
-    FXMLLoader loader = new FXMLLoader();
-    loader.setLocation(getClass().getResource("MainPage.fxml"));
-    Scene scene = new Scene(loader.load());
-    window.setScene(scene);
-    window.setResizable(false);
-    window.show();
+    BookingModelManager modelManager = new BookingModelManager("hotel.bin");
+    ViewHandler viewHandler = new ViewHandler(modelManager);
+    viewHandler.start(window);
   }
 }
