@@ -16,7 +16,7 @@ public class Room implements Serializable
     private int capacity;
 
     /**
-     * 4 argument constructor initializing the Room variables.
+     * 5 argument constructor initializing the Room variables.
      * @param roomNumber the room number.
      * @param isSmoking the information if you can smoke in the room.
      * @param type the type of the room.
@@ -96,7 +96,7 @@ public class Room implements Serializable
     }
     /**
      * Sets the capacity to the Room.
-     * @param capacity the price to set the object to.
+     * @param capacity the capacity to set the object to.
      */
     public void setCapacity(int capacity) {
         this.capacity = capacity;
