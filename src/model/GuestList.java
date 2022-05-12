@@ -44,6 +44,10 @@ public class GuestList implements Serializable
     }
   }
 
+  public Guest getGuest(int index)
+  {
+    return guests.get(index);
+  }
   /**
    * Gets a Guest object by phone number from list of guests
    * @param phoneNumber phone number of guest
