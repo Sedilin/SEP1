@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class StartApplication extends Application
+public class  StartApplication extends Application
 {
   public void start(Stage window) throws Exception
   {
