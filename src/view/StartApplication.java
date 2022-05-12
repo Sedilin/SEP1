@@ -12,6 +12,7 @@ public class  StartApplication extends Application
   {
     BookingModelManager modelManager = new BookingModelManager("hotel.bin");
     ViewHandler viewHandler = new ViewHandler(modelManager);
+    window.setResizable(false);
     viewHandler.start(window);
   }
 }
