@@ -6,8 +6,8 @@ import java.io.IOException;
 
 /**
  * A class that manages other classes
- * @author Lukasz
- * @version 1.1
+ * @author Lukasz and Gabriela
+ * @version 1.2
  */
 public class Hotel
 {
@@ -16,16 +16,13 @@ public class Hotel
     private GuestList guests;
 
     /**
-     * 3 argument constructor
-     * @param bookings the booking list.
-     * @param guests the guest list.
-     * @param rooms the room list.
+     * No-argument constructor.
      */
-    public Hotel(BookingList bookings, GuestList guests, RoomList rooms)
+    public Hotel()
     {
-        this.bookings = bookings;
-        this.guests = guests;
-        this.rooms= rooms;
+        rooms = new RoomList();
+        bookings = new BookingList();
+        guests = new GuestList();
     }
 
     /**
