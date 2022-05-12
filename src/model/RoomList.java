@@ -62,6 +62,12 @@ public class RoomList implements Serializable
         }
         return temp;
     }
+    public int size() {
+        return rooms.size();
+    }
+    public Room getRoom(int i) {
+        return rooms.get(i);
+    }
 
     /**
      * A toString method to print out each of the elements from the RoomList class.

@@ -6,7 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.BookingModelManager;
 
-public class StartApplication extends Application
+public class  StartApplication extends Application
 {
   public void start(Stage window) throws Exception
   {
