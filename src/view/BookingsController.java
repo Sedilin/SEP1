@@ -61,7 +61,6 @@ public class BookingsController
 
                 if (guestListTable.getItems().size() == 0)
                 {
-                    guestListTable.getItems().add(guest);
                     hotel.addGuest(guest);
                     modelManager.save(hotel);
                 }
@@ -69,8 +68,6 @@ public class BookingsController
                 {
                     for (int i = 0; i < guestListTable.getItems().size(); i++) {
                         if (!(guestListTable.getItems().get(i).getFirstName().equals(firstNameField.getText()) && guestListTable.getItems().get(i).getLastName().equals(lastNameField.getText()))) {
-                            updateGuestTable();
-                            guestListTable.getItems().add(guest);
                             hotel.addGuest(guest);
                             modelManager.save(hotel);
                         }
