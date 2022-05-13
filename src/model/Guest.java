@@ -188,10 +188,7 @@ public class Guest implements Serializable
         else
         {
             return firstName.equals(other.firstName) && lastName.equals(other.lastName) &&
-                    phoneNumber.equals(other.phoneNumber) && id.equals(other.id) &&
-                    title.equals(other.title) && nationality.equals(other.nationality) &&
-                    frequentGuest == other.frequentGuest && address.equals(other.address) &&
-                    birthday.equals(other.birthday);
+                    phoneNumber.equals(other.phoneNumber);
         }
     }
 }
