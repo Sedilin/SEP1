@@ -70,6 +70,7 @@ public class BookingsController
                         if (!(guestListTable.getItems().get(i).getFirstName().equals(firstNameField.getText()) && guestListTable.getItems().get(i).getLastName().equals(lastNameField.getText()))) {
                             hotel.addGuest(guest);
                             modelManager.save(hotel);
+                            break;
                         }
                     }
                 }
