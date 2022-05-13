@@ -24,7 +24,7 @@
                </VBox.margin></TextField>
             <ScrollPane prefHeight="247.0" prefWidth="357.0">
                <content>
-                  <TableView fx:id="guestListTable" prefHeight="245.0" prefWidth="330.0">
+                  <TableView fx:id="guestListTable" onMouseClicked="#addGuestDetailsToTextField" prefHeight="245.0" prefWidth="330.0">
                     <columns>
                       <TableColumn fx:id="firstNameColumn" prefWidth="97.0" text="First name" />
                       <TableColumn fx:id="lastNameColumn" prefWidth="102.0" text="Last name" />

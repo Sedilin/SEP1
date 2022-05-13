@@ -59,9 +59,14 @@ public class BookingsController
             if (!(firstNameField.getText().equals("")) && !(lastNameField.getText().equals("")) && !(phoneNumberField.getText().equals("")))
             {
                 Guest guest = new Guest(firstNameField.getText(), lastNameField.getText(), phoneNumberField.getText());
-                guestListTable.getItems().add(guest);
-                hotel.addGuest(guest);
-                modelManager.save(hotel);
+                for (int i = 0; i < guestListTable.getItems().size(); i++) {
+                    if (!(guestListTable.getItems().get(i).getFirstName().equals(firstNameField.getText()) && guestListTable.getItems().get(i).getLastName().equals(lastNameField.getText())))
+                    {
+                        guestListTable.getItems().add(guest);
+                        hotel.addGuest(guest);
+                        modelManager.save(hotel);
+                    }
+                }
             }
             viewHandler.openView("MainPage");
         }
