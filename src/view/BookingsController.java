@@ -82,6 +82,18 @@ public class BookingsController
             lastNameField.setDisable(false);
             phoneNumberField.setDisable(false);
         }
+        else if(event.getSource() == searchField)
+        {
+            Guest searchGuest = new Guest("Guest", "Not", "Found");
+            for (int i = 0; i < guestListTable.getItems().size(); i++) {
+                if (searchField.getText().equals(modelManager.load().getAllGuests().getGuest(i).getPhoneNumber()))
+                {
+                    searchGuest = modelManager.load().getAllGuests().getGuest(i);
+                }
+            }
+            guestListTable.getItems().clear();
+            guestListTable.getItems().add(searchGuest);
+        }
     }
 
     public void addGuestDetailsToTextField()
