@@ -49,10 +49,25 @@ public class BookingsController
         firstNameColumn.setCellValueFactory(new PropertyValueFactory<Guest, String>("firstName"));
         lastNameColumn.setCellValueFactory(new PropertyValueFactory<Guest, String>("lastName"));
         phoneNumberColumn.setCellValueFactory(new PropertyValueFactory<Guest, String>("phoneNumber"));
+
     }
-    public void bookButtonBookings(ActionEvent event)
+    public void handleForBookings(ActionEvent event)
     {
-        viewHandler.openView("MainPage");
+        if (event.getSource() == bookButton)
+        {
+            Hotel hotel = modelManager.load();
+            Guest guest = new Guest(firstNameField.getText(), lastNameField.getText(), phoneNumberField.getText());
+            guestListTable.getItems().add(guest);
+            hotel.addGuest(guest);
+            modelManager.save(hotel);
+            viewHandler.openView("MainPage");
+        }
+        else if (event.getSource() == newGuestButton)
+        {
+            firstNameField.setDisable(false);
+            lastNameField.setDisable(false);
+            phoneNumberField.setDisable(false);
+        }
     }
 
     public void addGuestDetailsToTextField()
@@ -65,6 +80,13 @@ public class BookingsController
     public void updateGuestTable()
     {
         guestListTable.getItems().clear();
+        firstNameField.setDisable(true);
+        lastNameField.setDisable(true);
+        phoneNumberField.setDisable(true);
+        firstNameField.clear();
+        lastNameField.clear();
+        phoneNumberField.clear();
+
         GuestList guests = modelManager.load().getAllGuests();
 
         for (int i = 0; i < guests.size(); i++) {
