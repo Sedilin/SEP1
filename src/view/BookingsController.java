@@ -16,8 +16,6 @@ public class BookingsController
     private BookingModelManager modelManager;
     private ViewHandler viewHandler;
 
-    private MyActionListener listener;
-
     private Booking currentBooking;
 
     @FXML private TextField searchField;
@@ -52,16 +50,11 @@ public class BookingsController
         lastNameColumn.setCellValueFactory(new PropertyValueFactory<Guest, String>("lastName"));
         phoneNumberColumn.setCellValueFactory(new PropertyValueFactory<Guest, String>("phoneNumber"));
     }
-    private class MyActionListener implements EventHandler<ActionEvent>
+    public void bookButtonBookings(ActionEvent event)
     {
-        public void handle(ActionEvent e)
-        {
-            if (e.getSource() == newGuestButton)
-            {
-
-            }
-        }
+        viewHandler.openView("MainPage");
     }
+
     public void addGuestDetailsToTextField()
     {
         Guest guest = guestListTable.getSelectionModel().getSelectedItem();
