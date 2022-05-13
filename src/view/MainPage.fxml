@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane userData="Overlook Hotel" prefHeight="440.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainPageController">
+<AnchorPane prefHeight="440.0" prefWidth="600.0" userData="Overlook Hotel" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainPageController">
    <children>
       <MenuBar prefHeight="32.0" prefWidth="600.0">
         <menus>
@@ -117,7 +117,7 @@
                            </font>
                         </Button>
                         <TextField layoutX="383.0" layoutY="32.0" prefHeight="26.0" prefWidth="159.0" promptText="Search" />
-                        <Button layoutX="247.0" layoutY="310.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="105.0" text="Register guest">
+                        <Button layoutX="247.0" layoutY="310.0" mnemonicParsing="false" onAction="#checkInButton" prefHeight="33.0" prefWidth="105.0" text="Check In">
                            <font>
                               <Font size="14.0" />
                            </font>

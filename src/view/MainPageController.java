@@ -55,6 +55,10 @@ public class MainPageController
   public void bookButton(ActionEvent event) {
     viewHandler.openView("Bookings");
   }
+  public void checkInButton(ActionEvent event)
+  {
+    viewHandler.openView("RegisterGuestDetails");
+  }
   private void updateRoomTypes()
   { roomType.getItems().clear();
     RoomList roomList1 = modelManager.load().getAllRooms();
