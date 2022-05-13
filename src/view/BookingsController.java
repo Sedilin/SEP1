@@ -56,15 +56,24 @@ public class BookingsController
         if (event.getSource() == bookButton)
         {
             Hotel hotel = modelManager.load();
-            if (!(firstNameField.getText().equals("")) && !(lastNameField.getText().equals("")) && !(phoneNumberField.getText().equals("")))
-            {
+            if (!(firstNameField.getText().equals("")) && !(lastNameField.getText().equals("")) && !(phoneNumberField.getText().equals(""))) {
                 Guest guest = new Guest(firstNameField.getText(), lastNameField.getText(), phoneNumberField.getText());
-                for (int i = 0; i < guestListTable.getItems().size(); i++) {
-                    if (!(guestListTable.getItems().get(i).getFirstName().equals(firstNameField.getText()) && guestListTable.getItems().get(i).getLastName().equals(lastNameField.getText())))
-                    {
-                        guestListTable.getItems().add(guest);
-                        hotel.addGuest(guest);
-                        modelManager.save(hotel);
+
+                if (guestListTable.getItems().size() == 0)
+                {
+                    guestListTable.getItems().add(guest);
+                    hotel.addGuest(guest);
+                    modelManager.save(hotel);
+                }
+                else
+                {
+                    for (int i = 0; i < guestListTable.getItems().size(); i++) {
+                        if (!(guestListTable.getItems().get(i).getFirstName().equals(firstNameField.getText()) && guestListTable.getItems().get(i).getLastName().equals(lastNameField.getText()))) {
+                            updateGuestTable();
+                            guestListTable.getItems().add(guest);
+                            hotel.addGuest(guest);
+                            modelManager.save(hotel);
+                        }
                     }
                 }
             }
