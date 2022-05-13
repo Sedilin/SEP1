@@ -37,6 +37,7 @@ public class Booking implements Serializable
         isCheckedIn = false;
         isCheckedOut = false;
     }
+
     //Guest
     /**
      * Adds a guest to the guest list in the Booking.
@@ -90,7 +91,6 @@ public class Booking implements Serializable
     }
 
     //Room
-
     /**
      * Changes a value of the Room in the Booking
      * @param room the new room.
@@ -109,7 +109,6 @@ public class Booking implements Serializable
     }
 
     //Check-In
-
     /**
      * Gets information if the guest is checked in.
      * @return the information if the guest is checked in.
@@ -128,10 +127,9 @@ public class Booking implements Serializable
     }
 
     //Check-Out
-
     /**
-     * Gets information if the guest is checked in.
-     * @return the information if the guest is checked in.
+     * Gets information if the guest is checked out.
+     * @return the information if the guest is checked out.
      */
     public boolean isCheckedOut()
     {
@@ -147,7 +145,6 @@ public class Booking implements Serializable
     }
 
     //Price
-
     /**
      * Applies the discount to the total price for the Booking.
      * @param discount the discount.
@@ -172,7 +169,7 @@ public class Booking implements Serializable
      */
     public String toString()
     {
-        return guestList.toString()+" "+room.getRoomNumber()+" "+arrivalDate+" "+departureDate+" "+ isCheckedIn + " " + isCheckedOut;
+        return guestList.toString()+" "+room.getRoomNumber() + " " + arrivalDate + " " + departureDate + " " + isCheckedIn + " " + isCheckedOut;
     }
 
     /**

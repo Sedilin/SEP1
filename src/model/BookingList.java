@@ -40,7 +40,7 @@ public class BookingList implements Serializable
 
     /**
      * Finds a booking by phone number.
-     * @param phoneNumber the phone number to search the booking by.
+     * @param phoneNumber the phone number to search for the booking.
      * @return the booking that has been found by the phone number, if booking does not exist it does not return anything.
      */
     public BookingList findBookingsByPhoneNumber(String phoneNumber)
