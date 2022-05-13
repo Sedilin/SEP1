@@ -14,10 +14,12 @@ public class MainPageController
 {
   private Region root;
   private BookingModelManager modelManager;
+  private ViewHandler viewHandler;
+
   private RoomList roomList;
   private GuestList guestList;
   private BookingList bookingList;
-  private ViewHandler viewHandler;
+
 
   /**
    * A GUI tab containing components for displaying a list of rooms.
@@ -36,6 +38,15 @@ public class MainPageController
   @FXML private ComboBox<String> roomType;
   @FXML private Button searchButton;
   @FXML private TextField resetButton;
+  @FXML MenuItem exitMenuItem;
+  @FXML MenuItem helpMenuItem;
+
+  public void init(ViewHandler viewHandler, BookingModelManager modelManager, Region root)
+  { this.viewHandler=viewHandler;
+    this.modelManager=modelManager;
+    this.root=root;
+  }
+  public Region getRoot() { return root;}
 
   public void initialize() {
     modelManager = new BookingModelManager("hotel.bin");
@@ -62,7 +73,9 @@ public class MainPageController
   private void updateRoomTypes()
   { roomType.getItems().clear();
     RoomList roomList1 = modelManager.load().getAllRooms();
+
     //ArrayList<String> types = new ArrayList<>();
+
     for (int i = 0; i < roomList1.size(); i++)
     {
       if (!roomType.getItems().contains(roomList1.getRoom(i).getType())) {
@@ -81,14 +94,29 @@ public class MainPageController
       roomsListTable.getItems().add(rooms.getRoom(i));
     }
   }
+  public void handleActions(ActionEvent event){
+    if (event.getSource() == exitMenuItem)
+    {
+      Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
+              "Do you really want to exit the program?",
+              ButtonType.YES, ButtonType.NO);
+      alert.setTitle("Exit");
+      alert.setHeaderText(null);
 
-  public void init(ViewHandler viewHandler, BookingModelManager modelManager, Region root)
-  { this.viewHandler=viewHandler;
-    this.modelManager=modelManager;
-    this.root=root;
-  }
+      alert.showAndWait();
 
-  public Region getRoot()
-  { return root;
+      if (alert.getResult() == ButtonType.YES)
+      {
+        System.exit(0);
+      }
+    }
+    else if (event.getSource() == helpMenuItem)
+    {
+      Alert alert = new Alert(Alert.AlertType.INFORMATION);
+      alert.setHeaderText(null);
+      alert.setTitle("Help");
+      alert.setContentText("Contact Support");
+      alert.showAndWait();
+    }
   }
 }
