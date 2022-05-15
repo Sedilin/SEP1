@@ -10,70 +10,64 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Region;
 import model.*;
 
-public class BookingsController
-{
+public class BookingsController {
     private Region root;
     private BookingModelManager modelManager;
     private ViewHandler viewHandler;
 
     private Booking currentBooking;
 
-    @FXML private TextField searchField;
-    @FXML private TableView<Guest> guestListTable;
-    @FXML private TableColumn<Guest,String> firstNameColumn;
-    @FXML private TableColumn<Guest,String> lastNameColumn;
-    @FXML private TableColumn<Guest,String> phoneNumberColumn;
-    @FXML private Button newGuestButton;
-    @FXML private TextField firstNameField;
-    @FXML private TextField lastNameField;
-    @FXML private TextField phoneNumberField;
-    @FXML private Button bookButton;
+    @FXML
+    private TextField searchField;
+    @FXML
+    private TableView<Guest> guestListTable;
+    @FXML
+    private TableColumn<Guest, String> firstNameColumn;
+    @FXML
+    private TableColumn<Guest, String> lastNameColumn;
+    @FXML
+    private TableColumn<Guest, String> phoneNumberColumn;
+    @FXML
+    private Button newGuestButton;
+    @FXML
+    private TextField firstNameField;
+    @FXML
+    private TextField lastNameField;
+    @FXML
+    private TextField phoneNumberField;
+    @FXML
+    private Button bookButton;
 
-    public void init(ViewHandler viewHandler, BookingModelManager modelManager, Region root)
-    {
+    public void init(ViewHandler viewHandler, BookingModelManager modelManager, Region root) {
         this.viewHandler = viewHandler;
         this.modelManager = modelManager;
         this.root = root;
         reset();
     }
-    public void reset()
-    {
+
+    public void reset() {
         updateGuestTable();
     }
-    public Region getRoot()
-    {
+
+    public Region getRoot() {
         return root;
     }
-    public void initialize()
-    {
+
+    public void initialize() {
         firstNameColumn.setCellValueFactory(new PropertyValueFactory<Guest, String>("firstName"));
         lastNameColumn.setCellValueFactory(new PropertyValueFactory<Guest, String>("lastName"));
         phoneNumberColumn.setCellValueFactory(new PropertyValueFactory<Guest, String>("phoneNumber"));
 
     }
-    public void handleForBookings(ActionEvent event)
-    {
-        if (event.getSource() == bookButton)
-        {
+
+    public void handleForBookings(ActionEvent event) {
+        if (event.getSource() == bookButton) {
             Hotel hotel = modelManager.load();
             if (!(firstNameField.getText().equals("")) && !(lastNameField.getText().equals("")) && !(phoneNumberField.getText().equals(""))) {
                 Guest guest = new Guest(firstNameField.getText(), lastNameField.getText(), phoneNumberField.getText());
 
-                if (guestListTable.getItems().size() == 0)
-                {
                     hotel.addGuest(guest);
                     modelManager.save(hotel);
-                }
-                else
-                {
-                    for (int i = 0; i < guestListTable.getItems().size(); i++) {
-                        if (!(guestListTable.getItems().get(i).getFirstName().equals(firstNameField.getText()) && guestListTable.getItems().get(i).getLastName().equals(lastNameField.getText()))) {
-                            hotel.addGuest(guest);
-                            modelManager.save(hotel);
-                            break;
-                        }
-                    }
-                }
             }
             viewHandler.openView("MainPage");
         }
@@ -86,12 +80,8 @@ public class BookingsController
         else if(event.getSource() == searchField)
         {
             Guest searchGuest = new Guest("Guest", "Not", "Found");
-            for (int i = 0; i < guestListTable.getItems().size(); i++) {
-                if (searchField.getText().equals(modelManager.load().getAllGuests().getGuest(i).getPhoneNumber()))
-                {
-                    searchGuest = modelManager.load().getAllGuests().getGuest(i);
-                }
-            }
+            if (modelManager.load().findGuestByPhoneNumber(searchField.getText()) != null)
+            searchGuest = modelManager.load().findGuestByPhoneNumber(searchField.getText());
             guestListTable.getItems().clear();
             guestListTable.getItems().add(searchGuest);
         }

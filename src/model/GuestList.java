@@ -26,6 +26,7 @@ public class GuestList implements Serializable
    */
   public void addGuest(Guest guest)
   {
+    if (!guests.contains(guest))
     guests.add(guest);
   }
 
