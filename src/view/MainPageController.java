@@ -84,16 +84,25 @@ public class MainPageController {
     }
 
     public void bookButton(ActionEvent event) {
-        Date arrivalDate = new Date(this.arrivalDate.getValue().getDayOfMonth(), this.arrivalDate.getValue().getMonthValue(), this.arrivalDate.getValue().getYear());
-        Date departureDate = new Date(this.departureDate.getValue().getDayOfMonth(), this.departureDate.getValue().getMonthValue(), this.departureDate.getValue().getYear());
-        Booking booking = new Booking(roomsListTable.getSelectionModel().getSelectedItem(), arrivalDate, departureDate);
-        Hotel hotel = modelManager.load();
-        hotel.addBooking(booking);
-        modelManager.save(hotel);
-        System.out.println(modelManager.load().getAllBookings());
-        viewHandler.openView("Bookings");
-    }
+        if (this.arrivalDate.getValue() != null && this.departureDate.getValue() != null && roomsListTable.getSelectionModel().getSelectedItem() != null) {
+            Date arrivalDate = new Date(this.arrivalDate.getValue().getDayOfMonth(), this.arrivalDate.getValue().getMonthValue(), this.arrivalDate.getValue().getYear());
+            Date departureDate = new Date(this.departureDate.getValue().getDayOfMonth(), this.departureDate.getValue().getMonthValue(), this.departureDate.getValue().getYear());
+            Booking booking = new Booking(roomsListTable.getSelectionModel().getSelectedItem(), arrivalDate, departureDate);
+            Hotel hotel = modelManager.load();
+            hotel.addBooking(booking);
+            modelManager.save(hotel);
+            System.out.println(modelManager.load().getAllBookings());
+            viewHandler.openView("Bookings");
+        }
+        else
+        {
 
+        }
+
+    }
+    public void bookingTable() {
+
+    }
     public void checkInButton(ActionEvent event) {
         viewHandler.openView("RegisterGuestDetails");
     }
