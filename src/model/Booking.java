@@ -35,6 +35,15 @@ public class Booking implements Serializable
         isCheckedIn = false;
         isCheckedOut = false;
     }
+    public String getGuestName() {
+        return guestList.getMainGuest().getFirstName() + " " +  guestList.getMainGuest().getLastName();
+    }
+    public String getPhoneNumber() {
+        return guestList.getMainGuest().getPhoneNumber();
+    }
+    public int getRoomNumber() {
+        return room.getRoomNumber();
+    }
 
     //Guest
     /**

@@ -90,7 +90,7 @@ public class BookingsController {
         }
     }
 
-    private void addGuestDetailsToTextField()
+    public void addGuestDetailsToTextField()
     {
         Guest guest = guestListTable.getSelectionModel().getSelectedItem();
         firstNameField.setText(guest.getFirstName());

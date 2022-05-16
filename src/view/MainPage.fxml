@@ -33,7 +33,10 @@
               <MenuItem mnemonicParsing="false" text="All bookings" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help" />
+          <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleActions" text="Contact" />
+               </items></Menu>
         </menus>
       </MenuBar>
       <TabPane layoutX="-1.0" layoutY="32.0" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
@@ -51,7 +54,7 @@
                               </Text>
                               <DatePicker fx:id="arrivalDate" prefHeight="38.0" prefWidth="227.0" promptText="Arrival date" />
                               <DatePicker fx:id="departureDate" prefHeight="38.0" prefWidth="227.0" promptText="Departure date" />
-                              <ComboBox fx:id="roomType" prefWidth="150.0" />
+                              <ComboBox fx:id="roomType" prefHeight="26.0" prefWidth="183.0" />
                               <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchButton" text="Search">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
@@ -95,13 +98,13 @@
                      <children>
                         <AnchorPane layoutX="62.0" layoutY="76.0" prefHeight="235.0" prefWidth="485.0">
                            <children>
-                              <TableView layoutX="-14.0" layoutY="8.0" prefHeight="210.0" prefWidth="495.0">
+                              <TableView fx:id="bookingListTable" layoutX="-14.0" layoutY="8.0" prefHeight="210.0" prefWidth="495.0">
                                  <columns>
-                                    <TableColumn prefWidth="99.0" text="First name" />
-                                    <TableColumn minWidth="0.0" prefWidth="99.0" text="Last name" />
-                                    <TableColumn maxWidth="400.0" prefWidth="99.0" text="Phone no." />
-                                    <TableColumn prefWidth="99.0" text="Room type" />
-                                    <TableColumn prefWidth="99.0" text="Room no." />
+                                    <TableColumn fx:id="guestColumn" prefWidth="119.0" text="Guest" />
+                                    <TableColumn fx:id="phoneNoColumn" minWidth="0.0" prefWidth="98.0" text="Phone no." />
+                                    <TableColumn fx:id="arrivalDateColumn" maxWidth="400.0" prefWidth="101.0" text="Arrival " />
+                                    <TableColumn fx:id="departureDateColumn" prefWidth="97.0" text="Departure" />
+                                    <TableColumn fx:id="roomNoColumn2" prefWidth="79.0" text="Room no." />
                                  </columns>
                               </TableView>
                            </children>
@@ -138,10 +141,10 @@
                            <children>
                               <TableView layoutX="-12.0" prefHeight="210.0" prefWidth="495.0">
                                  <columns>
-                                    <TableColumn prefWidth="99.0" text="First name" />
-                                    <TableColumn minWidth="0.0" prefWidth="99.0" text="Last name" />
-                                    <TableColumn maxWidth="400.0" prefWidth="99.0" text="Phone no." />
-                                    <TableColumn prefWidth="99.0" text="Arrival date" />
+                                    <TableColumn prefWidth="99.0" text="Guest" />
+                                    <TableColumn minWidth="0.0" prefWidth="99.0" text="Phone no." />
+                                    <TableColumn maxWidth="400.0" prefWidth="99.0" text="Arrival " />
+                                    <TableColumn prefWidth="99.0" text="Departure" />
                                     <TableColumn prefWidth="99.0" text="Room no." />
                                  </columns>
                               </TableView>

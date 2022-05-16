@@ -89,6 +89,9 @@ public class BookingList implements Serializable
         }
         return null;
     }
+    public Booking getBookingByIndex(int index)  {
+        return bookings.get(index);
+    }
 
     /**
      * Gets the size of bookings

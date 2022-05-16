@@ -54,6 +54,12 @@ public class MainPageController {
     MenuItem exitMenuItem;
     @FXML
     MenuItem helpMenuItem;
+    @FXML TableView<Booking> bookingListTable;
+    @FXML TableColumn<Booking, String> guestColumn;
+    @FXML TableColumn<Booking, String> phoneNoColumn;
+    @FXML TableColumn<Booking, Date>   arrivalDateColumn;
+    @FXML TableColumn<Booking, Date>   departureDateColumn;
+    @FXML TableColumn<Booking, Integer>   roomNoColumn2;
 
     public void init(ViewHandler viewHandler, BookingModelManager modelManager, Region root) {
         this.viewHandler = viewHandler;
@@ -73,14 +79,24 @@ public class MainPageController {
         priceColumn.setPrefWidth(90);
         capacityColumn.setCellValueFactory(new PropertyValueFactory<Room, Integer>("capacity"));
         capacityColumn.setPrefWidth(72);
+        guestColumn.setCellValueFactory(new PropertyValueFactory<Booking, String>("guestName"));
+        phoneNoColumn.setCellValueFactory(new PropertyValueFactory<Booking, String>("phoneNumber"));
+        arrivalDateColumn.setCellValueFactory(new PropertyValueFactory<Booking, Date>("arrivalDate"));
+        departureDateColumn.setCellValueFactory(new PropertyValueFactory<Booking, Date>("departureDate"));
+        roomNoColumn2.setCellValueFactory(new PropertyValueFactory<Booking, Integer>("roomNumber"));
 
         updateRoomsArea();
         updateRoomTypes();
+        updateBookingArea();
+
+
     }
 
     public void reset() {
         updateRoomTypes();
         roomType.getSelectionModel().clearSelection();
+        updateBookingArea();
+        updateRoomsArea();
     }
 
     public void bookButton(ActionEvent event) {
@@ -93,15 +109,20 @@ public class MainPageController {
             modelManager.save(hotel);
             System.out.println(modelManager.load().getAllBookings());
             viewHandler.openView("Bookings");
-        }
-        else
-        {
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Fill out all fields!");
+            alert.setHeaderText(null);
+            alert.showAndWait();
 
         }
-
     }
-    public void bookingTable() {
 
+    public void updateBookingArea() {
+        bookingListTable.getItems().clear();
+        BookingList bookings = modelManager.load().getAllBookings();
+        for (int i=0; i< bookings.size(); i++) {
+            bookingListTable.getItems().add(bookings.getBookingByIndex(i));
+        }
     }
     public void checkInButton(ActionEvent event) {
         viewHandler.openView("RegisterGuestDetails");
@@ -174,5 +195,6 @@ public class MainPageController {
             alert.setContentText("Contact Support");
             alert.showAndWait();
         }
+
     }
 }
