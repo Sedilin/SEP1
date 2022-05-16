@@ -171,8 +171,7 @@ public class Guest implements Serializable
      */
     public String toString()
     {
-        return firstName + " " + lastName + " " + phoneNumber + " " + id + " " + title + " " + nationality + " " +
-                frequentGuest + " " + address + " " + birthday.copy();
+        return firstName + " " + lastName + " " + phoneNumber;
     }
     /**
      * Compares all the variables of the object of two Guests.

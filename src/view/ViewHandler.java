@@ -108,4 +108,8 @@ public class ViewHandler {
         }
         return registerGuestDetailsController.getRoot();
     }
+    public MainPageController getMainPageController()
+    {
+        return mainPageController;
+    }
 }

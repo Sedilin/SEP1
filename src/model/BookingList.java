@@ -38,6 +38,11 @@ public class BookingList implements Serializable
         bookings.add(booking);
     }
 
+    public Booking getLastBooking()
+    {
+        return bookings.get(bookings.size()-1);
+    }
+
     /**
      * Finds a booking by phone number.
      * @param phoneNumber the phone number to search for the booking.

@@ -49,15 +49,15 @@
                                     <Font name="System Bold" size="20.0" />
                                  </font>
                               </Text>
-                              <DatePicker prefHeight="38.0" prefWidth="227.0" promptText="Arrival date" />
-                              <DatePicker prefHeight="38.0" prefWidth="227.0" promptText="Departure date" />
-                              <ComboBox fx:id="roomType" prefWidth="150.0" promptText="Room type" />
-                              <Button mnemonicParsing="false" text="Search">
+                              <DatePicker fx:id="arrivalDate" prefHeight="38.0" prefWidth="227.0" promptText="Arrival date" />
+                              <DatePicker fx:id="departureDate" prefHeight="38.0" prefWidth="227.0" promptText="Departure date" />
+                              <ComboBox fx:id="roomType" prefWidth="150.0" />
+                              <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchButton" text="Search">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Button>
-                              <Text fill="#000000d0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reset" underline="true">
+                              <Text fill="#000000d0" onMouseClicked="#resetSearch" strokeType="OUTSIDE" strokeWidth="0.0" text="Reset" underline="true">
                                  <font>
                                     <Font name="System Bold" size="12.5" />
                                  </font>

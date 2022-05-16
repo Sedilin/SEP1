@@ -123,4 +123,9 @@ public class Hotel implements Serializable
         return bookings.getBooking(booking).getTotalPrice();
     }
 
+    public String toString()
+    {
+        return guests + " " + bookings + " " + rooms;
+    }
+
 }

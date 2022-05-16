@@ -178,13 +178,13 @@ public class Date implements Serializable
    */
   public int daysInBetween(Date departureDate)
   {
-    Date temp = new Date(day, month, year);
+    Date arrivalDate = new Date(day, month, year);
     int count = 0;
     do {
-      temp.nextDay();
+      arrivalDate.nextDay();
       count++;
     }
-    while (temp.equals(departureDate));
+    while (arrivalDate.equals(departureDate));
       return count;
   }
   /**

@@ -20,16 +20,14 @@ public class Booking implements Serializable
     //Constructor
 
     /**
-     * 4 parameter constructor initializing the current booking.
+     * 3 parameter constructor initializing the current booking.
      * @param room the room.
-     * @param guest the guest.
      * @param arrivalDate the arrival date.
      * @param departureDate the departure date.
      */
-    public Booking (Room room, Guest guest, Date arrivalDate, Date departureDate)
+    public Booking (Room room, Date arrivalDate, Date departureDate)
     {
         guestList = new GuestList();
-        guestList.addGuest(guest);
         this.arrivalDate = arrivalDate;
         this.departureDate = departureDate;
         this.room = room;
@@ -56,6 +54,10 @@ public class Booking implements Serializable
         return guestList.getMainGuest();
     }
 
+    public GuestList getAllGuests()
+    {
+        return guestList;
+    }
     //Arrival date
     /**
      * Sets an arrival date in the Booking.
@@ -169,7 +171,7 @@ public class Booking implements Serializable
      */
     public String toString()
     {
-        return guestList.toString()+" "+room.getRoomNumber() + " " + arrivalDate + " " + departureDate + " " + isCheckedIn + " " + isCheckedOut;
+        return guestList.toString() +" "+room.getRoomNumber() + " " + arrivalDate + " " + departureDate + " " + isCheckedIn + " " + isCheckedOut;
     }
 
     /**

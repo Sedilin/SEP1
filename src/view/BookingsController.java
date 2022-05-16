@@ -65,11 +65,13 @@ public class BookingsController {
             Hotel hotel = modelManager.load();
             if (!(firstNameField.getText().equals("")) && !(lastNameField.getText().equals("")) && !(phoneNumberField.getText().equals(""))) {
                 Guest guest = new Guest(firstNameField.getText(), lastNameField.getText(), phoneNumberField.getText());
-
+                    hotel.getAllBookings().getLastBooking().addGuest(guest);
                     hotel.addGuest(guest);
+                    System.out.println(modelManager.load().getAllBookings());
                     modelManager.save(hotel);
+                    viewHandler.openView("MainPage");
+                    viewHandler.getMainPageController().reset();
             }
-            viewHandler.openView("MainPage");
         }
         else if (event.getSource() == newGuestButton)
         {

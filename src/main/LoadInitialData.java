@@ -21,7 +21,7 @@ public class LoadInitialData {
          * @param capacity the capacity of the room.
          */
         BookingModelManager bookingModelManager = new BookingModelManager("hotel.bin");
-        Hotel hotel = bookingModelManager.load();
+        Hotel hotel = new Hotel();
         hotel.getAllRooms().addRoom(new Room(305, false, "Single Bedroom Suite", 259.00, 2));
         hotel.getAllRooms().addRoom(new Room(304, false, "Single Bedroom Suite", 259.00, 2));
         hotel.getAllRooms().addRoom(new Room(303, false, "Single Bedroom Suite", 259.00, 2));
@@ -103,16 +103,16 @@ public class LoadInitialData {
          * @param Price the room price per night.
          * @param capacity the capacity of the room.
          */
-        hotel.getAllRooms().addRoom(new Room(110,false, "Single Room", 129.00, 2));
-        hotel.getAllRooms().addRoom(new Room(109,false, "Single Room", 129.00, 2));
-        hotel.getAllRooms().addRoom(new Room(108,false, "Single Room", 129.00, 2));
-        hotel.getAllRooms().addRoom(new Room(107,false, "Single Room", 129.00, 2));
-        hotel.getAllRooms().addRoom(new Room(106,false, "Single Room", 129.00, 2));
-        hotel.getAllRooms().addRoom(new Room(105,false, "Single Room", 129.00, 2));
-        hotel.getAllRooms().addRoom(new Room(104,false, "Single Room", 129.00, 2));
-        hotel.getAllRooms().addRoom(new Room(103,false, "Single Room", 129.00, 2));
-        hotel.getAllRooms().addRoom(new Room(102,false, "Single Room", 129.00, 2));
-        hotel.getAllRooms().addRoom(new Room(101,false, "Single Room", 129.00, 2));
+        hotel.getAllRooms().addRoom(new Room(110,false, "Single Room", 129.00, 1));
+        hotel.getAllRooms().addRoom(new Room(109,false, "Single Room", 129.00, 1));
+        hotel.getAllRooms().addRoom(new Room(108,false, "Single Room", 129.00, 1));
+        hotel.getAllRooms().addRoom(new Room(107,false, "Single Room", 129.00, 1));
+        hotel.getAllRooms().addRoom(new Room(106,false, "Single Room", 129.00, 1));
+        hotel.getAllRooms().addRoom(new Room(105,false, "Single Room", 129.00, 1));
+        hotel.getAllRooms().addRoom(new Room(104,false, "Single Room", 129.00, 1));
+        hotel.getAllRooms().addRoom(new Room(103,false, "Single Room", 129.00, 1));
+        hotel.getAllRooms().addRoom(new Room(102,false, "Single Room", 129.00, 1));
+        hotel.getAllRooms().addRoom(new Room(101,false, "Single Room", 129.00, 1));
         bookingModelManager.save(hotel);
     }
 }

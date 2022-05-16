@@ -29,6 +29,12 @@ public class GuestList implements Serializable
     if (!guests.contains(guest))
     guests.add(guest);
   }
+  public void addGuests(GuestList newGuests)
+  {
+    for (int i = 0; i < newGuests.size(); i++) {
+      guests.add(newGuests.getGuest(i));
+    }
+  }
 
   /**
    * Removes a guest from the array list of guests
