@@ -63,7 +63,7 @@ public class BookingsController {
     public void handleForBookings(ActionEvent event) {
         if (event.getSource() == bookButton) {
             Hotel hotel = modelManager.load();
-            if (!(firstNameField.getText().equals("")) && !(lastNameField.getText().equals("")) && !(phoneNumberField.getText().equals(""))) {
+            if ((!(firstNameField.getText().equals("Guest")) && !(lastNameField.getText().equals("Not")) && !(phoneNumberField.getText().equals("Found"))) && (!(firstNameField.getText().equals("")) && !(lastNameField.getText().equals("")) && !(phoneNumberField.getText().equals("")))) {
                 Guest guest = new Guest(firstNameField.getText(), lastNameField.getText(), phoneNumberField.getText());
                     hotel.getAllBookings().getLastBooking().addGuest(guest);
                     hotel.addGuest(guest);
