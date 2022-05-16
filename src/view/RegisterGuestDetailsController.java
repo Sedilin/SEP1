@@ -37,6 +37,7 @@ public class RegisterGuestDetailsController
   //taking info from this classes
   public void init(ViewHandler viewHandler, BookingModelManager modelManager, Region root)
   {
+    modelManager = new BookingModelManager("hotel.bin");
     this.viewHandler = viewHandler;
     this.modelManager = modelManager;
     this.root = root;

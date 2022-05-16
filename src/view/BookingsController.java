@@ -2,10 +2,7 @@ package view;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Region;
 import model.*;
@@ -69,8 +66,12 @@ public class BookingsController {
                     hotel.addGuest(guest);
                     System.out.println(modelManager.load().getAllBookings());
                     modelManager.save(hotel);
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION, "The guest has been created.");
+                    alert.setHeaderText(null);
+                    alert.showAndWait();
                     viewHandler.openView("MainPage");
                     viewHandler.getMainPageController().reset();
+
             }
         }
         else if (event.getSource() == newGuestButton)
@@ -89,14 +90,14 @@ public class BookingsController {
         }
     }
 
-    public void addGuestDetailsToTextField()
+    private void addGuestDetailsToTextField()
     {
         Guest guest = guestListTable.getSelectionModel().getSelectedItem();
         firstNameField.setText(guest.getFirstName());
         lastNameField.setText(guest.getLastName());
         phoneNumberField.setText(guest.getPhoneNumber());
     }
-    public void updateGuestTable()
+    private void updateGuestTable()
     {
         guestListTable.getItems().clear();
         firstNameField.setDisable(true);
