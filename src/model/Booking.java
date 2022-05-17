@@ -31,7 +31,7 @@ public class Booking implements Serializable
         this.arrivalDate = arrivalDate;
         this.departureDate = departureDate;
         this.room = room;
-        totalPrice = arrivalDate.daysInBetween(departureDate) * room.getPrice();
+        totalPrice = room.getPrice();
         isCheckedIn = false;
         isCheckedOut = false;
     }
@@ -171,7 +171,7 @@ public class Booking implements Serializable
      */
     public double getTotalPrice()
     {
-        return totalPrice;
+        return totalPrice * arrivalDate.daysInBetween(departureDate);
     }
 
     /**

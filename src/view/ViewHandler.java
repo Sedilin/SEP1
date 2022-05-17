@@ -14,6 +14,7 @@ public class ViewHandler {
     private MainPageController mainPageController;
     private BookingsController bookingsController;
     private RegisterGuestDetailsController registerGuestDetailsController;
+    private CheckOut checkOut;
 
     private BookingModelManager modelManager;
 
@@ -40,6 +41,9 @@ public class ViewHandler {
                 break;
             case "Bookings":
                 root = loadBookings();
+                break;
+            case "CheckOut":
+                root = loadCheckOut();
                 break;
         }
         scene.setRoot(root);
@@ -111,6 +115,25 @@ public class ViewHandler {
             registerGuestDetailsController.reset();
         }
         return registerGuestDetailsController.getRoot();
+    }
+    private Region loadCheckOut()
+    {
+        if (checkOut == null) {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("CheckOut.fxml"));
+                Region root = loader.load();
+                checkOut = loader.getController();
+                checkOut.init(this, modelManager, root);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else
+        {
+            checkOut.reset();
+        }
+        return checkOut.getRoot();
     }
     public MainPageController getMainPageController()
     {

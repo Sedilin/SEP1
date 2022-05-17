@@ -61,6 +61,7 @@ public class MainPageController
   @FXML TableColumn<Booking, Date> arrivalDateColumn2;
   @FXML TableColumn<Booking, Date> departureDateColumn2;
   @FXML TableColumn<Booking, Integer> roomNoColumn3;
+  @FXML Button payAndCheckOut;
 
   public void init(ViewHandler viewHandler, BookingModelManager modelManager,
       Region root)
@@ -267,6 +268,11 @@ public class MainPageController
     roomsListTable.getItems().clear();
     updateRoomsArea();
     updateRoomTypes();
+  }
+
+  public void payAndCheckOutButton()
+  {
+    viewHandler.openView("CheckOut");
   }
 
   public void handleActions(ActionEvent event)

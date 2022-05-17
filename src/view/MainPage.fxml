@@ -151,7 +151,7 @@
                            </children>
                         </AnchorPane>
                         <TextField fx:id="searchFieldCheckOut" layoutX="388.0" layoutY="32.0" onAction="#searchCheckedOutBookings" prefHeight="26.0" prefWidth="159.0" promptText="Search" />
-                        <Button layoutX="247.0" layoutY="310.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="105.0" text="Check Out">
+                        <Button fx:id="payAndCheckOut" layoutX="247.0" layoutY="310.0" mnemonicParsing="false" onAction="#payAndCheckOutButton" prefHeight="33.0" prefWidth="105.0" text="Check Out">
                            <font>
                               <Font size="14.0" />
                            </font>

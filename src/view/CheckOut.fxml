@@ -6,11 +6,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CheckOut">
    <children>
       <Button fx:id="payCheckOut" layoutX="253.0" layoutY="312.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="112.0" text="Pay &amp; Check Out" />
-      <TextField fx:id="discount" layoutX="55.0" layoutY="219.0" promptText="Discount" />
+      <TextField fx:id="discount" layoutX="55.0" layoutY="219.0" onAction="#discount" promptText="Discount" />
       <Text fx:id="guestName" layoutX="55.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guest name" />
       <Text fx:id="phoneNumber" layoutX="55.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number" />
       <Text fx:id="arrivalDate" layoutX="55.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arrival " />
@@ -21,6 +20,6 @@
          </font>
       </Text>
       <Text fx:id="totalPrice" layoutX="513.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" />
-      <Button layoutX="437.0" layoutY="42.0" mnemonicParsing="false" text="Import guest details" />
+      <Button fx:id="importButton" layoutX="437.0" layoutY="42.0" mnemonicParsing="false" onAction="#importButton" text="Import guest details" />
    </children>
 </AnchorPane>

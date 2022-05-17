@@ -182,11 +182,16 @@ public class Date implements Serializable
   {
     Date arrivalDate = new Date(day, month, year);
     int count = 0;
-    do {
-      arrivalDate.nextDay();
+
+    for (Date i = arrivalDate; !i.equals(departureDate); i.nextDay())
+    {
       count++;
     }
-    while (arrivalDate.equals(departureDate));
+//    do {
+//      count++;
+//      arrivalDate.nextDay();
+//    }
+//    while (!(arrivalDate.equals(departureDate)));
       return count;
   }
   /**
@@ -224,7 +229,7 @@ public class Date implements Serializable
     {
       return false;
     }
-    return year ==other.year && month == other.month && day == other.day;
+    return year == other.year && month == other.month && day == other.day;
   }
 
   /**
