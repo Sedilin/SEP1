@@ -1,6 +1,5 @@
 package model;
 
-import java.awt.print.Book;
 import java.io.Serializable;
 import java.util.ArrayList;
 /**
@@ -95,13 +94,14 @@ public class BookingList implements Serializable
         BookingList checkedInBookings = new BookingList();
         for (int i = 0; i < bookings.size(); i++)
         {
-            if(bookings.get(i).isCheckedIn())
+            if (bookings.get(i).isCheckedIn())
             {
                 checkedInBookings.addBooking(bookings.get(i));
             }
         }
         return checkedInBookings;
     }
+
 
     public Booking getBookingByIndex(int index)  {
         return bookings.get(index);
