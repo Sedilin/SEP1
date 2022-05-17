@@ -54,12 +54,21 @@ public class MainPageController {
     MenuItem exitMenuItem;
     @FXML
     MenuItem helpMenuItem;
+    //booking list table
     @FXML TableView<Booking> bookingListTable;
     @FXML TableColumn<Booking, String> guestColumn;
     @FXML TableColumn<Booking, String> phoneNoColumn;
     @FXML TableColumn<Booking, Date>   arrivalDateColumn;
     @FXML TableColumn<Booking, Date>   departureDateColumn;
     @FXML TableColumn<Booking, Integer>   roomNoColumn2;
+    //check out table
+    @FXML TableView<Booking> checkoutListTable;
+    @FXML TableColumn<Booking, String> guestColumn2;
+    @FXML TableColumn<Booking, String> phoneNoColumn2;
+    @FXML TableColumn<Booking, Date>   arrivalDateColumn2;
+    @FXML TableColumn<Booking, Date>   departureDateColumn2;
+    @FXML TableColumn<Booking, Integer>   roomNoColumn3;
+
 
     public void init(ViewHandler viewHandler, BookingModelManager modelManager, Region root) {
         this.viewHandler = viewHandler;
@@ -86,10 +95,18 @@ public class MainPageController {
         departureDateColumn.setCellValueFactory(new PropertyValueFactory<Booking, Date>("departureDate"));
         roomNoColumn2.setCellValueFactory(new PropertyValueFactory<Booking, Integer>("roomNumber"));
         //Check out table columns
+        guestColumn2.setCellValueFactory(new PropertyValueFactory<Booking, String>("guestName"));
+        phoneNoColumn2.setCellValueFactory(new PropertyValueFactory<Booking, String>("phoneNumber"));
+        arrivalDateColumn2.setCellValueFactory(new PropertyValueFactory<Booking, Date>("arrivalDate"));
+        departureDateColumn2.setCellValueFactory(new PropertyValueFactory<Booking, Date>("departureDate"));
+        roomNoColumn3.setCellValueFactory(new PropertyValueFactory<Booking, Integer>("roomNumber"));
 
         updateRoomsArea();
         updateRoomTypes();
+
         updateBookingArea();
+
+        updateCheckOutArea();
 
 
     }
@@ -123,6 +140,14 @@ public class MainPageController {
         BookingList bookings = modelManager.load().getAllBookings();
         for (int i=0; i< bookings.size(); i++) {
             bookingListTable.getItems().add(bookings.getBookingByIndex(i));
+        }
+    }
+    public void updateCheckOutArea() {
+        checkoutListTable.getItems().clear();
+        BookingList checkIn = modelManager.load().getAllBookings().getCheckedInBookings();
+        for (int i = 0; i < checkIn.size(); i++)
+        {
+            checkoutListTable.getItems().add(checkIn.getBookingByIndex(i));
         }
     }
     public void checkInButton(ActionEvent event) {
