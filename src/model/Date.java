@@ -152,6 +152,21 @@ public class Date implements Serializable
     return new Date(day,month,year);
   }
 
+  public int getTodayDay()
+  {
+    return today().getDay();
+  }
+
+  public int getTodayMonth()
+  {
+    return today().getMonth();
+  }
+
+  public int getTodayYear()
+  {
+    return today().getYear();
+  }
+
   /**
    * Increases the day of date object with one day
    */
