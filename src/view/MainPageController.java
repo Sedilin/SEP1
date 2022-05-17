@@ -33,7 +33,8 @@ public class MainPageController
    * @version 1.0
    */
 
-  @FXML private TextField searchField;
+  @FXML private TextField searchFieldCheckOut;
+  @FXML private TextField searchFieldBookings;
   @FXML private TableView<Room> roomsListTable;
   @FXML private TableColumn<Room, Integer> roomNoColumn;
   @FXML private TableColumn<Room, Integer> priceColumn;
@@ -160,23 +161,32 @@ public class MainPageController
     }
   }
 
-  public void searchBooking(ActionEvent event) {
-    //Booking searchBooking =
-    if (modelManager.load().findBookingsByPhoneNumber(searchField.getText()) != null)
+  public void searchCheckedOutBookings(ActionEvent event) {
+    if (modelManager.load().findBookingsByPhoneNumber(searchFieldCheckOut.getText()) != null)
     {
-      BookingList searchBooking = modelManager.load().findBookingsByPhoneNumber(searchField.getText());
+      BookingList searchBooking = modelManager.load().findBookingsByPhoneNumber(searchFieldCheckOut.getText());
       checkoutListTable.getItems().clear();
       for (int i=0; i<searchBooking.size(); i++) {
-        checkoutListTable.getItems().add(searchBooking.getBookingByIndex(i));
+        checkoutListTable.getItems().add(searchBooking.getCheckedInBookings().getBookingByIndex(i));
       }
-
     }
   }
+
+    public void searchBookings(ActionEvent event) {
+        if (modelManager.load().findBookingsByPhoneNumber(searchFieldBookings.getText()) != null)
+        {
+            BookingList searchBooking = modelManager.load().findBookingsByPhoneNumber(searchFieldBookings.getText());
+            bookingListTable.getItems().clear();
+            for (int i=0; i<searchBooking.size(); i++) {
+                bookingListTable.getItems().add(searchBooking.getNotCheckedInBookings().getBookingByIndex(i));
+            }
+        }
+    }
 
   public void updateBookingArea()
   {
     bookingListTable.getItems().clear();
-    BookingList bookings = modelManager.load().getAllBookings();
+    BookingList bookings = modelManager.load().getAllBookings().getNotCheckedInBookings();
     for (int i = 0; i < bookings.size(); i++)
     {
       bookingListTable.getItems().add(bookings.getBookingByIndex(i));

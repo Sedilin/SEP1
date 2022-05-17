@@ -101,6 +101,19 @@ public class BookingList implements Serializable
         }
         return checkedInBookings;
     }
+    public BookingList getNotCheckedInBookings()
+    {
+        BookingList notCheckedInBookings = new BookingList();
+        for (int i = 0; i < bookings.size(); i++)
+        {
+            if (!(bookings.get(i).isCheckedIn()))
+            {
+                notCheckedInBookings.addBooking(bookings.get(i));
+            }
+        }
+        return notCheckedInBookings;
+    }
+
 
 
     public Booking getBookingByIndex(int index)  {
