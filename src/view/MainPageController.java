@@ -79,11 +79,13 @@ public class MainPageController {
         priceColumn.setPrefWidth(90);
         capacityColumn.setCellValueFactory(new PropertyValueFactory<Room, Integer>("capacity"));
         capacityColumn.setPrefWidth(72);
+        //Booking list table columns
         guestColumn.setCellValueFactory(new PropertyValueFactory<Booking, String>("guestName"));
         phoneNoColumn.setCellValueFactory(new PropertyValueFactory<Booking, String>("phoneNumber"));
         arrivalDateColumn.setCellValueFactory(new PropertyValueFactory<Booking, Date>("arrivalDate"));
         departureDateColumn.setCellValueFactory(new PropertyValueFactory<Booking, Date>("departureDate"));
         roomNoColumn2.setCellValueFactory(new PropertyValueFactory<Booking, Integer>("roomNumber"));
+        //Check out table columns
 
         updateRoomsArea();
         updateRoomTypes();
