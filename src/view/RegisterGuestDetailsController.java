@@ -7,8 +7,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 import javafx.scene.text.Text;
-import model.BookingModelManager;
-import model.Guest;
+import model.*;
 
 public class RegisterGuestDetailsController
 {
@@ -30,8 +29,9 @@ public class RegisterGuestDetailsController
   @FXML private TextField birthday;
   @FXML private DatePicker arrival;
   @FXML private DatePicker departure;
-  @FXML private Text saveButton;
+  @FXML private Button saveButton;
   @FXML private Button checkIn;
+  @FXML private Button importGuestDetails;
 
   private Guest currentGuest;
 
@@ -61,12 +61,39 @@ public class RegisterGuestDetailsController
   {
     if (e.getSource() == checkIn)
     {
-
+      Hotel hotel = modelManager.load();
+      hotel.getAllBookings().getBooking(viewHandler.getMainPageController().bookingListTable.getSelectionModel().getSelectedItem()).setCheckedIn();
+      modelManager.save(hotel);
       viewHandler.openView("MainPage");
     }
     else if (e.getSource() == addGuest)
     {
       reset();
+    }
+    else if (e.getSource() == importGuestDetails)
+    {
+      currentGuest = viewHandler.getMainPageController().bookingListTable.getSelectionModel().getSelectedItem().getMainGuestForBooking();
+      firstName.setText(currentGuest.getFirstName());
+      lastName.setText(currentGuest.getLastName());
+      phoneNumber.setText(currentGuest.getPhoneNumber());
+    }
+    else if (e.getSource() == saveButton)
+    {
+      Hotel hotel = modelManager.load();
+      Guest guest = new Guest(firstName.getText(), lastName.getText(), phoneNumber.getText());
+      if (hotel.getAllGuests().getGuest(guest) == null)
+      {
+
+      }
+      guest.setId(ID.getText());
+      guest.setNationality(nationality.getText());
+      guest.setAddress(new Address(postalCode.getText(), city.getText(), country.getText()));
+      String[] tempArr = birthday.getText().split("/");
+      Date birthday = new Date(Integer.parseInt(tempArr[0]),Integer.parseInt(tempArr[1]), Integer.parseInt(tempArr[2]));
+      guest.setBirthday(birthday);
+      hotel.addGuest(guest);
+      modelManager.save(hotel);
+      System.out.println(modelManager.load().getAllGuests());
     }
   }
   private void updateRegisterGuestDetails()

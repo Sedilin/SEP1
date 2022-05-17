@@ -125,10 +125,15 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Text fx:id="saveButton" layoutX="393.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Save" underline="true">
+      <Button fx:id="importGuestDetails" layoutX="318.0" layoutY="39.0" mnemonicParsing="false" onAction="#handleForRegisterGuestDetails" text="Import guest details">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="11.0" />
          </font>
-      </Text>
+      </Button>
+      <Button fx:id="saveButton" layoutX="321.0" layoutY="319.0" mnemonicParsing="false" onAction="#handleForRegisterGuestDetails" prefHeight="33.0" prefWidth="105.0" text="Save">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

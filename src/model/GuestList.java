@@ -28,6 +28,11 @@ public class GuestList implements Serializable
   {
     if (!guests.contains(guest))
     guests.add(guest);
+    else if (guest.getId() != null)
+    {
+      guests.remove(guest);
+      guests.add(guest);
+    }
   }
   public void addGuests(GuestList newGuests)
   {
@@ -54,6 +59,18 @@ public class GuestList implements Serializable
   public Guest getGuest(int index)
   {
     return guests.get(index);
+  }
+
+  public Guest getGuest(Guest guest)
+  {
+    for (int i = 0; i < guests.size(); i++)
+    {
+      if (guests.get(i).equals(guest))
+      {
+        return guest;
+      }
+    }
+    return null;
   }
   /**
    * Gets a Guest object by phone number from list of guests

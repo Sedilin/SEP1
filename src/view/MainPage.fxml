@@ -139,7 +139,7 @@
                         </Text>
                         <AnchorPane layoutX="62.0" layoutY="76.0" prefHeight="210.0" prefWidth="485.0">
                            <children>
-                              <TableView layoutX="-12.0" prefHeight="210.0" prefWidth="495.0">
+                              <TableView fx:id="checkoutListTable" layoutX="-12.0" prefHeight="210.0" prefWidth="495.0">
                                  <columns>
                                     <TableColumn fx:id="guestColumn2" prefWidth="99.0" text="Guest" />
                                     <TableColumn fx:id="phoneNoColumn2" minWidth="0.0" prefWidth="99.0" text="Phone no." />
