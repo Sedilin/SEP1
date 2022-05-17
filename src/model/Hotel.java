@@ -60,7 +60,9 @@ public class Hotel implements Serializable
         }
         return availableRooms;
     }
-
+   public BookingList findBookingsByPhoneNumber(String phoneNumber) {
+        return bookings.findBookingsByPhoneNumber(phoneNumber);
+   }
     /**
      * Adds a booking object to bookings
      * @param booking booking object to be added
