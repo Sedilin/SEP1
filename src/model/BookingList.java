@@ -95,7 +95,10 @@ public class BookingList implements Serializable
         BookingList checkedInBookings = new BookingList();
         for (int i = 0; i < bookings.size(); i++)
         {
-            checkedInBookings.addBooking(bookings.get(i));
+            if(bookings.get(i).isCheckedIn())
+            {
+                checkedInBookings.addBooking(bookings.get(i));
+            }
         }
         return checkedInBookings;
     }
