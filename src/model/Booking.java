@@ -180,7 +180,7 @@ public class Booking implements Serializable
      */
     public String toString()
     {
-        return guestList.toString() +" "+room.getRoomNumber() + " " + arrivalDate + " " + departureDate + " " + isCheckedIn + " " + isCheckedOut;
+        return guestList.toString() +" "+room.getRoomNumber() + " " + arrivalDate + " " + departureDate + " " + isCheckedIn + " " + isCheckedOut + " " + totalPrice;
     }
 
     /**
@@ -195,6 +195,6 @@ public class Booking implements Serializable
             return false;
         }
         return guestList.equals(other.guestList) && room.equals(other.room) && arrivalDate.equals(other.arrivalDate)
-               && departureDate.equals(other.departureDate) && isCheckedOut == other.isCheckedOut && isCheckedIn == other.isCheckedIn;
+               && departureDate.equals(other.departureDate);
     }
 }

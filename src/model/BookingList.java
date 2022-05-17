@@ -34,7 +34,12 @@ public class BookingList implements Serializable
      */
     public void addBooking(Booking booking)
     {
+        if (!bookings.contains(booking))
         bookings.add(booking);
+        else {
+            bookings.remove(booking);
+            bookings.add(booking);
+        }
     }
 
     public Booking getLastBooking()
@@ -94,7 +99,7 @@ public class BookingList implements Serializable
         BookingList checkedInBookings = new BookingList();
         for (int i = 0; i < bookings.size(); i++)
         {
-            if (bookings.get(i).isCheckedIn())
+            if (bookings.get(i).isCheckedIn() && !(bookings.get(i).isCheckedOut()))
             {
                 checkedInBookings.addBooking(bookings.get(i));
             }
@@ -106,7 +111,7 @@ public class BookingList implements Serializable
         BookingList notCheckedInBookings = new BookingList();
         for (int i = 0; i < bookings.size(); i++)
         {
-            if (!(bookings.get(i).isCheckedIn()))
+            if (!(bookings.get(i).isCheckedIn()) && !(bookings.get(i).isCheckedOut()))
             {
                 notCheckedInBookings.addBooking(bookings.get(i));
             }
