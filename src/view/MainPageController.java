@@ -107,7 +107,6 @@ public class MainPageController {
             Hotel hotel = modelManager.load();
             hotel.addBooking(booking);
             modelManager.save(hotel);
-            System.out.println(modelManager.load().getAllBookings());
             viewHandler.openView("Bookings");
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Fill out all fields!");

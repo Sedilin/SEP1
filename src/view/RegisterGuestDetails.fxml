@@ -23,11 +23,11 @@
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <VBox layoutX="37.0" layoutY="95.0" prefHeight="270.0" prefWidth="195.0" spacing="15.0">
          <children>
-            <TextField prefHeight="26.0" prefWidth="159.5" promptText="Name" />
-            <TextField prefHeight="26.0" prefWidth="159.5" promptText="Surname" />
-            <TextField prefHeight="26.0" prefWidth="159.5" promptText="Phone number" />
-            <TextField prefHeight="26.0" prefWidth="159.5" promptText="ID no." />
-            <TextField prefHeight="26.0" prefWidth="159.5" promptText="Nationality" />
+            <TextField fx:id="firstName" prefHeight="26.0" prefWidth="159.5" promptText="First name" />
+            <TextField fx:id="lastName" prefHeight="26.0" prefWidth="159.5" promptText="Last name" />
+            <TextField fx:id="phoneNumber" prefHeight="26.0" prefWidth="159.5" promptText="Phone number" />
+            <TextField fx:id="ID" prefHeight="26.0" prefWidth="159.5" promptText="ID no." />
+            <TextField fx:id="nationality" prefHeight="26.0" prefWidth="159.5" promptText="Nationality" />
          </children>
          <padding>
             <Insets bottom="5.0" top="5.0" />
@@ -45,20 +45,20 @@
                   <Insets right="5.0" />
                </padding>
                <children>
-                  <TextField prefHeight="26.0" prefWidth="112.0" promptText="City" />
-                  <TextField prefHeight="26.0" prefWidth="129.0" promptText="Country" />
+                  <TextField fx:id="city" prefHeight="26.0" prefWidth="112.0" promptText="City" />
+                  <TextField fx:id="country" prefHeight="26.0" prefWidth="129.0" promptText="Country" />
                </children>
             </HBox>
             <HBox prefHeight="34.0" prefWidth="221.0">
                <children>
                   <HBox prefHeight="34.0" prefWidth="237.0" spacing="15.0">
                      <children>
-                        <TextField prefHeight="26.0" prefWidth="105.0" promptText="Postal code">
+                        <TextField fx:id="postalCode" prefHeight="26.0" prefWidth="105.0" promptText="Postal code">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
                         </TextField>
-                        <CheckBox mnemonicParsing="false" prefHeight="18.0" prefWidth="111.0" text="Smoking room">
+                        <CheckBox fx:id="smoking" mnemonicParsing="false" prefHeight="18.0" prefWidth="111.0" text="Smoking room">
                            <padding>
                               <Insets top="3.0" />
                            </padding>
@@ -74,7 +74,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Text>
-                  <TextField maxWidth="170.0" prefHeight="26.0" prefWidth="170.0" promptText="DD/MM/YYYY">
+                  <TextField fx:id="birthday" maxWidth="170.0" prefHeight="26.0" prefWidth="170.0" promptText="DD/MM/YYYY">
                      <HBox.margin>
                         <Insets left="40.0" top="6.0" />
                      </HBox.margin>
@@ -88,7 +88,7 @@
                         <Insets top="5.0" />
                      </HBox.margin>
                   </Text>
-                  <DatePicker layoutX="80.0" prefHeight="26.0" prefWidth="170.0" />
+                  <DatePicker fx:id="arrival" layoutX="80.0" prefHeight="26.0" prefWidth="170.0" />
                </children>
                <padding>
                   <Insets top="5.0" />
@@ -101,7 +101,7 @@
                         <Insets top="5.0" />
                      </HBox.margin>
                   </Text>
-                  <DatePicker prefHeight="26.0" prefWidth="170.0">
+                  <DatePicker fx:id="departure" prefHeight="26.0" prefWidth="170.0">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -116,16 +116,16 @@
             </HBox>
          </children>
       </VBox>
-      <Button layoutX="471.0" layoutY="40.0" mnemonicParsing="false" text="Add new guest">
+      <Button fx:id="addGuest" layoutX="471.0" layoutY="40.0" mnemonicParsing="false" onAction="#handleForRegisterGuestDetails" text="Add new guest">
          <font>
             <Font name="System Bold" size="11.0" />
          </font></Button>
-      <Button layoutX="456.0" layoutY="319.0" mnemonicParsing="false" onAction="#button" prefHeight="33.0" prefWidth="105.0" text="Check In">
+      <Button fx:id="checkIn" layoutX="456.0" layoutY="319.0" mnemonicParsing="false" onAction="#handleForRegisterGuestDetails" prefHeight="33.0" prefWidth="105.0" text="Check In">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Text layoutX="393.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Save" underline="true">
+      <Text fx:id="saveButton" layoutX="393.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Save" underline="true">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

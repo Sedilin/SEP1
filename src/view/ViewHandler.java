@@ -106,6 +106,10 @@ public class ViewHandler {
                 e.printStackTrace();
             }
         }
+        else
+        {
+            registerGuestDetailsController.reset();
+        }
         return registerGuestDetailsController.getRoot();
     }
     public MainPageController getMainPageController()
