@@ -141,11 +141,11 @@
                            <children>
                               <TableView layoutX="-12.0" prefHeight="210.0" prefWidth="495.0">
                                  <columns>
-                                    <TableColumn prefWidth="99.0" text="Guest" />
-                                    <TableColumn minWidth="0.0" prefWidth="99.0" text="Phone no." />
-                                    <TableColumn maxWidth="400.0" prefWidth="99.0" text="Arrival " />
-                                    <TableColumn prefWidth="99.0" text="Departure" />
-                                    <TableColumn prefWidth="99.0" text="Room no." />
+                                    <TableColumn fx:id="guestColumn2" prefWidth="99.0" text="Guest" />
+                                    <TableColumn fx:id="phoneNoColumn2" minWidth="0.0" prefWidth="99.0" text="Phone no." />
+                                    <TableColumn fx:id="arrivalDateColumn2" maxWidth="400.0" prefWidth="99.0" text="Arrival " />
+                                    <TableColumn fx:id="departureDateColumn2" prefWidth="99.0" text="Departure" />
+                                    <TableColumn fx:id="roomNoColumn3" prefWidth="99.0" text="Room no." />
                                  </columns>
                               </TableView>
                            </children>
