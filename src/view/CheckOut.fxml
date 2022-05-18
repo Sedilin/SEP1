@@ -10,66 +10,70 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CheckOut">
    <children>
-      <Button fx:id="payCheckOut" layoutX="255.0" layoutY="322.0" mnemonicParsing="false" onAction="#payAndCheckInButton" prefHeight="42.0" prefWidth="112.0" text="Pay &amp; Check Out" />
-      <TextField fx:id="discount" layoutX="386.0" layoutY="236.0" onAction="#discount" prefHeight="26.0" prefWidth="165.0" promptText="Discount" />
+      <Button fx:id="payCheckOut" layoutX="255.0" layoutY="322.0" mnemonicParsing="false" onAction="#payAndCheckInButton" opacity="0.9" prefHeight="42.0" prefWidth="112.0" style="-fx-background-color: rgb(158, 122, 32)rgb(158, 122, 32) rgb(158, 122, 32)rgb(158, 122, 32);" text="Pay &amp; Check Out" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <TextField fx:id="discount" layoutX="387.0" layoutY="260.0" onAction="#discount" prefHeight="26.0" prefWidth="165.0" promptText="Discount" style="-fx-border-color: #BEA888#BEA888 #BEA888#BEA888; -fx-border-radius: 3;" />
       <VBox layoutX="212.0" layoutY="99.0" prefHeight="130.0" prefWidth="100.0" spacing="20.0">
          <children>
-            <Text fx:id="guestName" strokeType="OUTSIDE" strokeWidth="0.0" text="guest name">
+            <Text fx:id="guestName" fill="#55433c" strokeType="OUTSIDE" strokeWidth="0.0">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text fx:id="phoneNumber" strokeType="OUTSIDE" strokeWidth="0.0" text="phone number">
+            <Text fx:id="phoneNumber" fill="#55433c" strokeType="OUTSIDE" strokeWidth="0.0">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text fx:id="arrivalDate" strokeType="OUTSIDE" strokeWidth="0.0" text="arrival ">
+            <Text fx:id="arrivalDate" fill="#55433c" strokeType="OUTSIDE" strokeWidth="0.0">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Text>
-            <Text fx:id="departureDate" strokeType="OUTSIDE" strokeWidth="0.0" text="departure">
+            <Text fx:id="departureDate" fill="#55433c" strokeType="OUTSIDE" strokeWidth="0.0">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
          </children>
       </VBox>
-      <HBox layoutX="387.0" layoutY="275.0" prefHeight="28.0" prefWidth="164.0" spacing="25.0">
+      <HBox layoutX="388.0" layoutY="294.0" prefHeight="28.0" prefWidth="164.0" spacing="25.0">
          <children>
-            <Text fx:id="guestName1111" strokeType="OUTSIDE" strokeWidth="0.0" text="Total payment:">
+            <Text fx:id="guestName1111" fill="#55433c" strokeType="OUTSIDE" strokeWidth="0.0" text="Total payment:">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Text>
-            <Text fx:id="totalPrice" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
+            <Text fx:id="totalPrice" fill="#55433c" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
          </children>
       </HBox>
-      <Button fx:id="importButton" layoutX="432.0" layoutY="51.0" mnemonicParsing="false" onAction="#importButton" prefHeight="26.0" prefWidth="126.0" text="Import guest details" />
+      <Button fx:id="importButton" layoutX="432.0" layoutY="51.0" mnemonicParsing="false" onAction="#importButton" opacity="0.77" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: rgb(158, 122, 32)rgb(158, 122, 32) rgb(158, 122, 32)rgb(158, 122, 32);" text="Import guest details" textFill="WHITE" />
       <VBox layoutX="71.0" layoutY="101.0" prefHeight="129.0" prefWidth="108.0" spacing="20.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Guest name:">
+            <Text fill="#55433c" strokeType="OUTSIDE" strokeWidth="0.0" text="Guest name:">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number:">
+            <Text fill="#55433c" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number:">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Arrival date:">
+            <Text fill="#55433c" strokeType="OUTSIDE" strokeWidth="0.0" text="Arrival date:">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Departure date:" />
+            <Text fill="#55433c" strokeType="OUTSIDE" strokeWidth="0.0" text="Departure date:" />
          </children>
       </VBox>
+      <TextField layoutX="387.0" layoutY="229.0" prefHeight="26.0" prefWidth="165.0" promptText="Cleaning fee" style="-fx-border-color: #BEA888#BEA888 #BEA888#BEA888; -fx-border-radius: 3;" />
    </children>
 </AnchorPane>
