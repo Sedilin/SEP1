@@ -61,16 +61,30 @@ public class BookingsController {
         if (event.getSource() == bookButton) {
             Hotel hotel = modelManager.load();
             if ((!(firstNameField.getText().equals("Guest")) && !(lastNameField.getText().equals("Not")) && !(phoneNumberField.getText().equals("Found"))) && (!(firstNameField.getText().equals("")) && !(lastNameField.getText().equals("")) && !(phoneNumberField.getText().equals("")))) {
-                Guest guest = new Guest(firstNameField.getText(), lastNameField.getText(), phoneNumberField.getText());
+                if (guestListTable.getSelectionModel().getSelectedItem() != null)
+                {
+                    Guest guest = guestListTable.getSelectionModel().getSelectedItem();
                     hotel.getAllBookings().getLastBooking().addGuest(guest);
-                    hotel.addGuest(guest);
-                    System.out.println(modelManager.load().getAllBookings());
                     modelManager.save(hotel);
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION, "The guest has been created.");
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION, "The booking has been created.");
                     alert.setHeaderText(null);
                     alert.showAndWait();
                     viewHandler.openView("MainPage");
                     viewHandler.getMainPageController().reset();
+                }
+                else
+                {
+                    Guest guest = new Guest(firstNameField.getText(), lastNameField.getText(), phoneNumberField.getText());
+                    hotel.getAllBookings().getLastBooking().addGuest(guest);
+                    hotel.addGuest(guest);
+                    System.out.println(modelManager.load().getAllBookings());
+                    modelManager.save(hotel);
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION, "The booking has been created.");
+                    alert.setHeaderText(null);
+                    alert.showAndWait();
+                    viewHandler.openView("MainPage");
+                    viewHandler.getMainPageController().reset();
+                }
 
             }
         }

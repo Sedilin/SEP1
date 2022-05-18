@@ -76,22 +76,26 @@ public class RegisterGuestDetailsController
       firstName.setText(currentGuest.getFirstName());
       lastName.setText(currentGuest.getLastName());
       phoneNumber.setText(currentGuest.getPhoneNumber());
+      if (currentGuest.getId() != null)
+      {
+        ID.setText(currentGuest.getId());
+        nationality.setText(currentGuest.getNationality());
+        city.setText(currentGuest.getAddress().getCity());
+        country.setText(currentGuest.getAddress().getCountry());
+        postalCode.setText(currentGuest.getAddress().getPostcode());
+        birthday.setText(currentGuest.getBirthday().toString());
+      }
     }
     else if (e.getSource() == saveButton)
     {
       Hotel hotel = modelManager.load();
-      Guest guest = new Guest(firstName.getText(), lastName.getText(), phoneNumber.getText());
-      if (hotel.getAllGuests().getGuest(guest) == null)
-      {
-
-      }
-      guest.setId(ID.getText());
-      guest.setNationality(nationality.getText());
-      guest.setAddress(new Address(postalCode.getText(), city.getText(), country.getText()));
+      currentGuest.setId(ID.getText());
+      currentGuest.setNationality(nationality.getText());
+      currentGuest.setAddress(new Address(postalCode.getText(), city.getText(), country.getText()));
       String[] tempArr = birthday.getText().split("/");
       Date birthday = new Date(Integer.parseInt(tempArr[0]),Integer.parseInt(tempArr[1]), Integer.parseInt(tempArr[2]));
-      guest.setBirthday(birthday);
-      hotel.addGuest(guest);
+      currentGuest.setBirthday(birthday);
+      hotel.addGuest(currentGuest);
       modelManager.save(hotel);
       System.out.println(modelManager.load().getAllGuests());
     }
