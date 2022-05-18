@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -16,23 +15,40 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="600.0" userData="Overlook Hotel" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.BookingsController">
    <children>
-      <VBox fillWidth="false" layoutX="25.0" layoutY="58.0" prefHeight="341.0" prefWidth="331.0">
+      <MenuBar layoutY="1.0" prefHeight="27.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem mnemonicParsing="false" text="Load" />
+                  <MenuItem mnemonicParsing="false" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Info">
+            <items>
+              <MenuItem mnemonicParsing="false" text="All bookings" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <VBox fillWidth="false" layoutX="25.0" layoutY="58.0" prefHeight="341.0" prefWidth="331.0" spacing="20.0">
          <children>
             <TextField fx:id="searchField" focusTraversable="false" onAction="#handleForBookings" promptText="Search">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin></TextField>
-            <ScrollPane prefHeight="247.0" prefWidth="357.0">
-               <content>
-                  <TableView fx:id="guestListTable" onMouseClicked="#addGuestDetailsToTextField" prefHeight="245.0" prefWidth="330.0">
-                    <columns>
-                      <TableColumn fx:id="firstNameColumn" prefWidth="97.0" text="First name" />
-                      <TableColumn fx:id="lastNameColumn" prefWidth="102.0" text="Last name" />
-                        <TableColumn fx:id="phoneNumberColumn" prefWidth="131.0" text="Phone no." />
-                    </columns>
-                  </TableView>
-               </content>
-            </ScrollPane>
+            <TableView fx:id="guestListTable" onMouseClicked="#addGuestDetailsToTextField" prefHeight="245.0" prefWidth="330.0">
+              <columns>
+                <TableColumn fx:id="firstNameColumn" prefWidth="97.0" text="First name" />
+                <TableColumn fx:id="lastNameColumn" prefWidth="102.0" text="Last name" />
+                  <TableColumn fx:id="phoneNumberColumn" prefWidth="131.0" text="Phone no." />
+              </columns>
+            </TableView>
             <Button fx:id="newGuestButton" mnemonicParsing="false" onAction="#handleForBookings" prefHeight="27.0" prefWidth="65.0" text="New guest" textAlignment="CENTER">
                <VBox.margin>
                   <Insets top="10.0" />
@@ -43,7 +59,7 @@
             </Button>
          </children>
       </VBox>
-      <VBox fillWidth="false" layoutX="361.0" layoutY="55.0" prefHeight="317.0" prefWidth="210.0">
+      <VBox fillWidth="false" layoutX="361.0" layoutY="59.0" prefHeight="295.0" prefWidth="214.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Booking">
                <font>
@@ -78,26 +94,5 @@
             </Button>
          </children>
       </VBox>
-      <MenuBar layoutY="1.0" prefHeight="27.0" prefWidth="600.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Save" />
-                  <MenuItem mnemonicParsing="false" text="Load" />
-                  <MenuItem mnemonicParsing="false" text="Exit" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Info">
-            <items>
-              <MenuItem mnemonicParsing="false" text="All bookings" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
    </children>
 </Pane>

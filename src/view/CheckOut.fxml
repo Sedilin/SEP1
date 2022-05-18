@@ -3,23 +3,73 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CheckOut">
    <children>
-      <Button fx:id="payCheckOut" layoutX="253.0" layoutY="312.0" mnemonicParsing="false" onAction="#payAndCheckInButton" prefHeight="42.0" prefWidth="112.0" text="Pay &amp; Check Out" />
-      <TextField fx:id="discount" layoutX="55.0" layoutY="219.0" onAction="#discount" promptText="Discount" />
-      <Text fx:id="guestName" layoutX="55.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guest name" />
-      <Text fx:id="phoneNumber" layoutX="55.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number" />
-      <Text fx:id="arrivalDate" layoutX="55.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arrival " />
-      <Text fx:id="departureDate" layoutX="55.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Departure" />
-      <Text fx:id="guestName1111" layoutX="387.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total payment:">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Text>
-      <Text fx:id="totalPrice" layoutX="513.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total" />
-      <Button fx:id="importButton" layoutX="437.0" layoutY="42.0" mnemonicParsing="false" onAction="#importButton" text="Import guest details" />
+      <Button fx:id="payCheckOut" layoutX="255.0" layoutY="322.0" mnemonicParsing="false" onAction="#payAndCheckInButton" prefHeight="42.0" prefWidth="112.0" text="Pay &amp; Check Out" />
+      <TextField fx:id="discount" layoutX="386.0" layoutY="236.0" onAction="#discount" prefHeight="26.0" prefWidth="165.0" promptText="Discount" />
+      <VBox layoutX="212.0" layoutY="99.0" prefHeight="130.0" prefWidth="100.0" spacing="20.0">
+         <children>
+            <Text fx:id="guestName" strokeType="OUTSIDE" strokeWidth="0.0" text="guest name">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="phoneNumber" strokeType="OUTSIDE" strokeWidth="0.0" text="phone number">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="arrivalDate" strokeType="OUTSIDE" strokeWidth="0.0" text="arrival ">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="departureDate" strokeType="OUTSIDE" strokeWidth="0.0" text="departure">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </VBox>
+      <HBox layoutX="387.0" layoutY="275.0" prefHeight="28.0" prefWidth="164.0" spacing="25.0">
+         <children>
+            <Text fx:id="guestName1111" strokeType="OUTSIDE" strokeWidth="0.0" text="Total payment:">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="totalPrice" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <Button fx:id="importButton" layoutX="432.0" layoutY="51.0" mnemonicParsing="false" onAction="#importButton" prefHeight="26.0" prefWidth="126.0" text="Import guest details" />
+      <VBox layoutX="71.0" layoutY="101.0" prefHeight="129.0" prefWidth="108.0" spacing="20.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Guest name:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Arrival date:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Departure date:" />
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

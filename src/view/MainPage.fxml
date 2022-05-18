@@ -23,9 +23,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Save" />
-                  <MenuItem mnemonicParsing="false" text="Load" />
-                  <MenuItem mnemonicParsing="false" text="Exit" />
+                  <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" onAction="#handleActions" text="Exit" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Info">
@@ -84,7 +82,7 @@
                               </TableView>
                            </children>
                         </AnchorPane>
-                        <Button layoutX="463.0" layoutY="274.0" mnemonicParsing="false" onAction="#bookButton" prefHeight="33.0" prefWidth="105.0" text="Book">
+                        <Button layoutX="463.0" layoutY="280.0" mnemonicParsing="false" onAction="#bookButton" prefHeight="33.0" prefWidth="105.0" text="Book">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -96,30 +94,30 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <AnchorPane layoutX="62.0" layoutY="76.0" prefHeight="235.0" prefWidth="485.0">
-                           <children>
-                              <TableView fx:id="bookingListTable" layoutX="-14.0" layoutY="8.0" prefHeight="210.0" prefWidth="495.0">
-                                 <columns>
-                                    <TableColumn fx:id="guestColumn" prefWidth="119.0" text="Guest" />
-                                    <TableColumn fx:id="phoneNoColumn" minWidth="0.0" prefWidth="98.0" text="Phone no." />
-                                    <TableColumn fx:id="arrivalDateColumn" maxWidth="400.0" prefWidth="101.0" text="Arrival " />
-                                    <TableColumn fx:id="departureDateColumn" prefWidth="97.0" text="Departure" />
-                                    <TableColumn fx:id="roomNoColumn2" prefWidth="79.0" text="Room no." />
-                                 </columns>
-                              </TableView>
-                           </children>
-                        </AnchorPane>
                         <Text layoutX="49.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Find booking" wrappingWidth="111.33541870117188">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Text>
+                        <AnchorPane layoutX="58.0" layoutY="76.0" prefHeight="220.0" prefWidth="492.0">
+                           <children>
+                              <TableView fx:id="bookingListTable" layoutX="-8.0" layoutY="8.0" prefHeight="210.0" prefWidth="495.0">
+                                 <columns>
+                                    <TableColumn fx:id="guestColumn" maxWidth="400.0" prefWidth="100.0" text="Guest" />
+                                    <TableColumn fx:id="phoneNoColumn" maxWidth="400.0" prefWidth="100.0" text="Phone no." />
+                                    <TableColumn fx:id="arrivalDateColumn" maxWidth="400.0" prefWidth="100.0" text="Arrival " />
+                                    <TableColumn fx:id="departureDateColumn" maxWidth="400.0" prefWidth="100.0" text="Departure" />
+                                    <TableColumn fx:id="roomNoColumn2" maxWidth="400.0" prefWidth="100.0" text="Room no." />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
                         <Button layoutX="638.0" layoutY="407.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="112.0" text="Book">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Button>
-                        <TextField fx:id="searchFieldBookings" layoutX="383.0" layoutY="32.0" onAction="#searchBookings" prefHeight="26.0" prefWidth="159.0" promptText="Search" />
+                        <TextField fx:id="searchFieldBookings" layoutX="389.0" layoutY="32.0" onAction="#searchBookings" prefHeight="26.0" prefWidth="159.0" promptText="Search" />
                         <Button layoutX="247.0" layoutY="310.0" mnemonicParsing="false" onAction="#checkInButton" prefHeight="33.0" prefWidth="105.0" text="Check In">
                            <font>
                               <Font size="14.0" />
@@ -132,25 +130,25 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Text layoutX="51.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check out" wrappingWidth="111.33541870117188">
+                        <Text layoutX="51.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check out" wrappingWidth="95.33541870117188">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Text>
-                        <AnchorPane layoutX="62.0" layoutY="76.0" prefHeight="210.0" prefWidth="485.0">
+                        <AnchorPane layoutX="58.0" layoutY="76.0" prefHeight="220.0" prefWidth="489.0">
                            <children>
-                              <TableView fx:id="checkoutListTable" layoutX="-12.0" prefHeight="210.0" prefWidth="495.0">
+                              <TableView fx:id="checkoutListTable" layoutX="-8.0" layoutY="8.0" prefHeight="210.0" prefWidth="495.0">
                                  <columns>
-                                    <TableColumn fx:id="guestColumn2" prefWidth="99.0" text="Guest" />
-                                    <TableColumn fx:id="phoneNoColumn2" minWidth="0.0" prefWidth="99.0" text="Phone no." />
-                                    <TableColumn fx:id="arrivalDateColumn2" maxWidth="400.0" prefWidth="99.0" text="Arrival " />
-                                    <TableColumn fx:id="departureDateColumn2" prefWidth="99.0" text="Departure" />
-                                    <TableColumn fx:id="roomNoColumn3" prefWidth="99.0" text="Room no." />
+                                    <TableColumn fx:id="guestColumn2" maxWidth="400.0" prefWidth="100.0" text="Guest" />
+                                    <TableColumn fx:id="phoneNoColumn2" maxWidth="400.0" prefWidth="100.0" text="Phone no." />
+                                    <TableColumn fx:id="arrivalDateColumn2" maxWidth="400.0" prefWidth="100.0" text="Arrival " />
+                                    <TableColumn fx:id="departureDateColumn2" maxWidth="400.0" prefWidth="100.0" text="Departure" />
+                                    <TableColumn fx:id="roomNoColumn3" maxWidth="400.0" prefWidth="100.0" text="Room no." />
                                  </columns>
                               </TableView>
                            </children>
                         </AnchorPane>
-                        <TextField fx:id="searchFieldCheckOut" layoutX="388.0" layoutY="32.0" onAction="#searchCheckedOutBookings" prefHeight="26.0" prefWidth="159.0" promptText="Search" />
+                        <TextField fx:id="searchFieldCheckOut" layoutX="389.0" layoutY="32.0" onAction="#searchCheckedOutBookings" prefHeight="26.0" prefWidth="159.0" promptText="Search" />
                         <Button fx:id="payAndCheckOut" layoutX="247.0" layoutY="310.0" mnemonicParsing="false" onAction="#payAndCheckOutButton" prefHeight="33.0" prefWidth="105.0" text="Check Out">
                            <font>
                               <Font size="14.0" />
