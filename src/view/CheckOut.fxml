@@ -14,7 +14,7 @@
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
-      <TextField fx:id="discount" layoutX="387.0" layoutY="260.0" onAction="#discount" prefHeight="26.0" prefWidth="165.0" promptText="Discount" style="-fx-border-color: #BEA888#BEA888 #BEA888#BEA888; -fx-border-radius: 3;" />
+      <TextField fx:id="discount" layoutX="387.0" layoutY="260.0" onAction="#discount" opacity="0.8" prefHeight="26.0" prefWidth="165.0" promptText="Discount" style="-fx-border-color: #BEA888#BEA888 #BEA888#BEA888; -fx-border-radius: 3;" />
       <VBox layoutX="212.0" layoutY="99.0" prefHeight="130.0" prefWidth="100.0" spacing="20.0">
          <children>
             <Text fx:id="guestName" fill="#55433c" strokeType="OUTSIDE" strokeWidth="0.0">
@@ -46,7 +46,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Text>
-            <Text fx:id="totalPrice" fill="#55433c" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
+            <Text fx:id="totalPrice" fill="#55433c" strokeType="OUTSIDE" strokeWidth="0.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -71,9 +71,12 @@
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text fill="#55433c" strokeType="OUTSIDE" strokeWidth="0.0" text="Departure date:" />
+            <Text fill="#55433c" strokeType="OUTSIDE" strokeWidth="0.0" text="Departure date:">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
          </children>
       </VBox>
-      <TextField layoutX="387.0" layoutY="229.0" prefHeight="26.0" prefWidth="165.0" promptText="Cleaning fee" style="-fx-border-color: #BEA888#BEA888 #BEA888#BEA888; -fx-border-radius: 3;" />
+      <TextField layoutX="387.0" layoutY="229.0" opacity="0.8" prefHeight="26.0" prefWidth="165.0" promptText="Cleaning fee" style="-fx-border-color: #BEA888#BEA888 #BEA888#BEA888; -fx-border-radius: 3;" />
    </children>
 </AnchorPane>
