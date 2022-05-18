@@ -142,8 +142,6 @@ public class RegisterGuestDetailsController
     country.clear();
     postalCode.clear();
     birthday.clear();
-    arrival.getEditor().clear();
-    departure.getEditor().clear();
     smoking.setSelected(false);
   }
 }
