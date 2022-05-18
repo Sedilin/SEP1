@@ -297,7 +297,8 @@ public class MainPageController
       Alert alert = new Alert(Alert.AlertType.INFORMATION);
       alert.setHeaderText(null);
       alert.setTitle("Help");
-      alert.setContentText("Contact Support");
+      alert.setContentText("Please get in touch and our support team " + "\n" + "will help you solve the issue!" + "\n" +"\n" +
+          "Phone number: 25792799 ");
       alert.showAndWait();
     }
 
