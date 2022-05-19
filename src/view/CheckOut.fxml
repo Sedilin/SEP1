@@ -63,7 +63,7 @@
             </Text>
             <Text fill="#55433c" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone number:">
                <font>
-                  <Font size="14.0" />
+                  <Font name="System Bold" size="14.0" />
                </font>
             </Text>
             <Text fill="#55433c" strokeType="OUTSIDE" strokeWidth="0.0" text="Arrival date:">
@@ -73,7 +73,7 @@
             </Text>
             <Text fill="#55433c" strokeType="OUTSIDE" strokeWidth="0.0" text="Departure date:">
                <font>
-                  <Font size="14.0" />
+                  <Font name="System Bold" size="14.0" />
                </font></Text>
          </children>
       </VBox>
