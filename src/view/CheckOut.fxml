@@ -77,6 +77,6 @@
                </font></Text>
          </children>
       </VBox>
-      <TextField layoutX="387.0" layoutY="229.0" opacity="0.8" prefHeight="26.0" prefWidth="165.0" promptText="Cleaning fee" style="-fx-border-color: #BEA888#BEA888 #BEA888#BEA888; -fx-border-radius: 3;" />
+      <TextField fx:id="cleaningFee" layoutX="387.0" layoutY="229.0" onAction="#cleaningFee" opacity="0.8" prefHeight="26.0" prefWidth="165.0" promptText="Cleaning fee" style="-fx-border-color: #BEA888#BEA888 #BEA888#BEA888; -fx-border-radius: 3;" />
    </children>
 </AnchorPane>

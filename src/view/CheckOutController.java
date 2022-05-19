@@ -89,7 +89,7 @@ public class CheckOutController
 
   public void cleaningFee()
   {
-    if(!cleaningFee.isDisabled())
+    if (cleaningFee.getText() != null)
     {
       currentBooking.applyCleaningFee(parseDouble(cleaningFee.getText()));
       totalPrice.setText(String.valueOf(Math.round(currentBooking.getTotalPrice())));
