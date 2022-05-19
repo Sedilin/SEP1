@@ -108,25 +108,6 @@ public class Guest implements Serializable
     }
 
     /**
-     * Gets a title from the Guest class.
-     * @return the title from the Guest class.
-     */
-    public String getTitle()
-    {
-        return title;
-    }
-
-    /**
-     * Sets the title to the Guest.
-     * @param title the id to set the object to.
-     */
-
-    public void setTitle(String title)
-    {
-        this.title = title;
-    }
-
-    /**
      * Gets a nationality from the Guest class.
      * @return the nationality from the Guest class.
      */
