@@ -1,0 +1,27 @@
+
+.tab-pane .tab-header-area .tab-header-background {
+-fx-background-color:  #D4CFB4;
+;
+
+}
+.tab-label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+ /* .root {
+-fx-focus-color:  #D4CFB4;
+-fx-faint-focus-color:  #D4CFB422;
+} */
+
+.table-view {
+-fx-background-color: white;
+-fx-focus-color: #C8CBB4;
+-fx-text-fill: white;
+-fx-font-weight: bold;
+}
+
+.table-view .column-header .label{
+-fx-text-fill: white;
+-fx-text-style: bold;
+}

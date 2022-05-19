@@ -13,9 +13,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="600.0" userData="Overlook Hotel" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.BookingsController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="600.0" style="-fx-background-color: antiquewhite;" stylesheets="@overlook.css" userData="Overlook Hotel" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.BookingsController">
    <children>
-      <MenuBar layoutY="1.0" prefHeight="27.0" prefWidth="600.0">
+      <MenuBar layoutY="-2.0" prefHeight="28.0" prefWidth="600.0" style="-fx-background-color: #D4CFB4#D4CFB4 #D4CFB4#D4CFB4 #D4CFB4#D4CFB4 #D4CFB4#D4CFB4;" stylesheets="@overlook.css">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -36,32 +36,22 @@
           </Menu>
         </menus>
       </MenuBar>
-      <VBox fillWidth="false" layoutX="25.0" layoutY="58.0" prefHeight="341.0" prefWidth="331.0" spacing="20.0">
+      <TextField fx:id="searchField" focusTraversable="false" layoutX="33.0" layoutY="66.0" onAction="#handleForBookings" promptText="Search" style="-fx-border-color: #BEA888; -fx-border-radius: 3;" />
+      <Button fx:id="newGuestButton" layoutX="202.0" layoutY="66.0" mnemonicParsing="false" onAction="#handleForBookings" opacity="0.77" prefHeight="27.0" prefWidth="78.0" style="-fx-background-color: rgb(158, 122, 32)rgb(158, 122, 32) rgb(158, 122, 32)rgb(158, 122, 32);" styleClass="#ffffff#ffffff" text="New guest" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <TableView fx:id="guestListTable" layoutX="31.0" layoutY="111.0" onMouseClicked="#addGuestDetailsToTextField" prefHeight="245.0" prefWidth="330.0">
+        <columns>
+          <TableColumn fx:id="firstNameColumn" prefWidth="97.0" style="-fx-color: #BEA888;" text="First name" />
+          <TableColumn fx:id="lastNameColumn" prefWidth="102.0" style="-fx-color: #BEA888#BEA888;" text="Last name" />
+            <TableColumn fx:id="phoneNumberColumn" prefWidth="131.0" style="-fx-color: #BEA888#BEA888;" text="Phone no." />
+        </columns>
+      </TableView>
+      <VBox fillWidth="false" layoutX="361.0" layoutY="73.0" prefHeight="211.0" prefWidth="214.0">
          <children>
-            <TextField fx:id="searchField" focusTraversable="false" onAction="#handleForBookings" promptText="Search">
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin></TextField>
-            <TableView fx:id="guestListTable" onMouseClicked="#addGuestDetailsToTextField" prefHeight="245.0" prefWidth="330.0">
-              <columns>
-                <TableColumn fx:id="firstNameColumn" prefWidth="97.0" text="First name" />
-                <TableColumn fx:id="lastNameColumn" prefWidth="102.0" text="Last name" />
-                  <TableColumn fx:id="phoneNumberColumn" prefWidth="131.0" text="Phone no." />
-              </columns>
-            </TableView>
-            <Button fx:id="newGuestButton" mnemonicParsing="false" onAction="#handleForBookings" prefHeight="27.0" prefWidth="65.0" text="New guest" textAlignment="CENTER">
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Button>
-         </children>
-      </VBox>
-      <VBox fillWidth="false" layoutX="361.0" layoutY="59.0" prefHeight="295.0" prefWidth="214.0">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Booking">
+            <Text fill="#4f4537" strokeType="OUTSIDE" strokeWidth="0.0" text="Booking">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -69,30 +59,30 @@
                   <Insets left="145.0" />
                </VBox.margin>
             </Text>
-            <TextField fx:id="firstNameField" alignment="CENTER" disable="true" prefHeight="26.0" prefWidth="208.0" promptText="First name">
+            <TextField fx:id="firstNameField" alignment="CENTER" disable="true" prefHeight="26.0" prefWidth="208.0" promptText="First name" style="-fx-border-color: #BEA888#BEA888 #BEA888#BEA888; -fx-border-radius: 3;">
                <VBox.margin>
                   <Insets left="10.0" top="40.0" />
                </VBox.margin>
-            </TextField>
-            <TextField fx:id="lastNameField" alignment="CENTER" disable="true" prefHeight="26.0" prefWidth="208.0" promptText="Last name">
-               <VBox.margin>
-                  <Insets left="10.0" top="25.0" />
-               </VBox.margin>
-            </TextField>
-            <TextField fx:id="phoneNumberField" alignment="CENTER" disable="true" prefHeight="26.0" prefWidth="208.0" promptText="Phone number">
-               <VBox.margin>
-                  <Insets left="10.0" top="25.0" />
-               </VBox.margin>
-            </TextField>
-            <Button fx:id="bookButton" mnemonicParsing="false" onAction="#handleForBookings" prefHeight="33.0" prefWidth="105.0" text="Book">
                <font>
-                  <Font size="14.0" />
+                  <Font name="System Bold" size="13.0" />
                </font>
+            </TextField>
+            <TextField fx:id="lastNameField" alignment="CENTER" disable="true" prefHeight="26.0" prefWidth="208.0" promptText="Last name" style="-fx-border-color: #BEA888#BEA888 #BEA888#BEA888; -fx-border-radius: 3;">
                <VBox.margin>
-                  <Insets left="60.0" top="60.0" />
+                  <Insets left="10.0" top="25.0" />
                </VBox.margin>
-            </Button>
+            </TextField>
+            <TextField fx:id="phoneNumberField" alignment="CENTER" disable="true" prefHeight="26.0" prefWidth="208.0" promptText="Phone number" style="-fx-border-color: #BEA888#BEA888 #BEA888#BEA888; -fx-border-radius: 3;">
+               <VBox.margin>
+                  <Insets left="10.0" top="25.0" />
+               </VBox.margin>
+            </TextField>
          </children>
       </VBox>
+      <Button fx:id="bookButton" layoutX="429.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleForBookings" opacity="0.9" prefHeight="33.0" prefWidth="105.0" style="-fx-background-color: rgb(158, 122, 32)rgb(158, 122, 32) rgb(158, 122, 32)rgb(158, 122, 32);" styleClass="#ffffff" text="Book" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

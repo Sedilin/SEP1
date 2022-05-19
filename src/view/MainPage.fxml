@@ -17,9 +17,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="440.0" prefWidth="600.0" userData="Overlook Hotel" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainPageController">
+<AnchorPane prefHeight="440.0" prefWidth="618.0" stylesheets="@overlook.css" userData="Overlook Hotel" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainPageController">
    <children>
-      <MenuBar prefHeight="32.0" prefWidth="600.0">
+      <MenuBar prefHeight="26.0" prefWidth="623.0" style="-fx-background-color: #D4CFB4#D4CFB4 #D4CFB4#D4CFB4;">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -37,28 +37,28 @@
                </items></Menu>
         </menus>
       </MenuBar>
-      <TabPane layoutX="-1.0" layoutY="32.0" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutY="23.0" prefHeight="415.0" prefWidth="623.0" style="-fx-background-color: antiquewhite;" tabClosingPolicy="UNAVAILABLE" AnchorPane.rightAnchor="0.0">
         <tabs>
-          <Tab text="Room list ">
+          <Tab style="-fx-background-color: #BEA888#BEA888 #BEA888#BEA888;" text="Room list ">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="369.0" prefWidth="616.0" style="-fx-background-color: antiquewhite;">
                      <children>
-                        <VBox layoutX="13.0" layoutY="35.0" prefHeight="310.0" prefWidth="329.0" spacing="20.0">
+                        <VBox layoutX="13.0" layoutY="35.0" prefHeight="310.0" prefWidth="275.0" spacing="20.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Check availability">
+                              <Text fill="#4f4537" strokeType="OUTSIDE" strokeWidth="0.0" text="Check availability">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
                               </Text>
-                              <DatePicker fx:id="arrivalDate" prefHeight="38.0" prefWidth="227.0" promptText="Arrival date" />
-                              <DatePicker fx:id="departureDate" prefHeight="38.0" prefWidth="227.0" promptText="Departure date" />
-                              <ComboBox fx:id="roomType" prefHeight="26.0" prefWidth="183.0" />
-                              <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchButton" text="Search">
+                              <DatePicker fx:id="arrivalDate" prefHeight="38.0" prefWidth="227.0" promptText="Arrival date" style="-fx-color: #D4CFB4#D4CFB4;" />
+                              <DatePicker fx:id="departureDate" prefHeight="38.0" prefWidth="227.0" promptText="Departure date" style="-fx-color: #D4CFB4#D4CFB4;" />
+                              <ComboBox fx:id="roomType" prefHeight="26.0" prefWidth="183.0" promptText="Room type" style="-fx-background-color: #D4CFB4#D4CFB4; -fx-border-radius: 3;" />
+                              <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchButton" opacity="0.77" style="-fx-color: rgb(158, 122, 32)rgb(158, 122, 32);" styleClass="#ffffff" text="Search" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Button>
-                              <Text fill="#000000d0" onMouseClicked="#resetSearch" strokeType="OUTSIDE" strokeWidth="0.0" text="Reset" underline="true">
+                              <Text fill="#4d4336" onMouseClicked="#resetSearch" strokeType="OUTSIDE" strokeWidth="0.0" text="Reset" underline="true">
                                  <font>
                                     <Font name="System Bold" size="12.5" />
                                  </font>
@@ -71,54 +71,46 @@
                               <Insets bottom="40.0" left="20.0" top="5.0" />
                            </padding>
                         </VBox>
-                        <AnchorPane layoutX="302.0" layoutY="45.0" prefHeight="200.0" prefWidth="288.0">
-                           <children>
-                              <TableView fx:id="roomsListTable" layoutX="-2.0" layoutY="-4.0" prefHeight="220.0" prefWidth="270.0">
-                                <columns>
-                                  <TableColumn fx:id="roomNoColumn" prefWidth="90.0" text="Room no." />
-                                  <TableColumn fx:id="priceColumn" minWidth="0.0" prefWidth="90.0" text="Price" />
-                                    <TableColumn fx:id="capacityColumn" maxWidth="400.0" prefWidth="90.0" text="Capacity" />
-                                </columns>
-                              </TableView>
-                           </children>
-                        </AnchorPane>
-                        <Button layoutX="463.0" layoutY="280.0" mnemonicParsing="false" onAction="#bookButton" prefHeight="33.0" prefWidth="105.0" text="Book">
+                        <Button layoutX="463.0" layoutY="280.0" mnemonicParsing="false" onAction="#bookButton" opacity="0.9" prefHeight="33.0" prefWidth="105.0" style="-fx-background-color: rgb(158, 122, 32)rgb(158, 122, 32) rgb(158, 122, 32)rgb(158, 122, 32);" styleClass="#ffffff" text="Book" textFill="WHITE">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="System Bold" size="14.0" />
                            </font>
                         </Button>
+                        <TableView fx:id="roomsListTable" layoutX="300.0" layoutY="47.0" prefHeight="220.0" prefWidth="270.0" stylesheets="@overlook.css">
+                          <columns>
+                            <TableColumn fx:id="roomNoColumn" prefWidth="90.0" style="-fx-color: #BEA888 #BEA888;" text="Room no." />
+                            <TableColumn fx:id="priceColumn" minWidth="0.0" prefWidth="90.0" style="-fx-color: #BEA888 #BEA888;" text="Price" />
+                              <TableColumn fx:id="capacityColumn" maxWidth="400.0" prefWidth="90.0" style="-fx-color: #BEA888 #BEA888;" text="Capacity" />
+                          </columns>
+                        </TableView>
                      </children></AnchorPane>
             </content>
           </Tab>
-            <Tab text="Booking list ">
+            <Tab style="-fx-background-color: #BEA888#BEA888 #BEA888#BEA888;" text="Booking list ">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: antiquewhite;">
                      <children>
-                        <Text layoutX="49.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Find booking" wrappingWidth="111.33541870117188">
+                        <Text fill="#4f4537" layoutX="49.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Find booking" wrappingWidth="111.33541870117188">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Text>
-                        <AnchorPane layoutX="58.0" layoutY="76.0" prefHeight="220.0" prefWidth="492.0">
-                           <children>
-                              <TableView fx:id="bookingListTable" layoutX="-8.0" layoutY="8.0" prefHeight="210.0" prefWidth="495.0">
-                                 <columns>
-                                    <TableColumn fx:id="guestColumn" maxWidth="400.0" prefWidth="100.0" text="Guest" />
-                                    <TableColumn fx:id="phoneNoColumn" maxWidth="400.0" prefWidth="100.0" text="Phone no." />
-                                    <TableColumn fx:id="arrivalDateColumn" maxWidth="400.0" prefWidth="100.0" text="Arrival " />
-                                    <TableColumn fx:id="departureDateColumn" maxWidth="400.0" prefWidth="100.0" text="Departure" />
-                                    <TableColumn fx:id="roomNoColumn2" maxWidth="400.0" prefWidth="100.0" text="Room no." />
-                                 </columns>
-                              </TableView>
-                           </children>
-                        </AnchorPane>
+                        <TableView fx:id="bookingListTable" layoutX="47.0" layoutY="82.0" prefHeight="210.0" prefWidth="500.0" stylesheets="@overlook.css">
+                           <columns>
+                              <TableColumn fx:id="guestColumn" maxWidth="400.0" prefWidth="100.0" style="-fx-color: #BEA888 #BEA888;" text="Guest" />
+                              <TableColumn fx:id="phoneNoColumn" maxWidth="400.0" prefWidth="100.0" style="-fx-color: #BEA888 #BEA888;" text="Phone no." />
+                              <TableColumn fx:id="arrivalDateColumn" maxWidth="400.0" prefWidth="100.0" style="-fx-color: #BEA888 #BEA888;" text="Arrival " />
+                              <TableColumn fx:id="departureDateColumn" maxWidth="400.0" prefWidth="100.0" style="-fx-color: #BEA888 #BEA888;" text="Departure" />
+                              <TableColumn fx:id="roomNoColumn2" maxWidth="400.0" prefWidth="100.0" style="-fx-color: #BEA888 #BEA888;" text="Room no." />
+                           </columns>
+                        </TableView>
                         <Button layoutX="638.0" layoutY="407.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="112.0" text="Book">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Button>
-                        <TextField fx:id="searchFieldBookings" layoutX="389.0" layoutY="32.0" onAction="#searchBookings" prefHeight="26.0" prefWidth="159.0" promptText="Search" />
-                        <Button layoutX="247.0" layoutY="310.0" mnemonicParsing="false" onAction="#checkInButton" prefHeight="33.0" prefWidth="105.0" text="Check In">
+                        <TextField fx:id="searchFieldBookings" layoutX="389.0" layoutY="32.0" onAction="#searchBookings" prefHeight="26.0" prefWidth="159.0" promptText="Search" style="-fx-border-color: #BEA888#BEA888; -fx-border-radius: 3;" />
+                        <Button layoutX="247.0" layoutY="310.0" mnemonicParsing="false" onAction="#checkInButton" opacity="0.9" prefHeight="33.0" prefWidth="105.0" style="-fx-background-color: rgb(158, 122, 32)rgb(158, 122, 32) rgb(158, 122, 32)rgb(158, 122, 32);" styleClass="#ffffff" text="Check In" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -126,30 +118,26 @@
                      </children></AnchorPane>
               </content>
             </Tab>
-            <Tab text="Check out">
+            <Tab style="-fx-background-color: #BEA888#BEA888 #BEA888#BEA888;" text="Check out">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: antiquewhite;">
                      <children>
-                        <Text layoutX="51.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check out" wrappingWidth="95.33541870117188">
+                        <Text fill="#4f4537" layoutX="51.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check out" wrappingWidth="95.33541870117188">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Text>
-                        <AnchorPane layoutX="58.0" layoutY="76.0" prefHeight="220.0" prefWidth="489.0">
-                           <children>
-                              <TableView fx:id="checkoutListTable" layoutX="-8.0" layoutY="8.0" prefHeight="210.0" prefWidth="495.0">
-                                 <columns>
-                                    <TableColumn fx:id="guestColumn2" maxWidth="400.0" prefWidth="100.0" text="Guest" />
-                                    <TableColumn fx:id="phoneNoColumn2" maxWidth="400.0" prefWidth="100.0" text="Phone no." />
-                                    <TableColumn fx:id="arrivalDateColumn2" maxWidth="400.0" prefWidth="100.0" text="Arrival " />
-                                    <TableColumn fx:id="departureDateColumn2" maxWidth="400.0" prefWidth="100.0" text="Departure" />
-                                    <TableColumn fx:id="roomNoColumn3" maxWidth="400.0" prefWidth="100.0" text="Room no." />
-                                 </columns>
-                              </TableView>
-                           </children>
-                        </AnchorPane>
-                        <TextField fx:id="searchFieldCheckOut" layoutX="389.0" layoutY="32.0" onAction="#searchCheckedOutBookings" prefHeight="26.0" prefWidth="159.0" promptText="Search" />
-                        <Button fx:id="payAndCheckOut" layoutX="247.0" layoutY="310.0" mnemonicParsing="false" onAction="#payAndCheckOutButton" prefHeight="33.0" prefWidth="105.0" text="Check Out">
+                        <TableView fx:id="checkoutListTable" layoutX="50.0" layoutY="82.0" prefHeight="210.0" prefWidth="500.0">
+                           <columns>
+                              <TableColumn fx:id="guestColumn2" maxWidth="400.0" prefWidth="100.0" style="-fx-color: #BEA888;" text="Guest" />
+                              <TableColumn fx:id="phoneNoColumn2" maxWidth="400.0" prefWidth="100.0" style="-fx-color: #BEA888;" text="Phone no." />
+                              <TableColumn fx:id="arrivalDateColumn2" maxWidth="400.0" prefWidth="100.0" style="-fx-color: #BEA888;" text="Arrival " />
+                              <TableColumn fx:id="departureDateColumn2" maxWidth="400.0" prefWidth="100.0" style="-fx-color: #BEA888;" text="Departure" />
+                              <TableColumn fx:id="roomNoColumn3" maxWidth="400.0" prefWidth="100.0" style="-fx-color: #BEA888;" text="Room no." />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="searchFieldCheckOut" layoutX="389.0" layoutY="32.0" onAction="#searchCheckedOutBookings" prefHeight="26.0" prefWidth="159.0" promptText="Search" style="-fx-border-color: #BEA888 #BEA888; -fx-border-radius: 3;" />
+                        <Button fx:id="payAndCheckOut" layoutX="247.0" layoutY="310.0" mnemonicParsing="false" onAction="#payAndCheckOutButton" opacity="0.9" prefHeight="33.0" prefWidth="105.0" style="-fx-background-color: rgb(158, 122, 32)rgb(158, 122, 32) rgb(158, 122, 32)rgb(158, 122, 32);" styleClass="#ffffff" text="Check Out" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
