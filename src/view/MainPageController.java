@@ -301,6 +301,5 @@ public class MainPageController
           "Phone number: 25792799 ");
       alert.showAndWait();
     }
-
   }
 }
