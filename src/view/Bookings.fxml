@@ -63,9 +63,6 @@
                <VBox.margin>
                   <Insets left="10.0" top="40.0" />
                </VBox.margin>
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
             </TextField>
             <TextField fx:id="lastNameField" alignment="CENTER" disable="true" prefHeight="26.0" prefWidth="208.0" promptText="Last name" style="-fx-border-color: #BEA888#BEA888 #BEA888#BEA888; -fx-border-radius: 3;">
                <VBox.margin>
