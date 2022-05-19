@@ -114,6 +114,7 @@ public class GuestList implements Serializable
   {
     return guests.size();
   }
+
   public Guest getMainGuest()
   {
     return guests.get(0);

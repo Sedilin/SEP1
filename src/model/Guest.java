@@ -15,7 +15,6 @@ public class Guest implements Serializable
     private String id;
     private String title;
     private String nationality;
-    private boolean frequentGuest;
     private Address address;
     private Date birthday;
 
@@ -33,7 +32,6 @@ public class Guest implements Serializable
         id = null;
         title = null;
         nationality = null;
-        frequentGuest = false;
         address = null;
         birthday = null;
     }
@@ -144,24 +142,6 @@ public class Guest implements Serializable
     public void setNationality(String nationality)
     {
         this.nationality = nationality;
-    }
-
-    /**
-     * Gets an information is guest a frequent visitor from the Guest class.
-     * @return the information if the guest is frequent from the Guest class.
-     */
-    public boolean isFrequentGuest()
-    {
-        return frequentGuest;
-    }
-
-    /**
-     * Sets the information if the guest is frequent to the Guest.
-     * @param frequentGuest the information if the guest is frequent to set the object.
-     */
-    public void setFrequentGuest(boolean frequentGuest)
-    {
-        this.frequentGuest = frequentGuest;
     }
 
     /**
