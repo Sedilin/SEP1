@@ -17,32 +17,22 @@ public class BookingsController {
 
     private Booking currentBooking;
 
-    @FXML
-    private TextField searchField;
-    @FXML
-    private TableView<Guest> guestListTable;
-    @FXML
-    private TableColumn<Guest, String> firstNameColumn;
-    @FXML
-    private TableColumn<Guest, String> lastNameColumn;
-    @FXML
-    private TableColumn<Guest, String> phoneNumberColumn;
-    @FXML
-    private Button newGuestButton;
-    @FXML
-    private TextField firstNameField;
-    @FXML
-    private TextField lastNameField;
-    @FXML
-    private TextField phoneNumberField;
-    @FXML
-    private Button bookButton;
+    @FXML private TextField searchField;
+    @FXML private TableView<Guest> guestListTable;
+    @FXML private TableColumn<Guest, String> firstNameColumn;
+    @FXML private TableColumn<Guest, String> lastNameColumn;
+    @FXML private TableColumn<Guest, String> phoneNumberColumn;
+    @FXML private Button newGuestButton;
+    @FXML private TextField firstNameField;
+    @FXML private TextField lastNameField;
+    @FXML private TextField phoneNumberField;
+    @FXML private Button bookButton;
 
     /**
-     * Initializes
-     * @param viewHandler
-     * @param modelManager
-     * @param root
+     * Initializes viewHandler object, model manager object and root object
+     * @param viewHandler view handler
+     * @param modelManager model manager
+     * @param root root
      */
     public void init(ViewHandler viewHandler, BookingModelManager modelManager, Region root) {
         this.viewHandler = viewHandler;
@@ -51,16 +41,26 @@ public class BookingsController {
         reset();
     }
 
+    /**
+     * Updates the guest table
+     */
     public void reset()
     {
         updateGuestTable();
     }
 
+    /**
+     *
+     * @return
+     */
     public Region getRoot()
     {
         return root;
     }
 
+    /**
+     * Initializes columns of the guest list table
+     */
     public void initialize()
     {
         firstNameColumn.setCellValueFactory(new PropertyValueFactory<Guest, String>("firstName"));
@@ -68,6 +68,10 @@ public class BookingsController {
         phoneNumberColumn.setCellValueFactory(new PropertyValueFactory<Guest, String>("phoneNumber"));
     }
 
+    /**
+     * A method that handles events for book button, new guest button and search field
+     * @param event
+     */
     public void handleForBookings(ActionEvent event)
     {
         if (event.getSource() == bookButton) {
@@ -116,6 +120,9 @@ public class BookingsController {
         }
     }
 
+    /**
+     * A method that displays the text from the selected item from the guest list table +
+     */
     public void addGuestDetailsToTextField()
     {
         Guest guest = guestListTable.getSelectionModel().getSelectedItem();
@@ -123,6 +130,7 @@ public class BookingsController {
         lastNameField.setText(guest.getLastName());
         phoneNumberField.setText(guest.getPhoneNumber());
     }
+
     private void updateGuestTable()
     {
         guestListTable.getItems().clear();
