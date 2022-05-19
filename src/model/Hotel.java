@@ -60,7 +60,13 @@ public class Hotel implements Serializable
         }
         return availableRooms;
     }
-   public BookingList findBookingsByPhoneNumber(String phoneNumber) {
+
+  /**
+   * Gets a booking by the number it was registered on from a booking list
+   * @param phoneNumber phone number of the main guest of the booking
+   * @return a booking
+   */
+  public BookingList findBookingsByPhoneNumber(String phoneNumber) {
         return bookings.findBookingsByPhoneNumber(phoneNumber);
    }
     /**
@@ -99,6 +105,11 @@ public class Hotel implements Serializable
         return guests;
     }
 
+  /**
+   * Gets a guest by the phone number
+   * @param phoneNumber phone number
+   * @return a guest
+   */
     public Guest findGuestByPhoneNumber (String phoneNumber)
     {
         GuestList allGuests = getAllGuests();
@@ -115,7 +126,7 @@ public class Hotel implements Serializable
     }
 
     /**
-     * Changes Sets booking variable's value checkedOut to true and writes it to the file than contains information about booking list
+     * Sets booking variable's value checkedOut to true and writes it to the file than contains information about booking list
      * @param booking booking which checkedOut value is changed
      * @return the variable total price of the booking object
      */
@@ -125,9 +136,13 @@ public class Hotel implements Serializable
         return bookings.getBooking(booking).getTotalPrice();
     }
 
-    public String toString()
+  /**
+   * A toString method to print out the fields of a hotel
+   * @return
+   */
+  public String toString()
     {
-        return guests + " " + bookings + " " + rooms;
+        return guests.toString() + " " + bookings.toString() + " " + rooms.toString();
     }
 
 }

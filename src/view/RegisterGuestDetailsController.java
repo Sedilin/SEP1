@@ -85,6 +85,10 @@ public class RegisterGuestDetailsController
         postalCode.setText(currentGuest.getAddress().getPostcode());
         birthday.setText(currentGuest.getBirthday().toString());
       }
+      if(viewHandler.getMainPageController().bookingListTable.getSelectionModel().getSelectedItem().getRoom().getRoomNumber() == 301 || viewHandler.getMainPageController().bookingListTable.getSelectionModel().getSelectedItem().getRoom().getRoomNumber() == 302)
+      {
+        smoking.setDisable(false);
+      }
     }
     else if (e.getSource() == saveButton)
     {
@@ -118,10 +122,14 @@ public class RegisterGuestDetailsController
           hotel.addGuest(additionalGuest);
           modelManager.save(hotel);
           count++;
-          Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "The additional guest has been added. \nNumber of guests created for the booking: " + count);
+          Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "The additional guest has been added. \n Number of guests created for the booking: " + count);
           alert.setHeaderText(null);
           alert.showAndWait();
         }
+      else if(e.getSource() == smoking)
+      {
+        viewHandler.getMainPageController().bookingListTable.getSelectionModel().getSelectedItem().getRoom().setSmoking(true);
+      }
       else
         {
           Alert alert = new Alert(Alert.AlertType.ERROR, "The room has reached its max capacity!");

@@ -8,10 +8,19 @@ import java.io.IOException;
 public class BookingModelManager {
     private String fileName;
 
+    /**
+     * 1 argument constructor
+     * @param fileName file name
+     */
     public BookingModelManager(String fileName)
     {
         this.fileName = fileName;
     }
+
+    /**
+     * Loads data from the binary file and to the hotel object
+     * @return returns a hotel object
+     */
     public Hotel load()
     {
         Hotel hotel = new Hotel();
@@ -33,6 +42,11 @@ public class BookingModelManager {
         }
         return hotel;
     }
+
+    /**
+     * Saves data to the binary file from the hotel object
+     * @param hotel hotel object
+     */
     public void save(Hotel hotel)
     {
         try

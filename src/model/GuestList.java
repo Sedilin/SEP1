@@ -34,6 +34,11 @@ public class GuestList implements Serializable
       guests.add(guest);
     }
   }
+
+  /**
+   * Adds a new guest to a guest list
+   * @param newGuests
+   */
   public void addGuests(GuestList newGuests)
   {
     for (int i = 0; i < newGuests.size(); i++) {
@@ -56,11 +61,21 @@ public class GuestList implements Serializable
     }
   }
 
+  /**
+   * Gets a guest by index from a guest list
+   * @param index index of the guest
+   * @return a guest
+   */
   public Guest getGuest(int index)
   {
     return guests.get(index);
   }
 
+  /**
+   * Gets a guest from a guest list
+   * @param guest
+   * @return
+   */
   public Guest getGuest(Guest guest)
   {
     for (int i = 0; i < guests.size(); i++)
@@ -72,6 +87,7 @@ public class GuestList implements Serializable
     }
     return null;
   }
+
   /**
    * Gets a Guest object by phone number from list of guests
    * @param phoneNumber phone number of guest

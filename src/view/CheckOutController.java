@@ -1,6 +1,5 @@
 package view;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -13,15 +12,16 @@ import model.Hotel;
 
 import static java.lang.Double.parseDouble;
 
-public class CheckOut
+public class CheckOutController
 
 {
   @FXML private Text guestName;
   @FXML private Text phoneNumber;
   @FXML private Text arrivalDate;
   @FXML private Text departureDate;
-  @FXML private TextField discount;
   @FXML private Text totalPrice;
+  @FXML private TextField discount;
+  @FXML private TextField cleaningFee;
   @FXML private Button importButton;
   @FXML private Button payAndCheckIn;
 
@@ -58,6 +58,7 @@ public class CheckOut
     arrivalDate.setText("Arrival date");
     departureDate.setText("Departure date");
     discount.clear();
+    cleaningFee.clear();
     totalPrice.setText("");
   }
   public void importButton()
@@ -71,16 +72,31 @@ public class CheckOut
     departureDate.setText(currentBooking.getDepartureDate().toString());
     totalPrice.setText(price);
     System.out.println(currentBooking);
+    if(viewHandler.getMainPageController().checkoutListTable.getSelectionModel().getSelectedItem().getRoom().isSmoking())
+    {
+      cleaningFee.setDisable(false);
+    }
   }
   public void discount() {
 
     if (discount.getText() != null)
     {
       currentBooking.applyDiscount(parseDouble(discount.getText()));
-      totalPrice.setText(String.valueOf(Math.floor(currentBooking.getTotalPrice())));
+      totalPrice.setText(String.valueOf(Math.round(currentBooking.getTotalPrice())));
       System.out.println(currentBooking);
     }
   }
+
+  public void cleaningFee()
+  {
+    if(!cleaningFee.isDisabled())
+    {
+      currentBooking.applyCleaningFee(parseDouble(cleaningFee.getText()));
+      totalPrice.setText(String.valueOf(Math.round(currentBooking.getTotalPrice())));
+    }
+  }
+
+
   public void payAndCheckInButton()
   {
     Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "The amount to pay for " + currentBooking.getArrivalDate().daysInBetween(currentBooking.getDepartureDate()) + " days: " + currentBooking.getTotalPrice() + " $");

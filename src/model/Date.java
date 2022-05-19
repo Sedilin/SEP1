@@ -30,6 +30,7 @@ public class Date implements Serializable
    * @param month the month
    * @param year the year
    */
+
   public Date(int day, int month, int year)
   {
     this.day = day;
@@ -152,8 +153,6 @@ public class Date implements Serializable
     return new Date(day,month,year);
   }
 
-
-
   /**
    * Increases the day of date object with one day
    */
@@ -213,6 +212,11 @@ public class Date implements Serializable
     return year <= obj.year && month <= obj.month && day <= obj.day;
   }
 
+  /**
+   * Verifies if the date from Date class is after another date object
+   * @param obj object of type Date
+   * @return true if the date from Date class is after the second object of type Date
+   */
   public boolean isAfter(Date obj)
   {
     return year > obj.year && month > obj.month && day > obj.day;

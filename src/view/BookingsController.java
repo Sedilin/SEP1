@@ -7,6 +7,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Region;
 import model.*;
 
+/**
+ *
+ */
 public class BookingsController {
     private Region root;
     private BookingModelManager modelManager;
@@ -35,6 +38,12 @@ public class BookingsController {
     @FXML
     private Button bookButton;
 
+    /**
+     * Initializes
+     * @param viewHandler
+     * @param modelManager
+     * @param root
+     */
     public void init(ViewHandler viewHandler, BookingModelManager modelManager, Region root) {
         this.viewHandler = viewHandler;
         this.modelManager = modelManager;
@@ -42,22 +51,25 @@ public class BookingsController {
         reset();
     }
 
-    public void reset() {
+    public void reset()
+    {
         updateGuestTable();
     }
 
-    public Region getRoot() {
+    public Region getRoot()
+    {
         return root;
     }
 
-    public void initialize() {
+    public void initialize()
+    {
         firstNameColumn.setCellValueFactory(new PropertyValueFactory<Guest, String>("firstName"));
         lastNameColumn.setCellValueFactory(new PropertyValueFactory<Guest, String>("lastName"));
         phoneNumberColumn.setCellValueFactory(new PropertyValueFactory<Guest, String>("phoneNumber"));
-
     }
 
-    public void handleForBookings(ActionEvent event) {
+    public void handleForBookings(ActionEvent event)
+    {
         if (event.getSource() == bookButton) {
             Hotel hotel = modelManager.load();
             if ((!(firstNameField.getText().equals("Guest")) && !(lastNameField.getText().equals("Not")) && !(phoneNumberField.getText().equals("Found"))) && (!(firstNameField.getText().equals("")) && !(lastNameField.getText().equals("")) && !(phoneNumberField.getText().equals("")))) {

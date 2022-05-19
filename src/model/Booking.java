@@ -35,25 +35,17 @@ public class Booking implements Serializable
         isCheckedIn = false;
         isCheckedOut = false;
     }
-    public String getGuestName() {
-        return guestList.getMainGuest().getFirstName() + " " +  guestList.getMainGuest().getLastName();
-    }
-    public String getPhoneNumber() {
-        return guestList.getMainGuest().getPhoneNumber();
-    }
-    public int getRoomNumber() {
-        return room.getRoomNumber();
-    }
 
     //Guest
     /**
-     * Adds a guest to the guest list in the Booking.
+     * Adds a guest to the guest list in the booking.
      * @param guest the guest.
      */
     public void addGuest(Guest guest)
     {
         guestList.addGuest(guest);
     }
+
     /**
      * Gets the guest from the guest list in the booking.
      * @return guest from guest list.
@@ -63,11 +55,34 @@ public class Booking implements Serializable
         return guestList.getMainGuest();
     }
 
+    /**
+     * Gets all guests from the guest list assigned to a booking object
+     * @return a list of all guests
+     */
     public GuestList getAllGuests()
     {
         return guestList;
     }
+
+    /**
+     * Gets guest's first name from the booking
+     * @return guest's first name from the booking
+     */
+    public String getGuestName() {
+        return guestList.getMainGuest().getFirstName() + " " +  guestList.getMainGuest().getLastName();
+    }
+
+    /**
+     * Gets guest's phone number from the booking
+     * @return guest's phone number in a string format
+     */
+    public String getPhoneNumber()
+    {
+        return guestList.getMainGuest().getPhoneNumber();
+    }
+
     //Arrival date
+
     /**
      * Sets an arrival date in the Booking.
      * @param arrivalDate the arrival date.
@@ -89,7 +104,8 @@ public class Booking implements Serializable
      * Sets the departure date of the Booking.
      * @param departureDate the departure date.
      */
-    public void setDepartureDate(Date departureDate) {
+    public void setDepartureDate(Date departureDate)
+    {
         this.departureDate = departureDate;
     }
 
@@ -102,6 +118,15 @@ public class Booking implements Serializable
     }
 
     //Room
+    /**
+     * Gets room number from the booking's room
+     * @return returns room's object number
+     */
+    public int getRoomNumber()
+    {
+        return room.getRoomNumber();
+    }
+
     /**
      * Changes a value of the Room in the Booking
      * @param room the new room.
@@ -166,12 +191,21 @@ public class Booking implements Serializable
     }
 
     /**
+     * Sets an additional cleaning fee and changing total price
+     * @param cleaningFee cleaning fee value in a double format
+     */
+    public void applyCleaningFee(double cleaningFee)
+    {
+        totalPrice += totalPrice * (cleaningFee/100);
+    }
+
+    /**
      * Gets the total price of the Booking.
      * @return the total price of the Booking.
      */
     public double getTotalPrice()
     {
-        return totalPrice * arrivalDate.daysInBetween(departureDate);
+        return Math.round(totalPrice * arrivalDate.daysInBetween(departureDate));
     }
 
     /**

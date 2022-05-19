@@ -14,6 +14,7 @@ public class Room implements Serializable
     private String type;
     private double price;
     private int capacity;
+
     /**
      * 5 argument constructor initializing the Room variables.
      * @param roomNumber the room number.
@@ -30,76 +31,97 @@ public class Room implements Serializable
         this.price = price;
         this.capacity=capacity;
     }
+
     /**
      * Gets a room number from the Room class.
      * @return the room number from the Room class.
      */
-    public int getRoomNumber() {
+    public int getRoomNumber()
+    {
         return roomNumber;
     }
+
     /**
      * Sets the room number to the Room.
      * @param roomNumber the room number to set the object to.
      */
-    public void setRoomNumber(int roomNumber) {
+    public void setRoomNumber(int roomNumber)
+    {
         this.roomNumber = roomNumber;
     }
+
     /**
      * Gets information on whether you can smoke in the room from the Room class.
      * @return information on whether you can smoke in the room from the Room class.
      */
-    public boolean isSmoking() {
+    public boolean isSmoking()
+    {
         return isSmoking;
     }
+
     /**
      * Sets the smoking information in the room to the Room Class.
      * @param isSmoking the information regarding smoking in the room to set the object to.
      */
-    public void setSmoking(boolean isSmoking) {
+    public void setSmoking(boolean isSmoking)
+    {
         this.isSmoking = isSmoking;
     }
+
     /**
      * Gets a room type from the Room Class.
      * @return the room type from the Room class.
      */
-    public String getType() {
+    public String getType()
+    {
         return type;
     }
+
     /**
      * Sets the room type to the Room.
      * @param type the type to set the object to.
      */
-    public void setType(String type) {
+    public void setType(String type)
+    {
         this.type = type;
     }
+
     /**
      * Gets a price from the Room class.
      * @return the price from the Room class.
      */
-    public double getPrice() {
+    public double getPrice()
+    {
         return price;
     }
+
     /**
      * Sets the price to the Room.
      * @param price the price to set the object to.
      */
-    public void setPrice(double price) {
+    public void setPrice(double price)
+    {
         this.price = price;
     }
+
     /**
      * Gets the capacity from the Room class.
      * @return the capacity from the Room class.
      */
-    public int getCapacity(){
+    public int getCapacity()
+    {
         return capacity;
     }
+
     /**
      * Sets the capacity to the Room.
      * @param capacity the capacity to set the object to.
      */
-    public void setCapacity(int capacity) {
+    public void setCapacity(int capacity)
+    {
         this.capacity = capacity;
     }
+
     /**
      * A toString method to print out each of the elements from the Room class.
      * @return all objects from the Room.
@@ -108,6 +130,7 @@ public class Room implements Serializable
     {
         return roomNumber + " " + isSmoking + " " + type + " " + price + " " + capacity;
     }
+
     /**
      * Compares room number, if it is possible to smoke, type of the room, price and capacity of the object of two Rooms.
      * @param obj object to be compared.

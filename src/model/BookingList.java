@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+
 /**
  * A class containing for the BookingList object.
  * @author Gabriela and Lukasz
@@ -42,6 +43,10 @@ public class BookingList implements Serializable
         }
     }
 
+    /**
+     * Gets last booking from booking list
+     * @return
+     */
     public Booking getLastBooking()
     {
         return bookings.get(bookings.size()-1);
@@ -94,6 +99,10 @@ public class BookingList implements Serializable
         return null;
     }
 
+    /**
+     * Gets a list of bookings which isCheckedIn value is true
+     * @return a list of checked in bookings
+     */
     public BookingList getCheckedInBookings()
     {
         BookingList checkedInBookings = new BookingList();
@@ -106,6 +115,11 @@ public class BookingList implements Serializable
         }
         return checkedInBookings;
     }
+
+    /**
+     * Gets a list of bookings which isCheckedIn values is false
+     * @return bookings which are not checked in
+     */
     public BookingList getNotCheckedInBookings()
     {
         BookingList notCheckedInBookings = new BookingList();
@@ -119,10 +133,32 @@ public class BookingList implements Serializable
         return notCheckedInBookings;
     }
 
-
-
-    public Booking getBookingByIndex(int index)  {
+    /**
+     * Gets a booking by its index in the booking list
+     * @param index index of the booking to be returned
+     * @return booking of a certain index
+     */
+    public Booking getBookingByIndex(int index)
+    {
         return bookings.get(index);
+    }
+
+    /**
+     * Gets the number of bookings registered on the same phone number
+     * @param phoneNumber phone number of a guest
+     * @return number of bookings registered on the same phone number
+     */
+    public int getNumberOfBookingsByPhoneNumber(String phoneNumber)
+    {
+        int count = 0;
+        for (int i = 0; i < bookings.size(); i++)
+        {
+            if(bookings.get(i).getMainGuestForBooking().getPhoneNumber().equals(phoneNumber))
+            {
+                count ++;
+            }
+        }
+        return count;
     }
 
     /**

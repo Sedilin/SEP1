@@ -14,7 +14,7 @@ public class ViewHandler {
     private MainPageController mainPageController;
     private BookingsController bookingsController;
     private RegisterGuestDetailsController registerGuestDetailsController;
-    private CheckOut checkOut;
+    private CheckOutController checkOut;
 
     private BookingModelManager modelManager;
 
@@ -138,5 +138,9 @@ public class ViewHandler {
     public MainPageController getMainPageController()
     {
         return mainPageController;
+    }
+    public RegisterGuestDetailsController getRegisterGuestDetailsController()
+    {
+        return registerGuestDetailsController;
     }
 }

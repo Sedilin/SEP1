@@ -19,11 +19,19 @@ public class RoomList implements Serializable
         rooms = new ArrayList<>();
     }
 
+    /**
+     * Adds a room to a room list
+     * @param room a room
+     */
     public void addRoom(Room room)
     {
         rooms.add(room);
     }
 
+    /**
+     * Removes a room from a room list
+     * @param room a room
+     */
     public void removeRoom(Room room)
     {
         rooms.remove(room);
@@ -51,7 +59,7 @@ public class RoomList implements Serializable
      * @param type the type we want to search for.
      * @return the array of Rooms with specific criteria.
      */
-    //We have only 4 types of rooms (single, double, suite, king bedroom).
+    //There are only 4 types of rooms (single, double, suite, king bedroom).
     public RoomList getRoomsType(String type)
     {
         RoomList temp = new RoomList();
@@ -62,11 +70,24 @@ public class RoomList implements Serializable
         }
         return temp;
     }
-    public int size() {
+
+    /**
+     * Gets the size of a room list
+     * @return a size in an int format
+     */
+    public int size()
+    {
         return rooms.size();
     }
-    public Room getRoom(int i) {
-        return rooms.get(i);
+
+    /**
+     * Gets a room by the index from a room list
+     * @param index index
+     * @return a room
+     */
+    public Room getRoom(int index)
+    {
+        return rooms.get(index);
     }
 
     /**

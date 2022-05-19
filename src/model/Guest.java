@@ -50,121 +50,156 @@ public class Guest implements Serializable
      * Sets the first name to the Guest.
      * @param firstName the first name to set the object to.
      */
-    public void setFirstName(String firstName) {
+    public void setFirstName(String firstName)
+    {
         this.firstName = firstName;
     }
+
     /**
      * Gets a last name from the Guest class.
      * @return the last name from the Guest class.
      */
-    public String getLastName() {
+    public String getLastName()
+    {
         return lastName;
     }
+
     /**
      * Sets the last name to the Guest.
      * @param lastName the last name to set the object to.
      */
-    public void setLastName(String lastName) {
+    public void setLastName(String lastName)
+    {
         this.lastName = lastName;
     }
+
     /**
      * Gets a phone number from the Guest class.
      * @return the phone number from the Guest class.
      */
-    public String getPhoneNumber() {
+    public String getPhoneNumber()
+    {
         return phoneNumber;
     }
+
     /**
      * Sets the phone number to the Guest.
      * @param phoneNumber the phone number to set the object to.
      */
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(String phoneNumber)
+    {
         this.phoneNumber = phoneNumber;
     }
+
     /**
      * Gets an id from the Guest class.
      * @return the id from the Guest class.
      */
-    public String getId() {
+    public String getId()
+    {
         return id;
     }
+
     /**
      * Sets the id to the Guest.
      * @param id the id to set the object to.
      */
-    public void setId(String id) {
+    public void setId(String id)
+    {
         this.id = id;
     }
+
     /**
      * Gets a title from the Guest class.
      * @return the title from the Guest class.
      */
-    public String getTitle() {
+    public String getTitle()
+    {
         return title;
     }
+
     /**
      * Sets the title to the Guest.
      * @param title the id to set the object to.
      */
-    public void setTitle(String title) {
+
+    public void setTitle(String title)
+    {
         this.title = title;
     }
+
     /**
      * Gets a nationality from the Guest class.
      * @return the nationality from the Guest class.
      */
-    public String getNationality() {
+    public String getNationality()
+    {
         return nationality;
     }
+
     /**
      * Sets the nationality to the Guest.
      * @param nationality the nationality to set the object to.
      */
-    public void setNationality(String nationality) {
+    public void setNationality(String nationality)
+    {
         this.nationality = nationality;
     }
+
     /**
      * Gets an information is guest a frequent visitor from the Guest class.
      * @return the information if the guest is frequent from the Guest class.
      */
-    public boolean isFrequentGuest() {
+    public boolean isFrequentGuest()
+    {
         return frequentGuest;
     }
+
     /**
      * Sets the information if the guest is frequent to the Guest.
      * @param frequentGuest the information if the guest is frequent to set the object.
      */
-    public void setFrequentGuest(boolean frequentGuest) {
+    public void setFrequentGuest(boolean frequentGuest)
+    {
         this.frequentGuest = frequentGuest;
     }
+
     /**
      * Gets an address from the Guest class.
      * @return the address from the Guest class.
      */
-    public Address getAddress() {
+    public Address getAddress()
+    {
         return address;
     }
+
     /**
      * Sets the address to the Guest.
      * @param address the nationality to set the object to.
      */
-    public void setAddress(Address address) {
+    public void setAddress(Address address)
+    {
         this.address = address;
     }
+
     /**
      * Gets a birthday from the Guest class.
      * @return the birthday from the Guest class.
      */
-    public Date getBirthday() {
+    public Date getBirthday()
+    {
         return birthday.copy();
     }
+
     /**
      * Sets the birthday to the Guest.
      * @param birthday the nationality to set the object to.
      */
-    public void setBirthday(Date birthday) {
+    public void setBirthday(Date birthday)
+    {
         this.birthday = birthday.copy();
     }
+
     /**
      * A toString method to print out each of the elements from the Guest class.
      * @return all objects from the Guest.
@@ -173,6 +208,7 @@ public class Guest implements Serializable
     {
         return firstName + " " + lastName + " " + phoneNumber + " " + id + " " + address + " " +birthday;
     }
+
     /**
      * Compares all the variables of the object of two Guests.
      * @param obj object to be compared.

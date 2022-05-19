@@ -5,6 +5,13 @@ import java.util.ArrayList;
 
 public class MyFileHandler
 {
+   /**
+    *
+    * @param fileName
+    * @param obj
+    * @throws FileNotFoundException
+    * @throws IOException
+    */
    // Writes the given object to a file with the given file name
    public static void writeToBinaryFile(String fileName, Object obj) throws FileNotFoundException, IOException
    {
