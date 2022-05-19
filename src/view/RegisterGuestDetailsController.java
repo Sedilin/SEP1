@@ -89,6 +89,10 @@ public class RegisterGuestDetailsController
       {
         smoking.setDisable(false);
       }
+      else
+      {
+        smoking.setDisable(true);
+      }
     }
     else if (e.getSource() == saveButton)
     {
