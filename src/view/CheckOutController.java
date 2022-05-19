@@ -29,6 +29,12 @@ public class CheckOutController
   private BookingModelManager modelManager;
   private Region root;
 
+  /**
+   * Initializes viewHandler object, model manager object and root object
+   * @param viewHandler view handler
+   * @param modelManager model manager
+   * @param root root
+   */
   Booking currentBooking;
   public void init(ViewHandler viewHandler, BookingModelManager modelManager, Region root)
   {
@@ -37,30 +43,54 @@ public class CheckOutController
     this.root = root;
     reset();
   }
+
+  /**
+   * Initializes the binary file to the model manager
+   */
   public void initialize()
   {
     modelManager = new BookingModelManager("hotel.bin");
   }
 
+  /**
+   *
+   * @return
+   */
   public Region getRoot()
   {
     return root;
   }
 
+  /**
+   * Resets the CheckOut page using the method updateCheckoutPage()
+   */
   public void reset()
   {
     updateCheckOutPage();
   }
 
+  /**
+   * Text area in order for guest information to be imported
+   */
+
   public void updateCheckOutPage() {
-    guestName.setText("Guest name");
-    phoneNumber.setText("Phone number");
-    arrivalDate.setText("Arrival date");
-    departureDate.setText("Departure date");
+    guestName.setText(" ");
+    phoneNumber.setText(" ");
+    arrivalDate.setText(" ");
+    departureDate.setText(" ");
     discount.clear();
     cleaningFee.clear();
     totalPrice.setText("");
   }
+
+  /**
+   * First it uses the reset method
+   * Gets the currentBooking from the CheckOut table
+   * Makes a new variable price which converts the total price to String data type
+   * Imports guest information to the text area
+   * Prints out the currentBooking
+   * Sets the cleaningFee to enable if in the room is allowed to smoke
+   */
   public void importButton()
   {
     reset();
@@ -77,6 +107,12 @@ public class CheckOutController
       cleaningFee.setDisable(false);
     }
   }
+
+  /**
+   * Applies the discount to the currentBooking and makes it a double
+   * Calculates the totalPrice when discount is added
+   * Prints out the currentBooking
+   */
   public void discount() {
 
     if (discount.getText() != null)
@@ -87,6 +123,10 @@ public class CheckOutController
     }
   }
 
+  /**
+   * Applies cleaningFee to the currentBooking and makes it a double
+   * Calculates the totalPrice after the cleaningFee is added
+   */
   public void cleaningFee()
   {
     if (cleaningFee.getText() != null)
@@ -96,6 +136,13 @@ public class CheckOutController
     }
   }
 
+  /**
+   * Confirmation alert type which prints out for how many days the guest has to pay
+   * and the final amount
+   * If the payment is confirmed it sets the booking to checkedOut
+   * Prints the currentBooking
+   * Loads and saves the hotel and viewHandler opens the MainPage view
+   */
 
   public void payAndCheckInButton()
   {
