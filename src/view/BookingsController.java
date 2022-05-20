@@ -8,8 +8,10 @@ import javafx.scene.layout.Region;
 import model.*;
 
 /**
- *
+ *Controller for the booking view
+ * @author Lukasz, Gabriela, Diana
  */
+
 public class BookingsController {
     private Region root;
     private BookingModelManager modelManager;

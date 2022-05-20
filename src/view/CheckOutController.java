@@ -12,6 +12,10 @@ import model.Hotel;
 
 import static java.lang.Double.parseDouble;
 
+/**
+ * Controller for the checkOut view
+ * @author Lukasz, DIana, Gabriela
+ */
 public class CheckOutController
 
 {
