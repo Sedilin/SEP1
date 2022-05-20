@@ -229,9 +229,10 @@ public class MainPageController
   public void searchButton()
   {
     roomsListTable.getItems().clear();
-    roomList = modelManager.load().getAllRooms();
+    Hotel hotel = modelManager.load();
+    roomList = hotel.getAllRooms();
 
-    RoomList searchRoom = modelManager.load().getAvailableRooms(
+    RoomList searchRoom = hotel.getAvailableRooms(
         new Date(arrivalDate.getValue().getDayOfMonth(),
             arrivalDate.getValue().getMonthValue(),
             arrivalDate.getValue().getYear()),

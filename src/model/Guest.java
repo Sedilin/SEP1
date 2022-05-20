@@ -167,7 +167,7 @@ public class Guest implements Serializable
      */
     public String toString()
     {
-        return firstName + " " + lastName + " " + phoneNumber + " " + id + " " + address + " " +birthday;
+        return firstName + " " + lastName + " " + phoneNumber + " " + id + " " + address + " " + birthday;
     }
 
     /**

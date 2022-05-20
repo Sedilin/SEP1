@@ -106,6 +106,7 @@ public class BookingsController {
         }
         else if (event.getSource() == newGuestButton)
         {
+            guestListTable.getSelectionModel().clearSelection();
             firstNameField.setDisable(false);
             lastNameField.setDisable(false);
             phoneNumberField.setDisable(false);

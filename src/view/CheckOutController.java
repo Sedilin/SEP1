@@ -67,6 +67,7 @@ public class CheckOutController
   public void reset()
   {
     updateCheckOutPage();
+    cleaningFee.setDisable(true);
   }
 
   /**

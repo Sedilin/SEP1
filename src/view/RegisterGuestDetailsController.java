@@ -62,7 +62,13 @@ public class RegisterGuestDetailsController
     {
       count = 0;
       Hotel hotel = modelManager.load();
-      hotel.getAllBookings().getBooking(viewHandler.getMainPageController().bookingListTable.getSelectionModel().getSelectedItem()).setCheckedIn();
+      Booking temp = hotel.getAllBookings().getBooking(viewHandler.getMainPageController().bookingListTable.getSelectionModel().getSelectedItem());
+
+      if (smoking.isSelected())
+      {
+        temp.getRoom().setSmoking(true);
+      }
+      temp.setCheckedIn();
       modelManager.save(hotel);
       viewHandler.openView("MainPage");
     }
@@ -130,10 +136,6 @@ public class RegisterGuestDetailsController
           alert.setHeaderText(null);
           alert.showAndWait();
         }
-      else if(e.getSource() == smoking)
-      {
-        viewHandler.getMainPageController().bookingListTable.getSelectionModel().getSelectedItem().getRoom().setSmoking(true);
-      }
       else
         {
           Alert alert = new Alert(Alert.AlertType.ERROR, "The room has reached its max capacity!");
