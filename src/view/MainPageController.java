@@ -9,13 +9,17 @@ import javafx.scene.layout.Region;
 import main.HotelManagerGUI;
 import model.*;
 
-import javax.swing.*;
+
 import java.time.chrono.*;
 import java.time.*;
 
 import java.time.chrono.ChronoLocalDate;
 import java.util.ArrayList;
 
+/**
+ * A controller for the mainPage view
+ * @author Lukasz, Diana, Gabriela
+ */
 public class MainPageController
 {
   private Region root;
@@ -40,6 +44,7 @@ public class MainPageController
   @FXML private TableColumn<Room, Integer> priceColumn;
   @FXML private TableColumn<Room, Integer> capacityColumn;
   @FXML private Button bookButton;
+  @FXML private Button deleteButton;
   @FXML private DatePicker arrivalDate;
   @FXML private DatePicker departureDate;
   @FXML private ComboBox<String> roomType;
@@ -62,6 +67,7 @@ public class MainPageController
   @FXML TableColumn<Booking, Date> departureDateColumn2;
   @FXML TableColumn<Booking, Integer> roomNoColumn3;
   @FXML Button payAndCheckOut;
+
 
   public void init(ViewHandler viewHandler, BookingModelManager modelManager,
       Region root)
@@ -162,6 +168,14 @@ public class MainPageController
     }
   }
 
+  public void deleteButton(ActionEvent event)
+  {
+    Hotel hotel = modelManager.load();
+    hotel.getAllBookings().removeBooking(bookingListTable.getSelectionModel().getSelectedItem());
+    modelManager.save(hotel);
+    updateBookingArea();
+  }
+
   public void searchCheckedOutBookings(ActionEvent event) {
     if (modelManager.load().findBookingsByPhoneNumber(searchFieldCheckOut.getText()) != null)
     {
@@ -229,9 +243,10 @@ public class MainPageController
   public void searchButton()
   {
     roomsListTable.getItems().clear();
-    roomList = modelManager.load().getAllRooms();
+    Hotel hotel = modelManager.load();
+    roomList = hotel.getAllRooms();
 
-    RoomList searchRoom = modelManager.load().getAvailableRooms(
+    RoomList searchRoom = hotel.getAvailableRooms(
         new Date(arrivalDate.getValue().getDayOfMonth(),
             arrivalDate.getValue().getMonthValue(),
             arrivalDate.getValue().getYear()),

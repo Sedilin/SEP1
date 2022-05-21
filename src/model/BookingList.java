@@ -43,6 +43,11 @@ public class BookingList implements Serializable
         }
     }
 
+    public void removeBooking(Booking booking)
+    {
+        bookings.remove(booking);
+    }
+
     /**
      * Gets last booking from booking list
      * @return

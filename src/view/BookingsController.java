@@ -8,8 +8,10 @@ import javafx.scene.layout.Region;
 import model.*;
 
 /**
- *
+ *Controller for the booking view
+ * @author Lukasz, Gabriela, Diana
  */
+
 public class BookingsController {
     private Region root;
     private BookingModelManager modelManager;
@@ -106,6 +108,7 @@ public class BookingsController {
         }
         else if (event.getSource() == newGuestButton)
         {
+            guestListTable.getSelectionModel().clearSelection();
             firstNameField.setDisable(false);
             lastNameField.setDisable(false);
             phoneNumberField.setDisable(false);

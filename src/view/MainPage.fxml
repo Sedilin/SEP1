@@ -34,12 +34,13 @@
           <Menu mnemonicParsing="false" text="Help">
                <items>
                   <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleActions" text="Contact" />
-               </items></Menu>
+               </items>
+            </Menu>
         </menus>
       </MenuBar>
       <TabPane layoutY="23.0" prefHeight="415.0" prefWidth="623.0" style="-fx-background-color: antiquewhite;" tabClosingPolicy="UNAVAILABLE" AnchorPane.rightAnchor="0.0">
         <tabs>
-          <Tab style="-fx-background-color: #BEA888#BEA888 #BEA888#BEA888;" text="Room list ">
+          <Tab style="-fx-background-color: #BEA888#BEA888 #BEA888#BEA888;" text="Create booking">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="369.0" prefWidth="616.0" style="-fx-background-color: antiquewhite;">
                      <children>
@@ -86,7 +87,7 @@
                      </children></AnchorPane>
             </content>
           </Tab>
-            <Tab style="-fx-background-color: #BEA888#BEA888 #BEA888#BEA888;" text="Booking list ">
+            <Tab style="-fx-background-color: #BEA888#BEA888 #BEA888#BEA888;" text="Check In">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: antiquewhite;">
                      <children>
@@ -110,7 +111,12 @@
                            </font>
                         </Button>
                         <TextField fx:id="searchFieldBookings" layoutX="389.0" layoutY="32.0" onAction="#searchBookings" prefHeight="26.0" prefWidth="159.0" promptText="Search" style="-fx-border-color: #BEA888#BEA888; -fx-border-radius: 3;" />
-                        <Button layoutX="247.0" layoutY="310.0" mnemonicParsing="false" onAction="#checkInButton" opacity="0.9" prefHeight="33.0" prefWidth="105.0" style="-fx-background-color: rgb(158, 122, 32)rgb(158, 122, 32) rgb(158, 122, 32)rgb(158, 122, 32);" styleClass="#ffffff" text="Check In" textFill="WHITE">
+                        <Button layoutX="441.0" layoutY="320.0" mnemonicParsing="false" onAction="#checkInButton" opacity="0.9" prefHeight="33.0" prefWidth="105.0" style="-fx-background-color: rgb(158, 122, 32)rgb(158, 122, 32) rgb(158, 122, 32)rgb(158, 122, 32);" styleClass="#ffffff" text="Check In" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="deleteButton" layoutX="312.0" layoutY="320.0" mnemonicParsing="false" onAction="#deleteButton" opacity="0.9" prefHeight="33.0" prefWidth="105.0" style="-fx-background-color: rgb(158, 122, 32)rgb(158, 122, 32) rgb(158, 122, 32)rgb(158, 122, 32);" styleClass="#ffffff" text="Delete" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>

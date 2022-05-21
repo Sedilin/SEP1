@@ -8,6 +8,9 @@ import model.BookingModelManager;
 
 import java.io.IOException;
 
+/**
+ * A class that handles switches between scenes
+ */
 public class ViewHandler {
     private Scene scene;
     private Stage window;
@@ -18,16 +21,31 @@ public class ViewHandler {
 
     private BookingModelManager modelManager;
 
+    /**
+     * Initializes modelManager and a new scene
+     * @param modelManager
+     * @throws IOException indicates a failure in reading from the file
+     */
     public ViewHandler (BookingModelManager modelManager) throws IOException
     {
         this.modelManager = modelManager;
         scene = new Scene(new Region());
     }
+
+    /**
+     * Passes the created stage object to the viewHandler and opens the mainView
+     * @param window stage object
+     */
     public void start(Stage window)
     {
         this.window = window;
         openView("MainPage");
     }
+
+    /**
+     * Switches between scenes basing on their ID
+     * @param id ID of the scenes
+     */
     public void openView(String id)
     {
         Region root = null;
@@ -135,10 +153,20 @@ public class ViewHandler {
         }
         return checkOut.getRoot();
     }
+
+    /**
+     * Returns mainPageController
+     * @return mainPageController
+     */
     public MainPageController getMainPageController()
     {
         return mainPageController;
     }
+
+    /**
+     * Returns registerGuestDetailsController
+     * @return registerGuestDetailsController
+     */
     public RegisterGuestDetailsController getRegisterGuestDetailsController()
     {
         return registerGuestDetailsController;

@@ -10,7 +10,7 @@ public class MyFileHandler
     * @param fileName file name
     * @param obj object to be written in the file
     * @throws FileNotFoundException an exception which means that the binary file was not found
-    * @throws IOException an exception which indicates a failure in input operations
+    * @throws IOException an exception which indicates a failure in writing to the file
     */
    // Writes the given object to a file with the given file name
    public static void writeToBinaryFile(String fileName, Object obj) throws FileNotFoundException, IOException
@@ -45,7 +45,7 @@ public class MyFileHandler
     * @param fileName file name
     * @param objs object from the given array
     * @throws FileNotFoundException an exception which means that the binary file was not found
-    * @throws IOException an exception which indicates a failure in input operations
+    * @throws IOException an exception which indicates a failure in writing to the file
     */
    // Writes the objects in the given array to a file with the given file name
    public static void writeArrayToBinaryFile(String fileName, Object[] objs) throws FileNotFoundException, IOException
@@ -81,9 +81,9 @@ public class MyFileHandler
     * Reads the first object from the file with the given file name and returns it
     * @param fileName file name
     * @return the first object from the file
-    * @throws FileNotFoundException an exception which means that the binary file was not found
-    * @throws IOException an exception which indicates a failure in output operations
-    * @throws ClassNotFoundException
+    * @throws FileNotFoundException indicates that the binary file was not found
+    * @throws IOException indicates a failure in reading from the file
+    * @throws ClassNotFoundException indicates a mismatch of classes from the file and computer
     */
    // Reads the first object from the file with the given file name and returns it.
    // Whoever calls the method will need to cast it from type Object to its actual type
@@ -125,10 +125,10 @@ public class MyFileHandler
    /**
     * Reads all objects from the file with the given file name and returns it as an Object[].
     * @param fileName file name
-    * @return returns an array of all objects read from binary file
-    * @throws FileNotFoundException an exception which means that the binary file was not found
-    * @throws IOException an exception which indicates a failure in output operations
-    * @throws ClassNotFoundException an exception that indicates a failure in finding the class in
+    * @return an array of all objects read from binary file
+    * @throws FileNotFoundException which means that the binary file was not found
+    * @throws IOException indicates a failure in reading from the file
+    * @throws ClassNotFoundException indicates a mismatch of classes from the file and computer
     */
    // Reads all objects from the file with the given file name and returns it as an Object[].
    // Whoever calls the method will need to cast the Objects to their actual type

@@ -6,6 +6,10 @@ import javafx.scene.layout.Region;
 import javafx.scene.text.Text;
 import model.*;
 
+/**
+ * Controller for the registerGuestDetails
+ * @author Lukasz, Diana, Gabriela
+ */
 public class RegisterGuestDetailsController
 {
 
@@ -34,6 +38,12 @@ public class RegisterGuestDetailsController
   private int count = 0;
   Guest additionalGuest;
 
+  /**
+   * Called from the view handler class to set up the view handler, modelManager and root layout
+   * @param viewHandler viewHandler
+   * @param modelManager modelManager
+   * @param root root layout
+   */
   //taking info from this classes
   public void init(ViewHandler viewHandler, BookingModelManager modelManager, Region root)
   {
@@ -42,27 +52,41 @@ public class RegisterGuestDetailsController
     this.root = root;
     reset();
   }
-  public void initialize()
-  {
-    modelManager = new BookingModelManager("hotel.bin");
-  }
 
+  /**
+   * Returns root layout
+   * @return root layout
+   */
   public Region getRoot()
   {
     return root;
   }
+
+  /**
+   * Clears all the fields and sets smoking to false
+   */
   public void reset()
   {
     updateRegisterGuestDetails();
   }
 
+  /**
+   * A method that handles events for checkIn, addGuest, importGuestDetails and save buttons
+   * @param e an action event
+   */
   public void handleForRegisterGuestDetails(ActionEvent e)
   {
     if (e.getSource() == checkIn)
     {
       count = 0;
       Hotel hotel = modelManager.load();
-      hotel.getAllBookings().getBooking(viewHandler.getMainPageController().bookingListTable.getSelectionModel().getSelectedItem()).setCheckedIn();
+      Booking temp = hotel.getAllBookings().getBooking(viewHandler.getMainPageController().bookingListTable.getSelectionModel().getSelectedItem());
+
+      if (smoking.isSelected())
+      {
+        temp.getRoom().setSmoking(true);
+      }
+      temp.setCheckedIn();
       modelManager.save(hotel);
       viewHandler.openView("MainPage");
     }
@@ -130,10 +154,6 @@ public class RegisterGuestDetailsController
           alert.setHeaderText(null);
           alert.showAndWait();
         }
-      else if(e.getSource() == smoking)
-      {
-        viewHandler.getMainPageController().bookingListTable.getSelectionModel().getSelectedItem().getRoom().setSmoking(true);
-      }
       else
         {
           Alert alert = new Alert(Alert.AlertType.ERROR, "The room has reached its max capacity!");
@@ -143,6 +163,10 @@ public class RegisterGuestDetailsController
 
       }
     }
+
+  /**
+   * Clears all the fields and sets smoking to false
+   */
   private void updateRegisterGuestDetails()
   {
     firstName.clear();

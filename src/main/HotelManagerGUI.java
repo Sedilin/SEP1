@@ -4,8 +4,8 @@ import javafx.application.Application;
 import view.StartApplication;
 
 /**
- *
- * @author
+ * Main class that launches the GUI
+ * @author Lukasz
  * @version 1.0
  */
 
