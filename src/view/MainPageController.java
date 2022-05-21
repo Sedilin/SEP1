@@ -69,6 +69,12 @@ public class MainPageController
   @FXML Button payAndCheckOut;
 
 
+  /**
+   * Initializes viewHandler object, modelManager object and root object
+   * @param viewHandler view handler
+   * @param modelManager model manager
+   * @param root root
+   */
   public void init(ViewHandler viewHandler, BookingModelManager modelManager,
       Region root)
   {
@@ -77,14 +83,23 @@ public class MainPageController
     this.root = root;
   }
 
+  /**
+   * Returns the root layout of the controller's view
+   * @return root of the controller's view
+   */
   public Region getRoot()
   {
     return root;
   }
 
+  /**
+   * Assigns values to table columns for room list, booking list and check out
+   * Updates the tables
+   */
   public void initialize()
   {
     modelManager = new BookingModelManager("hotel.bin");
+    //Room list table columns
     roomNoColumn.setCellValueFactory(
         new PropertyValueFactory<Room, Integer>("roomNumber"));
     roomNoColumn.setPrefWidth(90);
@@ -126,6 +141,10 @@ public class MainPageController
 
   }
 
+  /**
+   * Updates the room types, booking list table, room list table and check out table
+   */
+
   public void reset()
   {
     updateRoomTypes();
@@ -135,6 +154,10 @@ public class MainPageController
     updateCheckOutArea();
   }
 
+  /**
+   * Action event for book button
+   * Alert Error dialog displayed in case of unfulfilled requirements
+   */
   public void bookButton(ActionEvent event)
   {
     ChronoLocalDate currentDate = LocalDate.from(ZonedDateTime.now());
@@ -176,6 +199,9 @@ public class MainPageController
     updateBookingArea();
   }
 
+  /**
+   * Action event for searching booking on the checkout page
+   */
   public void searchCheckedOutBookings(ActionEvent event) {
     if (modelManager.load().findBookingsByPhoneNumber(searchFieldCheckOut.getText()) != null)
     {
@@ -186,6 +212,10 @@ public class MainPageController
       }
     }
   }
+
+  /**
+   * Action event for searching booking on booking list page
+   */
 
     public void searchBookings(ActionEvent event) {
         if (modelManager.load().findBookingsByPhoneNumber(searchFieldBookings.getText()) != null)
@@ -198,6 +228,10 @@ public class MainPageController
         }
     }
 
+  /**
+   * Updates the booking list table
+   */
+
   public void updateBookingArea()
   {
     bookingListTable.getItems().clear();
@@ -207,6 +241,10 @@ public class MainPageController
       bookingListTable.getItems().add(bookings.getBookingByIndex(i));
     }
   }
+
+  /**
+   * Updates the checkout table
+   */
 
   public void updateCheckOutArea()
   {
@@ -218,11 +256,18 @@ public class MainPageController
     }
   }
 
+  /**
+   * Action event which opens Register Guest Details page
+   * @param event checkInButton
+   */
   public void checkInButton(ActionEvent event)
   {
     viewHandler.openView("RegisterGuestDetails");
   }
 
+  /**
+   * Updates the room type combo box
+   */
   private void updateRoomTypes()
   {
     roomType.getItems().clear();
@@ -240,8 +285,13 @@ public class MainPageController
     roomType.setPromptText("Room type");
   }
 
+  /**
+   * Searches the room availability and displays it to the room list table
+   */
+
   public void searchButton()
   {
+
     roomsListTable.getItems().clear();
     Hotel hotel = modelManager.load();
     roomList = hotel.getAllRooms();
@@ -265,6 +315,10 @@ public class MainPageController
     }
   }
 
+  /**
+   * Updates the room list table
+   */
+
   public void updateRoomsArea()
   {
     roomsListTable.getItems().clear();
@@ -276,6 +330,10 @@ public class MainPageController
     }
   }
 
+  /**
+   * Clears all the fields and updates the room type and room list table
+   */
+
   public void resetSearch()
   {
     arrivalDate.getEditor().clear();
@@ -285,10 +343,18 @@ public class MainPageController
     updateRoomTypes();
   }
 
+  /**
+   * viewHandler opens a new page CheckOut
+   */
+
   public void payAndCheckOutButton()
   {
     viewHandler.openView("CheckOut");
   }
+
+  /**
+   * Action event which displays alert dialogs for the menu items in the menu bar
+   */
 
   public void handleActions(ActionEvent event)
   {
@@ -298,6 +364,7 @@ public class MainPageController
           "Do you really want to exit the program?", ButtonType.YES,
           ButtonType.NO);
       alert.setTitle("Exit");
+
       alert.setHeaderText(null);
 
       alert.showAndWait();
@@ -311,6 +378,7 @@ public class MainPageController
     {
       Alert alert = new Alert(Alert.AlertType.INFORMATION);
       alert.setHeaderText(null);
+
       alert.setTitle("Help");
       alert.setContentText("Please get in touch and our support team " + "\n" + "will help you solve the issue!" + "\n" +"\n" +
           "Phone number: 25792799 ");
