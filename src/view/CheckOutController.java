@@ -62,7 +62,7 @@ public class CheckOutController
   }
 
   /**
-   * Resets the CheckOut page using the method updateCheckoutPage()
+   * Updates the checkout page
    */
   public void reset()
   {
@@ -70,7 +70,7 @@ public class CheckOutController
   }
 
   /**
-   * Text area in order for guest information to be imported
+   * Imports the data about the guest into the text area
    */
 
   public void updateCheckOutPage() {
@@ -84,12 +84,7 @@ public class CheckOutController
   }
 
   /**
-   * First it uses the reset method
-   * Gets the currentBooking from the CheckOut table
-   * Makes a new variable price which converts the total price to String data type
-   * Imports guest information to the text area
-   * Prints out the currentBooking
-   * Sets the cleaningFee to enable if in the room is allowed to smoke
+   * Imports current booking guest data
    */
   public void importButton()
   {
@@ -109,9 +104,7 @@ public class CheckOutController
   }
 
   /**
-   * Applies the discount to the currentBooking and makes it a double
-   * Calculates the totalPrice when discount is added
-   * Prints out the currentBooking
+   * Applies the discount to the current booking total price
    */
   public void discount() {
 
@@ -124,8 +117,7 @@ public class CheckOutController
   }
 
   /**
-   * Applies cleaningFee to the currentBooking and makes it a double
-   * Calculates the totalPrice after the cleaningFee is added
+   * Applies cleaning fee to the current booking total price
    */
   public void cleaningFee()
   {
@@ -139,9 +131,6 @@ public class CheckOutController
   /**
    * Confirmation alert type which prints out for how many days the guest has to pay
    * and the final amount
-   * If the payment is confirmed it sets the booking to checkedOut
-   * Prints the currentBooking
-   * Loads and saves the hotel and viewHandler opens the MainPage view
    */
 
   public void payAndCheckInButton()
