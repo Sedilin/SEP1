@@ -5,6 +5,11 @@ import utils.MyFileHandler;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/**
+ * A class loading and saving the hotel binary file.
+ * @author Gabriela and Lukasz
+ * @version 1.0
+ * */
 public class BookingModelManager {
     private String fileName;
 
