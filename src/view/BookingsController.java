@@ -6,6 +6,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Region;
 import model.*;
+import utils.MyFileHandler;
 
 /**
  *Controller for the booking view
@@ -52,8 +53,8 @@ public class BookingsController {
     }
 
     /**
-     *
-     * @return
+     * Gets the root of the object
+     * @return the root
      */
     public Region getRoot()
     {
@@ -72,7 +73,7 @@ public class BookingsController {
 
     /**
      * A method that handles events for book button, new guest button and search field
-     * @param event
+     * @param event an event that happens after some action on GUI
      */
     public void handleForBookings(ActionEvent event)
     {
@@ -87,6 +88,9 @@ public class BookingsController {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION, "The booking has been created.");
                     alert.setHeaderText(null);
                     alert.showAndWait();
+                    Date departure = Date.today();
+                    departure.nextDay();
+                    MyFileHandler.createXMLFile(hotel.getAvailableRooms(Date.today(), departure, null));
                     viewHandler.openView("MainPage");
                     viewHandler.getMainPageController().reset();
                 }

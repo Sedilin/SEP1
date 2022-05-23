@@ -3,6 +3,9 @@ package utils;
 import java.io.*;
 import java.util.ArrayList;
 
+import parser.ParserException;
+import parser.XmlJsonParser;
+
 public class MyFileHandler
 {
    /**
@@ -81,7 +84,16 @@ public class MyFileHandler
             }
          }
       }
-
       return obj;
+   }
+
+
+   public static void createXMLFile(Object list) {
+      XmlJsonParser parser = new XmlJsonParser();
+      try {
+         parser.toXml(list, "Availability.xml");
+      } catch (ParserException e) {
+         e.printStackTrace();
+      }
    }
  }

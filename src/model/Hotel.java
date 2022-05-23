@@ -46,8 +46,11 @@ public class Hotel implements Serializable
     {
         RoomList availableRooms = getAllRooms();
         BookingList allBookings = getAllBookings();
-        allBookings = allBookings.getRoomsOfOneType(roomType);
-        availableRooms = availableRooms.getRoomsType(roomType);
+        if (roomType != null)
+        {
+            allBookings = allBookings.getRoomsOfOneType(roomType);
+            availableRooms = availableRooms.getRoomsType(roomType);
+        }
 
         for (Booking booking : allBookings.getAllBooking())
         {
@@ -138,7 +141,7 @@ public class Hotel implements Serializable
 
   /**
    * A toString method to print out the fields of a hotel
-   * @return
+   * @return a string representation of Hotel object
    */
   public String toString()
     {

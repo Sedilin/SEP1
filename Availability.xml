@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<RoomList>
+  <rooms>
+    <roomNumber>305</roomNumber>
+    <price>259.0</price>
+    <type>Single Bedroom Suite</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>304</roomNumber>
+    <price>259.0</price>
+    <type>Single Bedroom Suite</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>303</roomNumber>
+    <price>259.0</price>
+    <type>Single Bedroom Suite</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>302</roomNumber>
+    <price>339.0</price>
+    <type>2-Bedroom Suite</type>
+    <isSmoking>false</isSmoking>
+    <capacity>4</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>219</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>218</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>217</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>216</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>215</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>214</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>213</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>212</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>211</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>210</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>209</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>208</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>207</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>206</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>205</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-Twin</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>204</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-Twin</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>203</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-Twin</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>202</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-Twin</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>201</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-Twin</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>118</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>117</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>116</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>115</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>114</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>113</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>112</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>111</roomNumber>
+    <price>169.0</price>
+    <type>Double Room-King Size</type>
+    <isSmoking>false</isSmoking>
+    <capacity>2</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>110</roomNumber>
+    <price>129.0</price>
+    <type>Single Room</type>
+    <isSmoking>false</isSmoking>
+    <capacity>1</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>109</roomNumber>
+    <price>129.0</price>
+    <type>Single Room</type>
+    <isSmoking>false</isSmoking>
+    <capacity>1</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>108</roomNumber>
+    <price>129.0</price>
+    <type>Single Room</type>
+    <isSmoking>false</isSmoking>
+    <capacity>1</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>107</roomNumber>
+    <price>129.0</price>
+    <type>Single Room</type>
+    <isSmoking>false</isSmoking>
+    <capacity>1</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>106</roomNumber>
+    <price>129.0</price>
+    <type>Single Room</type>
+    <isSmoking>false</isSmoking>
+    <capacity>1</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>105</roomNumber>
+    <price>129.0</price>
+    <type>Single Room</type>
+    <isSmoking>false</isSmoking>
+    <capacity>1</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>104</roomNumber>
+    <price>129.0</price>
+    <type>Single Room</type>
+    <isSmoking>false</isSmoking>
+    <capacity>1</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>103</roomNumber>
+    <price>129.0</price>
+    <type>Single Room</type>
+    <isSmoking>false</isSmoking>
+    <capacity>1</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>102</roomNumber>
+    <price>129.0</price>
+    <type>Single Room</type>
+    <isSmoking>false</isSmoking>
+    <capacity>1</capacity>
+  </rooms>
+  <rooms>
+    <roomNumber>101</roomNumber>
+    <price>129.0</price>
+    <type>Single Room</type>
+    <isSmoking>false</isSmoking>
+    <capacity>1</capacity>
+  </rooms>
+</RoomList>
