@@ -98,7 +98,7 @@ public class Date implements Serializable
   public boolean isLeapYear()
 
   {
-    return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+    return year % 4 == 0 && year % 100 != 0 || year % 400 == 0; // O(8)
   }
 
   /**
@@ -110,32 +110,35 @@ public class Date implements Serializable
   {
 
     if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8
-        || month == 10 || month == 12)
+        || month == 10 || month == 12) // O(13)
     {
-      return 31;
+      return 31; // O(1)
     }
 
-    else if (month == 2)
+    else if (month == 2) // O(1)
     {
-      if (isLeapYear())
+      if (isLeapYear()) //O(8)
       {
-        return 29;
+        return 29; // O(1)
       }
       else
       {
-        return 28;
+        return 28; // O(1)
       }
     }
 
-    else if (month == 4 || month == 6 || month == 9 || month == 11)
+    else if (month == 4 || month == 6 || month == 9 || month == 11) // O(7)
     {
-      return 30;
+      return 30; // O(1)
     }
 
     else
     {
-      return -1;
+      return -1; // O(1)
     }
+    // The method returns the number of days in given month
+    // T(n) = 13 + 1 + 1 + 8 + 1 + 1 + 7 + 1 + 1 = 34
+    // Ignoring constants and coefficient we get T(n) = O(1)
   }
 
   /**
