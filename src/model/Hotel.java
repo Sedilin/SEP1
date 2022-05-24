@@ -44,25 +44,39 @@ public class Hotel implements Serializable
      */
     public RoomList getAvailableRooms(Date arrivalDate, Date departureDate, String roomType)
     {
-        RoomList availableRooms = getAllRooms();
-        BookingList allBookings = getAllBookings();
-        if (roomType != null)
+
+      //We initialize a roomList object and a bookingList object
+
+        RoomList availableRooms = getAllRooms(); // O(1)
+        BookingList allBookings = getAllBookings(); // O(1)
+
+     // We check if the roomType is not null and assign the according bookings to allBookings and according rooms to availableRooms
+        if (roomType != null) // This comparison will be done once
         {
-            allBookings = allBookings.getRoomsOfOneType(roomType);
-            availableRooms = availableRooms.getRoomsType(roomType);
+            allBookings = allBookings.getRoomsOfOneType(roomType); // O(n)
+            availableRooms = availableRooms.getRoomsType(roomType); // O(n)
         }
 
-        for (Booking booking : allBookings.getAllBooking())
+        for (Booking booking : allBookings.getAllBooking())  // This loop will run n times
         {
-            if ((arrivalDate.isAfter(booking.getArrivalDate()) && arrivalDate.isBefore(booking.getDepartureDate())) ||
-                    (departureDate.isAfter(booking.getArrivalDate()) && departureDate.isBefore(booking.getDepartureDate())) ||
-                    arrivalDate.equals(booking.getArrivalDate()) || departureDate.equals(booking.getDepartureDate()))
+            if ((arrivalDate.isAfter(booking.getArrivalDate()) && arrivalDate.isBefore(booking.getDepartureDate())) || // O(4)
+                    (departureDate.isAfter(booking.getArrivalDate()) && departureDate.isBefore(booking.getDepartureDate())) || // O(4)
+                    arrivalDate.equals(booking.getArrivalDate()) || departureDate.equals(booking.getDepartureDate())) // O(4)
             {
-                availableRooms.removeRoom(booking.getRoom());
+                availableRooms.removeRoom(booking.getRoom()); // O(n) + O(1)
             }
         }
-        return availableRooms;
+        return availableRooms; // O(1)
+
+      /*
+
+      We loop through all bookings and check if the arrival and departure dates don't overlap
+      T(n) = 1 + 1 +  1 + n + n + n(4 + 4 + 4 + n + 1) + 1 = 4 + 15n + n^2, so ignoring constants and coefficients
+      we get T(n) = O(n^2)
+      We chose this method due to its complexity
+       */
     }
+
 
   /**
    * Gets a booking by the number it was registered on from a booking list
@@ -72,6 +86,7 @@ public class Hotel implements Serializable
   public BookingList findBookingsByPhoneNumber(String phoneNumber) {
         return bookings.findBookingsByPhoneNumber(phoneNumber);
    }
+
     /**
      * Adds a booking object to bookings
      * @param booking booking object to be added
@@ -135,8 +150,8 @@ public class Hotel implements Serializable
      */
     public double checkOut(Booking booking)
     {
-        bookings.getBooking(booking).setCheckedOut();
-        return bookings.getBooking(booking).getTotalPrice();
+        bookings.getBooking(booking).setCheckedOut(); // O(1)
+        return bookings.getBooking(booking).getTotalPrice(); // O()
     }
 
   /**
