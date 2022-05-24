@@ -87,7 +87,10 @@ public class MyFileHandler
       return obj;
    }
 
-
+   /**
+    * Creates the XML file of available rooms
+    * @param list that should be written in the xml file
+    */
    public static void createXMLFile(Object list) {
       XmlJsonParser parser = new XmlJsonParser();
       try {
